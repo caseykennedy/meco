@@ -23,7 +23,6 @@ const Reset = css`
     padding: 0;
     height: 100%;
     overflow: auto;
-    /* overflow: hidden; */
   }
 
   /* Sections
@@ -39,7 +38,6 @@ const Reset = css`
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
-    /* overflow: hidden; */
   }
 
   /**

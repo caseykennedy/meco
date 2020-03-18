@@ -26,7 +26,8 @@ type ThemeShape = {
   strokeWidth: string
   maxWidth: string
   siteWidth: string
-  marqueeWidth: string
+  indentWidth: string
+  headerHeight: string
   sidebarWidth: {
     [key: string]: string
   }
@@ -81,7 +82,7 @@ const theme: ThemeShape = {
     background: '#F6F4EA',
     
     primary: '#132B59',
-    secondary: 'B8860B',
+    secondary: '#B8860B',
     tertiary: 'magenta',
 
     black: '#000000',
@@ -115,8 +116,8 @@ const theme: ThemeShape = {
   // ___________________________________________________________________
 
   fonts: {
-    body: `"Falster", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-    heading: `"Falster", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    body: `"Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    heading: `"Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     code: `"Menlo", Consolas, "Liberation Mono", Menlo, Courier, monospace`
   },
 
@@ -147,11 +148,14 @@ const theme: ThemeShape = {
   // ___________________________________________________________________
 
   maxWidth: '1680px',
-  siteWidth: '50vw',
+  siteWidth: '100vw',
+  indentWidth: '18px',
   sidebarWidth: {
     collapsed: '56px',
     expanded: '50vw'
   },
+
+  headerHeight: '60px',
 
   grid: {
     gap: '0.5rem'
@@ -168,7 +172,7 @@ const theme: ThemeShape = {
     }
   },
 
-  border: '3px solid #000000',
+  border: '2px solid #132B59',
   shadow: '2rem 1.5rem 1rem #8a8a7c',
 
   root: {

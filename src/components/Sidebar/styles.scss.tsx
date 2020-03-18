@@ -31,8 +31,8 @@ export const Sidebar = styled(AnimatedFlex)`
   height: 100vh;
   padding: ${theme.space[3]};
 
-  background: ${theme.colors.background};
-  /* border-left: ${theme.border}; */
+  background: ${theme.colors.primary};
+  border-left: ${theme.border};
 
   transition: all 0.333s ease-in-out;
   z-index: 20;

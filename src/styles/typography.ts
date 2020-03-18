@@ -11,10 +11,22 @@ import FalsterGroteskWoff2 from './fonts/BCFalsterGrotesk-Regular.woff2'
 import FalsterGroteskWoff from './fonts/BCFalsterGrotesk-Regular.woff'
 import FalsterGroteskOtf from './fonts/BCFalsterGrotesk-Regular.otf'
 
+// Aeonik Regular
+import AeonikRegularEot from './fonts/AeonikRegular.eot'
+import AeonikRegularWoff2 from './fonts/AeonikRegular.woff2'
+import AeonikRegularWoff from './fonts/AeonikRegular.woff'
+import AeonikRegularOtf from './fonts/AeonikRegular.otf'
+
+// Suisse Works
+import SuisseWorksEot from './fonts/SuisseWorks-Bold-WebTrial.eot'
+import SuisseWorksWoff2 from './fonts/SuisseWorks-Bold-WebTrial.woff2'
+import SuisseWorksWoff from './fonts/SuisseWorks-Bold-WebTrial.woff'
+import SuisseWorksTtf from './fonts/SuisseWorks-Bold-WebTrial.ttf'
+
 // ___________________________________________________________________
 
 const Typography = css`
-  /* Aeonik Regular */
+  /* BC Falster */
   @font-face {
     font-family: 'Falster';
     src: url(${FalsterGroteskEot});
@@ -23,6 +35,32 @@ const Typography = css`
       url(${FalsterGroteskOtf}) format('opentype'),
       url(${FalsterGroteskEot}?#iefix) format('embedded-opentype');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Aeonik Regular */
+  @font-face {
+    font-family: 'Aeonik';
+    src: url(${AeonikRegularEot});
+    src: url(${AeonikRegularWoff2}) format('woff2'),
+      url(${AeonikRegularWoff}) format('woff'),
+      url(${AeonikRegularOtf}) format('opentype'),
+      url(${AeonikRegularEot}?#iefix) format('embedded-opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Suisse Works Bold */
+  @font-face {
+    font-family: 'SuisseWorks';
+    src: url(${SuisseWorksEot});
+    src: url(${SuisseWorksWoff2}) format('woff2'),
+      url(${SuisseWorksWoff}) format('woff'),
+      url(${SuisseWorksTtf}) format('truetype'),
+      url(${SuisseWorksEot}?#iefix) format('embedded-opentype');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
   }

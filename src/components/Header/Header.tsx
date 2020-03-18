@@ -9,6 +9,8 @@ import { Link } from 'gatsby'
 import { useSpring, config } from 'react-spring'
 import { Scrambler } from 'react-text-scrambler'
 
+import Symbol from '../symbol'
+
 import { Heading } from '../../elements'
 
 import theme from '../../../config/theme'
@@ -25,11 +27,14 @@ const Header: React.FC = () => {
     to: { opacity: 1, transform: theme.transform.matrix.to }
   })
   return (
-    <S.Header as="header" style={DelayedFade}>
+    <S.Header as="header">
       <S.HeaderInner>
+        <S.Symbol>
+          <Symbol />
+        </S.Symbol>
         <S.Logo>
-          <Link to="/" className="js-hover" aria-label="MECO, back to home">
-            <Heading as="h1" fontSize={3} mb={0}>MECO</Heading>
+          <Link to="/" aria-label="MECO, back to home">
+            MECO
           </Link>
         </S.Logo>
       </S.HeaderInner>

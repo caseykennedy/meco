@@ -35,10 +35,9 @@ export const Main = styled(animated.main)`
   position: relative;
   z-index: 22;
 
-  width: calc(${theme.siteWidth});
+  width: calc(${theme.siteWidth} - 50vw);
 
   @media ${theme.mq.medium} {
-    /* width: calc(100vw - ${theme.sidebarWidth.expanded}); */
   }
 `
 

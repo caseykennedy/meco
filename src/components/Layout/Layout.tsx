@@ -13,7 +13,6 @@ import useNavigation from '../../hooks/useNavigation'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import Footer from '../Footer'
-import Cursor from '../Cursor'
 
 import theme from '../../../config/theme'
 
@@ -27,9 +26,6 @@ type LayoutProps = {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  // Navigation data hook
-  const navData = useNavigation()
-
   // Ref <main> to lock body for modal/overlay
   const mainRef = useRef<HTMLDivElement>(null)
 
@@ -38,16 +34,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Cursor />
       <S.Wrapper>
         <Header />
         <S.Main
           ref={mainRef}
         >
           {children}
-          <Footer navData={navData} />
+          <Footer />
         </S.Main>
-        <Sidebar mainRef={mainRef} navData={navData} />
+        <Sidebar mainRef={mainRef} />
       </S.Wrapper>
     </ThemeProvider>
   )

@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   /* Cursor */
-  html,
+  /* html,
   a,
   button {
     cursor: none;
@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       cursor: none;
     }
-  }
+  } */
 
   #drawer-root {
     position: relative;
