@@ -1,4 +1,4 @@
-// Cursor Styles:
+// Homepage Styles:
 
 // ___________________________________________________________________
 
@@ -20,8 +20,10 @@ export const Content = styled(Flex)`
   justify-content: flex-end;
 
   width: 100%;
-  padding-top: ${theme.space[4]};
+  padding-top: ${theme.space[3]};
+  padding-right: ${theme.space[4]};
   padding-left: ${theme.space[4]};
+
   border-left: ${theme.border};
 
   @media ${theme.mq.small} {

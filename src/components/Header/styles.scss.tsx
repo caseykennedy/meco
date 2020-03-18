@@ -64,7 +64,7 @@ export const Logo = styled(Box)`
   margin-left: ${theme.space[3]};
 
   font-family: 'SuisseWorks';
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   line-height: 0;
 
   a {

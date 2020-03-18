@@ -5,17 +5,23 @@
 import { css } from 'styled-components'
 import theme from '../../config/theme'
 
-// BC Falster Grotesk Regular
-import FalsterGroteskEot from './fonts/BCFalsterGrotesk-Regular.eot'
-import FalsterGroteskWoff2 from './fonts/BCFalsterGrotesk-Regular.woff2'
-import FalsterGroteskWoff from './fonts/BCFalsterGrotesk-Regular.woff'
-import FalsterGroteskOtf from './fonts/BCFalsterGrotesk-Regular.otf'
-
 // Aeonik Regular
 import AeonikRegularEot from './fonts/AeonikRegular.eot'
 import AeonikRegularWoff2 from './fonts/AeonikRegular.woff2'
 import AeonikRegularWoff from './fonts/AeonikRegular.woff'
 import AeonikRegularOtf from './fonts/AeonikRegular.otf'
+
+// Aeonik Bold
+import AeonikMediumEot from './fonts/Aeonik-Medium.eot'
+import AeonikMediumWoff2 from './fonts/Aeonik-Medium.woff2'
+import AeonikMediumWoff from './fonts/Aeonik-Medium.woff'
+import AeonikMediumTtf from './fonts/Aeonik-Medium.ttf'
+
+// Aeonik Bold
+import AeonikBoldEot from './fonts/AeonikBold.eot'
+import AeonikBoldWoff2 from './fonts/AeonikBold.woff2'
+import AeonikBoldWoff from './fonts/AeonikBold.woff'
+import AeonikBoldOtf from './fonts/AeonikBold.otf'
 
 // Suisse Works
 import SuisseWorksEot from './fonts/SuisseWorks-Bold-WebTrial.eot'
@@ -26,19 +32,6 @@ import SuisseWorksTtf from './fonts/SuisseWorks-Bold-WebTrial.ttf'
 // ___________________________________________________________________
 
 const Typography = css`
-  /* BC Falster */
-  @font-face {
-    font-family: 'Falster';
-    src: url(${FalsterGroteskEot});
-    src: url(${FalsterGroteskWoff2}) format('woff2'),
-      url(${FalsterGroteskWoff}) format('woff'),
-      url(${FalsterGroteskOtf}) format('opentype'),
-      url(${FalsterGroteskEot}?#iefix) format('embedded-opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
   /* Aeonik Regular */
   @font-face {
     font-family: 'Aeonik';
@@ -48,6 +41,32 @@ const Typography = css`
       url(${AeonikRegularOtf}) format('opentype'),
       url(${AeonikRegularEot}?#iefix) format('embedded-opentype');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Aeonik Medium */
+  @font-face {
+    font-family: 'Aeonik';
+    src: url(${AeonikMediumEot});
+    src: url(${AeonikMediumWoff2}) format('woff2'),
+      url(${AeonikMediumWoff}) format('woff'),
+      url(${AeonikMediumTtf}) format('truetype'),
+      url(${AeonikMediumEot}?#iefix) format('embedded-opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Aeonik Bold */
+  @font-face {
+    font-family: 'Aeonik';
+    src: url(${AeonikBoldEot});
+    src: url(${AeonikBoldWoff2}) format('woff2'),
+      url(${AeonikBoldWoff}) format('woff'),
+      url(${AeonikBoldOtf}) format('opentype'),
+      url(${AeonikBoldEot}?#iefix) format('embedded-opentype');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
   }
@@ -107,9 +126,9 @@ const Typography = css`
   h5,
   h6 {
     font-family: ${theme.fonts.heading};
-    font-weight: ${theme.fontWeights.regular};
+    font-weight: ${theme.fontWeights.medium};
     line-height: ${theme.root.font.headingLineHeight};
-    margin: 0 0 0.2em;
+    margin: 0 0 0.25em;
     transition: ${theme.transition.all};
   }
 
@@ -125,7 +144,8 @@ const Typography = css`
   h1,
   .text--xxl {
     font-size: calc(${theme.root.font.xl});
-    line-height: calc(${theme.root.font.headingLineHeight} / 1);
+    font-weight: ${theme.fontWeights.regular};
+    line-height: calc(${theme.root.font.headingLineHeight} / 1.1);
 
     @media ${theme.mq.medium} {
       font-size: ${theme.root.font.xxl};
@@ -155,9 +175,7 @@ const Typography = css`
   .text--md {
     font-size: ${theme.root.font.md};
     line-height: ${theme.root.font.bodyLineHeight};
-    text-indent: 0;
-    text-align: left;
-    text-transform: uppercase;
+    margin: 0 0 1em;
   }
 
   .text--sm,
@@ -170,7 +188,7 @@ const Typography = css`
   }
 
   p {
-    font-size: ${theme.fontSizes[3]};
+    font-size: ${theme.fontSizes[2]};
     line-height: ${theme.root.font.bodyLineHeight};
     margin-bottom: 0.8em;
 

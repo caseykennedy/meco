@@ -6,7 +6,6 @@
 import React, { useEffect, useRef } from 'react'
 
 import { ThemeProvider } from 'styled-components'
-import { useSpring } from 'react-spring'
 
 import useNavigation from '../../hooks/useNavigation'
 
@@ -40,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           ref={mainRef}
         >
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </S.Main>
         <Sidebar mainRef={mainRef} />
       </S.Wrapper>
