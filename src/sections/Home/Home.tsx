@@ -37,6 +37,9 @@ const Home: React.FC = () => {
             <br />
             services
           </Heading>
+          <Heading as="h3">
+            + equipment rentals
+          </Heading>
         </Box>
         <Divider py={10} />
       </S.Content>
