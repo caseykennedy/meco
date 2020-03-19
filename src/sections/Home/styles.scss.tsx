@@ -20,27 +20,31 @@ export const Content = styled(Flex)`
   justify-content: flex-end;
 
   width: 100%;
-  padding-top: ${theme.space[3]};
-  padding-right: ${theme.space[4]};
-  padding-left: ${theme.space[4]};
+  min-width: 100vw;
+  padding: ${theme.space[3]} ${theme.space[4]};
 
+  background: ${theme.colors.background};
   border-left: ${theme.border};
 
-  @media ${theme.mq.small} {
+  @media ${theme.mq.medium} {
+    min-width: inherit;
   }
 `
 
-export const Indent = styled.div`
-  display: flex;
+export const Indent = styled(Flex)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 
-  width: calc(${theme.indentWidth} + calc(${theme.space[3]} * 2));
+  min-width: calc(${theme.headerHeight} - 2px);
   height: auto;
-  padding: ${theme.space[3]};
+  padding: ${theme.space[3]} 0;
+  background: ${theme.colors.background};
 
-  @media ${theme.mq.small} {
+  display: none;
+
+  @media ${theme.mq.medium} {
+    display: inherit;
   }
 `
 

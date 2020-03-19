@@ -31,16 +31,16 @@ export const Sidebar = styled(AnimatedFlex)`
   height: 100vh;
   padding: ${theme.space[3]};
 
-  background: ${theme.colors.primary};
+  /* background: ${theme.colors.primary}; */
   border-left: ${theme.border};
 
   transition: all 0.333s ease-in-out;
   z-index: 20;
 
-  &.expanded {
-    width: ${theme.sidebarWidth.expanded};
-    opacity: 0.94;
-    box-shadow: 6rem 0rem 8rem white;
+  display: none;
+  
+  @media ${theme.mq.medium} {
+    display: initial;
   }
 `
 

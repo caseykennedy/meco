@@ -26,7 +26,7 @@ type Props = {}
 const Home: React.FC = () => {
   return (
     <S.Container>
-      <S.Indent>{/* <S.Marker>a</S.Marker> */}</S.Indent>
+      <S.Indent><S.Marker>a</S.Marker></S.Indent>
       <S.Content>
         <Box>
           <Heading as="h1" color="secondary">

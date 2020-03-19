@@ -4,7 +4,7 @@
 
 // Core
 import styled from 'styled-components'
-import { readableColor, lighten } from 'polished'
+import { readableColor, darken } from 'polished'
 
 // Theme
 import theme from '../../../config/theme'
@@ -15,10 +15,9 @@ import { Box, Flex, AnimatedFlex } from '../../elements'
 // ___________________________________________________________________
 
 export const Header = styled(AnimatedFlex)`
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   background: ${theme.colors.background};
   border-bottom: ${theme.border};
@@ -33,24 +32,12 @@ export const Header = styled(AnimatedFlex)`
   z-index: 30;
 `
 
-export const HeaderInner = styled(Flex)`
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-direction: row;
-  align-items: center;
-
-  color: white;
-  position: relative;
-  /* z-index: 31; */
-`
-
 export const Symbol = styled(Flex)`
   justify-content: center;
   align-items: center;
 
   background: ${theme.colors.primary};
-  border-right: ${theme.border};
-  padding: 0 ${theme.space[3]};
+  min-width: ${theme.headerHeight};
   height: ${theme.headerHeight};
 
   svg {
@@ -59,9 +46,10 @@ export const Symbol = styled(Flex)`
   }
 `
 
-export const Logo = styled(Box)`
-  position: relative;
-  margin-left: ${theme.space[3]};
+export const Logo = styled(Flex)`
+  align-items: center;
+
+  width: 50vw;
 
   font-family: 'SuisseWorks';
   font-size: 2.3rem;
@@ -69,7 +57,69 @@ export const Logo = styled(Box)`
 
   a {
     display: flex;
+    position: relative;
+    top: 1px;
+    margin-left: ${theme.space[3]};
     color: ${theme.colors.text};
+  }
+
+  span {
+    color: ${theme.colors.primary};
+    font-size: ${theme.fontSizes[0]};
+    font-weight: ${theme.fontWeights.regular};
+    letter-spacing: 0;
+    margin-left: ${theme.space[3]};
+
+    display: none;
+
+    @media ${theme.mq.medium} {
+      display: inherit;
+    }
+  }
+`
+
+export const Toolbar = styled(Flex)`
+  align-items: center;
+  width: 50vw;
+  border-left: ${theme.border};
+`
+
+export const Marquee = styled(Flex)`
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  border-right: ${theme.border};
+  height: ${theme.headerHeight};
+  padding: 0 ${theme.space[5]};
+
+  display: none;
+
+  @media ${theme.mq.medium} {
+    display: inherit;
+  }
+`
+
+export const ReserveBtn = styled(Flex)`
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  color: ${theme.colors.white};
+  text-transform: uppercase;
+  font-weight: ${theme.fontWeights.medium};
+  text-align: center;
+  line-height: 1;
+
+  background: ${theme.colors.secondary};
+  height: ${theme.headerHeight};
+  padding: 0 ${theme.space[4]};
+
+  cursor: pointer;
+  transition: ${theme.transition.all};
+
+  &:hover {
+    background: ${darken(0.05, `${theme.colors.secondary}`)};
   }
 `
 

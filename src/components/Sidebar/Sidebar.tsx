@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarShape> = ({ mainRef }) => {
         asdf
       </Overlay>
       <S.Sidebar as="aside" style={DelayedFade}>
-        <S.SidebarInner>asdf</S.SidebarInner>
+        <S.SidebarInner>slider</S.SidebarInner>
       </S.Sidebar>
     </>
   )

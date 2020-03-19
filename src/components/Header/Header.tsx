@@ -18,16 +18,19 @@ import * as S from './styles.scss'
 const Header: React.FC = () => {
   return (
     <S.Header as="header">
-      <S.HeaderInner>
+      <S.Logo>
         <S.Symbol>
           <Symbol />
         </S.Symbol>
-        <S.Logo>
-          <Link to="/" aria-label="MECO, back to home">
-            MECO
-          </Link>
-        </S.Logo>
-      </S.HeaderInner>
+        <Link to="/" aria-label="MECO, back to home">
+          MECO
+        </Link>
+        <span>McKinnies Equipment Co.</span>
+      </S.Logo>
+      <S.Toolbar>
+        <S.Marquee>Burning Man 2020 is upon us</S.Marquee>
+        <S.ReserveBtn>Reserve Water</S.ReserveBtn>
+      </S.Toolbar>
     </S.Header>
   )
 }
