@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
 
   #drawer-root {
     position: relative;
-    z-index: 21;
+    z-index: 100;
   }
 
   /* hover popup: need to find a new home for this */

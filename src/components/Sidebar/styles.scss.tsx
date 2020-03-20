@@ -24,7 +24,7 @@ export const Sidebar = styled(AnimatedFlex)`
 
   /* right: 0; */
   width: ${theme.siteWidth};
-  padding: 0 2px 2px 2px;
+  padding: 0 0 2px 2px;
 
   transition: all 0.333s ease-in-out;
   

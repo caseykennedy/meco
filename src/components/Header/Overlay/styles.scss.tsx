@@ -25,16 +25,15 @@ export const Overlay = styled.div`
     align-items: center;
 
     position: fixed;
-    width: 40vw;
+    width: 50vw;
     height: 100%;
-    top: 0;
-    right: 40vw;
+    top: ${theme.headerHeight};
+    right: -50vw;
     bottom: 0;
     /* left: 0; */
 
     background: ${theme.colors.black};
     padding: ${theme.space[3]};
-    z-index: 20;
 
     visibility: hidden;
     opacity: 1;

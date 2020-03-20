@@ -30,7 +30,7 @@ const Home: React.FC = () => {
   return (
     <>
       <S.Container>
-        <Sidebar mainRef={mainRef} />
+        <Sidebar />
         <S.Content>
           <Box>
             <Heading as="h1" color="secondary">
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
           <Divider py={10} />
         </S.Content>
         <S.Indent>
-          <S.Marker>a</S.Marker>
+          <S.Marker>family owned &amp; operated since 1996</S.Marker>
         </S.Indent>
       </S.Container>
     </>

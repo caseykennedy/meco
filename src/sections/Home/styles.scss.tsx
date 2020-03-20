@@ -50,9 +50,10 @@ export const Indent = styled(Flex)`
   justify-content: flex-start;
   align-items: center;
 
-  min-width: calc(${theme.headerHeight} - 2px);
+  width: calc(${theme.headerHeight} - 2px);
+  max-width: calc(${theme.headerHeight} - 2px);
   height: auto;
-  padding: ${theme.space[3]} 0;
+  padding: ${theme.space[4]} 0;
   background: ${theme.colors.background};
 
   display: none;
@@ -63,8 +64,11 @@ export const Indent = styled(Flex)`
 `
 
 export const Marker = styled(Box)`
-  position: sticky;
-  top: 80px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-transform: uppercase;
 `
 
 // ___________________________________________________________________ Styles
