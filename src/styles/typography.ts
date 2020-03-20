@@ -273,37 +273,6 @@ const Typography = css`
       }
     }
   }
-
-  ul {
-    li {
-      font-size: ${theme.fontSizes[2]};
-      padding-bottom: ${theme.space[2]};
-      position: relative;
-      /* margin-top: ${theme.space[5]}; */
-      /* border-bottom: 1px solid ${theme.colors.white}; */
-
-      /* &::before {
-        content: '▶';
-        position: absolute;
-        width: 20px;
-        left: 0;
-        
-      } */
-
-      span {
-        color: ${theme.colors.white};
-        font-size: ${theme.fontSizes[2]};
-      }
-
-      /* .ico {
-        padding-right: ${theme.space[3]};
-
-        svg {
-          width: calc(${theme.space[3]} * 1.4);
-        }
-      } */
-    }
-  }
 `
 
 export default Typography

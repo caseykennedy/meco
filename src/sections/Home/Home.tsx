@@ -8,6 +8,8 @@ import React, { useRef } from 'react'
 // Components
 import Section from '../../components/Section'
 import Sidebar from '../../components/Sidebar'
+import Wiggles from '../../components/Wiggles'
+import Accordion from '../../components/Accordion'
 
 // Elements
 import { Box, Heading, Text } from '../../elements'
@@ -22,7 +24,12 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type Props = {}
+const AccordionProps = {
+  chevronColor: theme.colors.text,
+  color: theme.colors.text,
+  colorActive: theme.colors.primary,
+  borderColor: theme.colors.text
+}
 
 const Home: React.FC = () => {
   // Ref <main> to lock body for modal/overlay
@@ -32,7 +39,7 @@ const Home: React.FC = () => {
       <S.Container>
         <Sidebar />
         <S.Content>
-          <Box>
+          <Section pt={0} border={false}>
             <Heading as="h1" color="secondary">
               Portable
               <br />
@@ -58,7 +65,8 @@ const Home: React.FC = () => {
                 MECO
               </HeadingStroked>
             </Box>
-
+          </Section>
+          <Section border={true}>
             <Heading as="h4">
               Our mission here ar MECO Sales &amp; Rentals is Awareness spiral
               east-west, rolfing peacock feather synchronicity. Dead sea
@@ -69,7 +77,50 @@ const Home: React.FC = () => {
               sisters community, all-encompassing eye gazing. Somatic grass-fed
               herbal tea equinox.
             </Text>
-          </Box>
+          </Section>
+          <Section border={true}>
+            <S.Illustration pb={6} px={4}>
+              <Wiggles />
+            </S.Illustration>
+            <Heading as="h4" mb={0}>
+              Our services include, but are not limited to:
+            </Heading>
+          </Section>
+
+          <S.Services as="ul">
+            {services.map((service, idx) => (
+              <li key={idx}>
+                <span>○</span> {service}
+              </li>
+            ))}
+          </S.Services>
+
+          <Section border={true}>
+            <S.Illustration pb={6} px={4}>
+              <Wiggles />
+            </S.Illustration>
+            <Heading as="h4">
+              Supplying the Playa’s Water Needs for nearly 20 Years!
+            </Heading>
+            <Text as="p">
+              Burning man backjack five rhythms rawthentic self my brothers and
+              sisters community, all-encompassing eye gazing. Somatic grass-fed
+              herbal tea equinox.
+            </Text>
+          </Section>
+
+          <Section pt={0} pr={0} pl={0} border={false}>
+            {faqs.map((item, index) => (
+              <Accordion title={item.title} key={index} {...AccordionProps}>
+                <Box pt={3} px={4}>
+                  <Text as="p">
+                    {item.body}
+                  </Text>
+                </Box>
+              </Accordion>
+            ))}
+          </Section>
+
           <Divider py={10} />
           <Divider py={10} />
           <Divider py={10} />
@@ -85,3 +136,37 @@ const Home: React.FC = () => {
 export default Home
 
 // ___________________________________________________________________
+
+const services = [
+  'non-potable water hauling',
+  'dust abatement',
+  'septic systems',
+  'excavation',
+  'potable water hauling',
+  'driveways',
+  'trucking',
+  'equipment rentals'
+]
+
+const faqs = [
+  {
+    title: 'Potable water tank rental',
+    body:
+      "We offer customizable alcoholic beverage and food catering packages so The Venue becomes YOUR venue. Need a DJ? We've got you covered. Photographer/Videographer packages available as well."
+  },
+  {
+    title: 'Tank delivery schedule',
+    body:
+      "The perfect After Party--No Curfew--go 24 hours if you'd like. Make it the pre-party--Walking distance from the local bars and clubs--upstairs from Xhale, Lucky Beaver, and Aleworx. Next door to Peak and Opal. Let us help you throw the party of your dreams!"
+  },
+  {
+    title: 'Private bulk potable water storage',
+    body:
+      'Host your destination wedding and get a free estimate based on your select options. Invite the extended family for the reception! Would it be too weird if it was the same place you threw your bachelorette/bachelor party!? Low group pricing. Free parking.'
+  },
+  {
+    title: 'RV potable water',
+    body:
+      'Need the perfect holiday party location? Have a corporate function that needs an all inclusive venue? Company brunch before a day on the slopes? Family Re-union? Come see what we have to offer at The Venue. '
+  }
+]

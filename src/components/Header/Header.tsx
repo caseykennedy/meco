@@ -51,7 +51,7 @@ const Header: React.FC<HeaderShape> = ({ mainRef }) => {
         mainRef={mainRef}
         className={`nav-bg ${isNavOpen ? 'nav-bg--open' : 'nav-bg--closed'}`}
       >
-        <Heading as="h3" color="white">reservation form</Heading>
+        <Heading as="h3">Don't get left in the dust</Heading>
       </Overlay>
     </>
   )

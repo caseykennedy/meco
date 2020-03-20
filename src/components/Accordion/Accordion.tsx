@@ -4,7 +4,7 @@
 
 import React, { useState, useRef } from 'react'
 
-import { Box, Text } from '../../elements'
+import { Box, Text, Heading } from '../../elements'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
@@ -57,11 +57,11 @@ const Accordion: React.FC<AccordionProps> = ({
           color={color}
           colorActive={colorActive}
         >
-          <Text fontSize={[3, 4, 5]}>
+          <Heading as="h4" fontSize={[2]} mb={0}>
             {title}
-          </Text>
+          </Heading>
           <S.Carat
-            name="nextArrow"
+            name="carat"
             color="white"
             className={setRotate}
             chevronColor={chevronColor}
@@ -72,7 +72,7 @@ const Accordion: React.FC<AccordionProps> = ({
           style={{ maxHeight: `${setHeight}` }}
           borderColor={borderColor}
         >
-          <Box pb={3}>{children}</Box>
+          <Box pb={4}>{children}</Box>
         </S.AccordionContent>
       </S.AccordionInner>
     </S.AccordionContainer>

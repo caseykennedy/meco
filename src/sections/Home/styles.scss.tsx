@@ -28,7 +28,7 @@ export const Content = styled(Flex)`
   justify-content: flex-end;
 
   width: 100%;
-  padding: ${theme.space[3]} ${theme.space[3]};
+  padding: ${theme.space[3]} 0;
 
   background: ${theme.colors.background};
   border-left: ${theme.border};
@@ -41,7 +41,7 @@ export const Content = styled(Flex)`
         2px
     );
     min-width: inherit;
-    padding: ${theme.space[3]} ${theme.space[4]};
+    padding: ${theme.space[3]} 0;
   }
 `
 
@@ -69,6 +69,38 @@ export const Marker = styled(Box)`
   writing-mode: vertical-rl;
   text-orientation: mixed;
   text-transform: uppercase;
+`
+
+export const Illustration = styled(Box)`
+  svg {
+    width: 100%;
+  }
+`
+
+export const Services = styled(Flex)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+
+  /* border-bottom: ${theme.border}; */
+
+  li {
+    flex: 1 1 auto;
+    align-self: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: ${theme.space[3]} ${theme.space[4]};
+    border-bottom: ${theme.border};
+    list-style: none;
+    text-transform: uppercase;
+
+    font-size: ${theme.fontSizes[2]};
+
+    span {
+      margin-right: ${theme.space[2]};
+    }
+  }
 `
 
 // ___________________________________________________________________ Styles

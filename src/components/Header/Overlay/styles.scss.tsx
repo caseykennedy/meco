@@ -3,21 +3,17 @@
 // ___________________________________________________________________
 
 import styled from 'styled-components'
-import { readableColor, lighten } from 'polished'
 
-// Theme
+import { Box } from '../../../elements'
+
 import theme from '../../../../config/theme'
-
-// Elements
-import { Box, AnimatedFlex, Flex } from '../../../elements'
-
-// Styles
-import { Rotate } from '../../../styles/transitions'
 
 // Begin Styles
 // ___________________________________________________________________
 
-export const Overlay = styled.div`
+const overlayWidth = '100vw'
+
+export const Overlay = styled(Box)`
   &.nav-bg {
     display: flex;
     justify-content: center;
@@ -25,20 +21,25 @@ export const Overlay = styled.div`
     align-items: center;
 
     position: fixed;
-    width: 50vw;
-    height: 100%;
-    top: ${theme.headerHeight};
-    right: -50vw;
-    bottom: 0;
-    /* left: 0; */
 
-    background: ${theme.colors.black};
+    width: ${overlayWidth};
+    height: 100%;
     padding: ${theme.space[3]};
 
+    top: ${theme.headerHeight};
+    right: -${overlayWidth};
+    bottom: 0;
+
+    background: ${theme.colors.background};
     visibility: hidden;
     opacity: 1;
+    transition: all 0.444s ease-out;
 
-    transition: ${theme.transition.all};
+    @media ${theme.mq.small} {
+      width: calc(${overlayWidth} / 2);
+      right: -calc(${overlayWidth} / 2);
+      border-left: ${theme.border};
+    }
 
     &.nav-bg--open {
       visibility: visible;
@@ -47,5 +48,3 @@ export const Overlay = styled.div`
     }
   }
 `
-
-// ___________________________________________________________________ Styles

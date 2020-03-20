@@ -25,7 +25,7 @@ type Props = {
   pl?: number | number[] | string
   id?: string
   width?: number | number[] | string | string[]
-  height?: string
+  border: boolean
 }
 
 const Section: React.FC<Props> = ({
@@ -38,9 +38,9 @@ const Section: React.FC<Props> = ({
   pl,
   id,
   width,
-  height
+  border
 }) => (
-  <Box
+  <Container
     as="section"
     bg={bg}
     color={color}
@@ -48,7 +48,7 @@ const Section: React.FC<Props> = ({
     pb={pb}
     id={id}
     width={width}
-    style={{ height: `${height}`, borderBottom: `${theme.border}` }}
+    border={border}
   >
     <Box
       width={1}
@@ -59,23 +59,26 @@ const Section: React.FC<Props> = ({
     >
       {children}
     </Box>
-  </Box>
+  </Container>
 )
 
 export default Section
 
-//
 // ___________________________________________________________________
 
 const defaultProps = {
-  pt: [6, 6, 8],
-  pb: [3],
-  pr: theme.gutter,
-  pl: theme.gutter,
+  pt: [4, 8],
+  pb: [4],
+  pr: [3, 4],
+  pl: [3, 4],
   width: 1,
-  height: 'inherit'
+  border: true
 }
 
 Section.defaultProps = defaultProps
 
 // ___________________________________________________________________
+
+const Container = styled(Box)<{ border: boolean }>`
+  border-bottom: ${p => !p.border ? 'none' : `${theme.border}`};
+`

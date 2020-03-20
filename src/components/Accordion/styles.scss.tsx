@@ -29,19 +29,20 @@ export const AccordionInner = styled.div`
   flex-direction: column;
 
   .rotate {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
   }
 `
 
 export const AccordionToggle = styled.button<{ colorActive: string, color: string }>`
-  align-items: flex-end;
+  align-items: center;
   background: transparent;
   color: ${p => p.color};
+  text-transform: uppercase;
   cursor: pointer;
   display: flex;
   border: none;
   outline: none;
-  padding: ${theme.space[2]} 0;
+  padding: ${theme.space[3]} ${theme.space[4]};
   transition: background-color 0.6s ease;
 
   &:last-child {
@@ -56,13 +57,12 @@ export const AccordionToggle = styled.button<{ colorActive: string, color: strin
 export const AccordionContent = styled(Box)<{ borderColor: string }>`
   overflow: hidden;
   transition: max-height 0.3s ease;
-  border-bottom: 6px solid ${p => p.borderColor};
+  border-bottom: 2px solid ${p => p.borderColor};
 `
 
 export const Carat = styled(Icon)<{ chevronColor: string }>`
   margin-left: auto;
   transition: transform 0.3s ease;
-  transform: rotate(-45deg);
 
   svg {
     fill: ${p => p.chevronColor};
