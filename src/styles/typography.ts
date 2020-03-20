@@ -23,11 +23,17 @@ import AeonikBoldWoff2 from './fonts/AeonikBold.woff2'
 import AeonikBoldWoff from './fonts/AeonikBold.woff'
 import AeonikBoldOtf from './fonts/AeonikBold.otf'
 
-// Suisse Works
-import SuisseWorksEot from './fonts/SuisseWorks-Bold-WebTrial.eot'
-import SuisseWorksWoff2 from './fonts/SuisseWorks-Bold-WebTrial.woff2'
-import SuisseWorksWoff from './fonts/SuisseWorks-Bold-WebTrial.woff'
-import SuisseWorksTtf from './fonts/SuisseWorks-Bold-WebTrial.ttf'
+// Suisse Works Bold
+import SuisseWorksBookEot from './fonts/SuisseWorks-Book.eot'
+import SuisseWorksBookWoff2 from './fonts/SuisseWorks-Book.woff2'
+import SuisseWorksBookWoff from './fonts/SuisseWorks-Book.woff'
+import SuisseWorksBookTtf from './fonts/SuisseWorks-Book.ttf'
+
+// Suisse Works Bold
+import SuisseWorksBoldEot from './fonts/SuisseWorks-Bold.eot'
+import SuisseWorksBoldWoff2 from './fonts/SuisseWorks-Bold.woff2'
+import SuisseWorksBoldWoff from './fonts/SuisseWorks-Bold.woff'
+import SuisseWorksBoldTtf from './fonts/SuisseWorks-Bold.ttf'
 
 // ___________________________________________________________________
 
@@ -71,14 +77,27 @@ const Typography = css`
     font-display: swap;
   }
 
+  /* Suisse Works Book */
+  @font-face {
+    font-family: 'SuisseWorks';
+    src: url(${SuisseWorksBookEot});
+    src: url(${SuisseWorksBookWoff2}) format('woff2'),
+      url(${SuisseWorksBookWoff}) format('woff'),
+      url(${SuisseWorksBookTtf}) format('truetype'),
+      url(${SuisseWorksBookEot}?#iefix) format('embedded-opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
   /* Suisse Works Bold */
   @font-face {
     font-family: 'SuisseWorks';
-    src: url(${SuisseWorksEot});
-    src: url(${SuisseWorksWoff2}) format('woff2'),
-      url(${SuisseWorksWoff}) format('woff'),
-      url(${SuisseWorksTtf}) format('truetype'),
-      url(${SuisseWorksEot}?#iefix) format('embedded-opentype');
+    src: url(${SuisseWorksBoldEot});
+    src: url(${SuisseWorksBoldWoff2}) format('woff2'),
+      url(${SuisseWorksBoldWoff}) format('woff'),
+      url(${SuisseWorksBoldTtf}) format('truetype'),
+      url(${SuisseWorksBoldEot}?#iefix) format('embedded-opentype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;

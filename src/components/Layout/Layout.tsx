@@ -41,7 +41,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {children}
           {/* <Footer /> */}
         </S.Main>
-        <Sidebar mainRef={mainRef} />
+        
       </S.Wrapper>
     </ThemeProvider>
   )

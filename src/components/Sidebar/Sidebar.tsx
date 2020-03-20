@@ -6,14 +6,12 @@
 import React, { useState } from 'react'
 
 import { useSpring, config } from 'react-spring'
-import { Scrambler } from 'react-text-scrambler'
-
-import useScrollWatch from '../../hooks/useScrollWatch'
 
 import Overlay from './Overlay'
 import Icon from '../Icons'
+import Gallery from '../Gallery'
 
-import { Heading, Text } from '../../elements'
+import { Box, Text } from '../../elements'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
@@ -30,14 +28,6 @@ const Sidebar: React.FC<SidebarShape> = ({ mainRef }) => {
   // Navigation toggle
   const [isNavOpen, setNavOpen] = useState(false)
   const toggleModal = () => setNavOpen(!isNavOpen)
-
-  const DelayedFade = useSpring({
-    config: config.molasses,
-    delay: 600,
-    from: { opacity: 0, transform: theme.transform.matrix.from },
-    to: { opacity: 1, transform: theme.transform.matrix.to }
-  })
-
   return (
     <>
       <Overlay
@@ -50,8 +40,11 @@ const Sidebar: React.FC<SidebarShape> = ({ mainRef }) => {
       >
         asdf
       </Overlay>
-      <S.Sidebar as="aside" style={DelayedFade}>
-        <S.SidebarInner>slider</S.SidebarInner>
+      <S.Sidebar as="aside">
+        <Box className="gallery">
+          <Gallery />
+        </Box>
+        {/* <S.MakeReservation>make a reservation</S.MakeReservation> */}
       </S.Sidebar>
     </>
   )

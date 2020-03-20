@@ -12,7 +12,15 @@ import theme from '../../../config/theme'
 // ___________________________________________________________________
 
 export const Container = styled(Flex)`
+  flex-direction: column;
+  justify-content: flex-end;
+
+  position: relative;
   margin-top: calc(${theme.headerHeight});
+
+  @media ${theme.mq.small} {
+    flex-direction: row-reverse;
+  }
 `
 
 export const Content = styled(Flex)`
@@ -20,14 +28,20 @@ export const Content = styled(Flex)`
   justify-content: flex-end;
 
   width: 100%;
-  min-width: 100vw;
-  padding: ${theme.space[3]} ${theme.space[4]};
+  padding: ${theme.space[3]} ${theme.space[3]};
 
   background: ${theme.colors.background};
   border-left: ${theme.border};
 
-  @media ${theme.mq.medium} {
+  z-index: 99;
+
+  @media ${theme.mq.small} {
+    width: calc(
+      calc(${theme.siteWidth} - ${theme.headerHeight}) - ${theme.sidebarWidth} +
+        2px
+    );
     min-width: inherit;
+    padding: ${theme.space[3]} ${theme.space[4]};
   }
 `
 
@@ -43,8 +57,8 @@ export const Indent = styled(Flex)`
 
   display: none;
 
-  @media ${theme.mq.medium} {
-    display: inherit;
+  @media ${theme.mq.small} {
+    display: flex;
   }
 `
 

@@ -29,7 +29,9 @@ const Header: React.FC = () => {
       </S.Logo>
       <S.Toolbar>
         <S.Marquee>Burning Man 2020 is upon us</S.Marquee>
-        <S.ReserveBtn>Reserve Water</S.ReserveBtn>
+        <S.ReserveBtn>
+          Reserve Water <span>→</span>
+        </S.ReserveBtn>
       </S.Toolbar>
     </S.Header>
   )

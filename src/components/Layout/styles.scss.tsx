@@ -16,8 +16,7 @@ import { Box, Flex } from '../../elements'
 // Begin Styles
 // ___________________________________________________________________
 
-export const Wrapper = styled.div`
-  display: flex;
+export const Wrapper = styled(Flex)`
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -35,7 +34,7 @@ export const Main = styled(animated.main)`
   position: relative;
   z-index: 22;
 
-  width: calc(${theme.siteWidth} - 50vw);
+  width: calc(${theme.siteWidth});
 
   @media ${theme.mq.medium} {
   }

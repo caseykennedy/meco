@@ -34,13 +34,12 @@ import theme from '../../config/theme'
 
 const IndexPage = () => {
   const data = useContentYaml()
-
   // Page animation
   const pageAnimation = useSpring({
-    config: config.molasses,
+    config: config.slow,
     delay: 0,
-    from: { opacity: 0 },
-    to: { opacity: 1 }
+    from: { transform: theme.transform.matrix.from },
+    to: { transform: theme.transform.matrix.to }
   })
   return (
     <Layout>

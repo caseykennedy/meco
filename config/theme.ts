@@ -28,9 +28,7 @@ type ThemeShape = {
   siteWidth: string
   indentWidth: string
   headerHeight: string
-  sidebarWidth: {
-    [key: string]: string
-  }
+  sidebarWidth: string
   grid: {
     [key: string]: string
   }
@@ -57,7 +55,7 @@ type ThemeShape = {
 // Begin theme
 // ___________________________________________________________________
 
-const breakpoints: string[] = ['380px', '770px']
+const breakpoints: string[] = ['768px', '1100px']
 // Aliases - FUTURE ENHANCEMENT
 // breakpoints.xs = breakpoints[0];
 // breakpoints.sm = breakpoints[1];
@@ -151,10 +149,7 @@ const theme: ThemeShape = {
   maxWidth: '1680px',
   siteWidth: '100vw',
   indentWidth: '18px',
-  sidebarWidth: {
-    collapsed: '56px',
-    expanded: '50vw'
-  },
+  sidebarWidth: '50vw',
 
   headerHeight: '60px',
 
@@ -168,7 +163,7 @@ const theme: ThemeShape = {
 
   transform: {
     matrix: {
-      from: 'matrix(1, 0, 0, 1, 16, 16)',
+      from: 'matrix(1, 0, 0, 1, 0, 32)',
       to: 'matrix(1, 0, 0, 1, 0, 0)'
     }
   },

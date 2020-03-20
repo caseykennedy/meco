@@ -10,7 +10,7 @@ import { readableColor } from 'polished'
 import theme from '../../../config/theme'
 
 // Elements
-import { Box, Flex } from '../../elements'
+import { AnimatedBox, Flex } from '../../elements'
 
 // Styles
 import { Rotate } from '../../styles/transitions'
@@ -18,8 +18,8 @@ import { Rotate } from '../../styles/transitions'
 // Begin Styles
 // ___________________________________________________________________
 
-export const Container = styled(Box)`
-  /* overflow: hidden; */
+export const Container = styled(AnimatedBox)`
+  /* flex: 1; */
 
   .slick-slider {
     .slick-arrow {

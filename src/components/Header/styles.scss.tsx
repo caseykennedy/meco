@@ -46,13 +46,14 @@ export const Symbol = styled(Flex)`
   }
 `
 
-export const Logo = styled(Flex)`
+export const Logo = styled(AnimatedFlex)`
   align-items: center;
 
   width: 50vw;
 
   font-family: 'SuisseWorks';
   font-size: 2.3rem;
+  font-weight: ${theme.fontWeights.bold};
   line-height: 0;
 
   a {
@@ -65,7 +66,7 @@ export const Logo = styled(Flex)`
 
   span {
     color: ${theme.colors.primary};
-    font-size: ${theme.fontSizes[0]};
+    font-size: 1.2rem;
     font-weight: ${theme.fontWeights.regular};
     letter-spacing: 0;
     margin-left: ${theme.space[3]};
@@ -112,14 +113,27 @@ export const ReserveBtn = styled(Flex)`
   line-height: 1;
 
   background: ${theme.colors.secondary};
-  height: ${theme.headerHeight};
+  height: calc(${theme.headerHeight} - 2px);
   padding: 0 ${theme.space[4]};
 
   cursor: pointer;
   transition: ${theme.transition.all};
 
+  span {
+    font-size: ${theme.fontSizes[2]};
+    position: relative;
+    top: -2px;
+    margin-left: ${theme.space[2]};
+
+    transition: ${theme.transition.all};
+  }
+
   &:hover {
     background: ${darken(0.05, `${theme.colors.secondary}`)};
+
+    span {
+      margin-left: ${theme.space[4]};
+    }
   }
 `
 
