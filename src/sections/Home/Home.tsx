@@ -27,7 +27,7 @@ import theme from '../../../config/theme'
 const AccordionProps = {
   chevronColor: theme.colors.text,
   color: theme.colors.text,
-  colorActive: theme.colors.primary,
+  colorActive: theme.colors.secondary,
   borderColor: theme.colors.text
 }
 
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
             </Text>
           </Section>
           <Section border={true}>
-            <S.Illustration pb={6} px={4}>
+            <S.Illustration pb={8} px={4}>
               <Wiggles />
             </S.Illustration>
             <Heading as="h4" mb={0}>
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
           </S.Services>
 
           <Section border={true}>
-            <S.Illustration pb={6} px={4}>
+            <S.Illustration pb={8} px={4}>
               <Wiggles />
             </S.Illustration>
             <Heading as="h4">
@@ -120,10 +120,6 @@ const Home: React.FC = () => {
               </Accordion>
             ))}
           </Section>
-
-          <Divider py={10} />
-          <Divider py={10} />
-          <Divider py={10} />
         </S.Content>
         <S.Indent>
           <S.Marker>family owned &amp; operated since 1996</S.Marker>

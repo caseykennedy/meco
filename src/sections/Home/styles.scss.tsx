@@ -96,6 +96,7 @@ export const Services = styled(Flex)`
     text-transform: uppercase;
 
     font-size: ${theme.fontSizes[2]};
+    font-weight: ${theme.fontWeights.medium};
 
     span {
       margin-right: ${theme.space[2]};

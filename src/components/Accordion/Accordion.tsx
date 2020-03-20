@@ -52,7 +52,7 @@ const Accordion: React.FC<AccordionProps> = ({
     <S.AccordionContainer>
       <S.AccordionInner>
         <S.AccordionToggle
-          className={`${setActive}  js-hover`}
+          className={setActive}
           onClick={toggleAccordion}
           color={color}
           colorActive={colorActive}

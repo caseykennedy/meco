@@ -87,6 +87,7 @@ export const Toolbar = styled(Flex)`
 
 export const Marquee = styled(Flex)`
   align-items: center;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
