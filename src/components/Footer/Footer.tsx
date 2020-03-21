@@ -4,10 +4,8 @@
 // ___________________________________________________________________
 
 import * as React from 'react'
-import { Link } from 'gatsby'
 
-import { Box, Flex, Text } from '../../elements'
-import Section from '../../components/Section'
+import { Heading, Text } from '../../elements'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
@@ -20,19 +18,23 @@ const Year = () => {
 
 const Footer: React.FC = () => {
   return (
-    <>
-      <Flex
-        as="footer"
-        flexDirection="column"
-        justifyContent="space-between"
-        width={1}
-        px={theme.gutter}
-        py={theme.gutter}
-        style={{ minHeight: '100vh' }}
-      >
-        <Box />
-      </Flex>
-    </>
+    <S.Footer>
+    <S.Indent>
+      <S.Marker>contact us</S.Marker>
+    </S.Indent>
+      <S.Content>
+        <Heading as="h4">
+          If you can’t find what you are looking for or need special assistance,
+          please contact Amanda McKinnies.
+        </Heading>
+        <Text as="p" mt={10}>
+          <Text fontWeight={500}>Amanda McKinnies</Text>
+          P: (775) 762-3963
+          <br />
+          E: MecoAmanda775@gmail.com
+        </Text>
+      </S.Content>
+    </S.Footer>
   )
 }
 

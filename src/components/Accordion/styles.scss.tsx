@@ -1,4 +1,4 @@
-// Sidebar Styles:
+// Accordion Styles:
 
 // ___________________________________________________________________
 
@@ -33,7 +33,7 @@ export const AccordionInner = styled.div`
   }
 `
 
-export const AccordionToggle = styled.button<{ colorActive: string, color: string }>`
+export const AccordionToggle = styled(Box)<{ colorActive: string, color: string }>`
   align-items: center;
   background: transparent;
   color: ${p => p.color};

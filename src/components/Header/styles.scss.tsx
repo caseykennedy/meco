@@ -37,12 +37,19 @@ export const Symbol = styled(Flex)`
   align-items: center;
 
   background: ${theme.colors.primary};
+  border-right: ${theme.border};
   min-width: ${theme.headerHeight};
-  height: ${theme.headerHeight};
+  height: calc(${theme.headerHeight} - 2px);
+
+  transition: all 0.333s ease-in-out;
 
   svg {
     width: 18px;
     fill: ${theme.colors.background};
+  }
+  
+  &.active {
+    background: ${theme.colors.secondary};
   }
 `
 
@@ -52,9 +59,13 @@ export const Logo = styled(AnimatedFlex)`
   width: 50vw;
 
   font-family: 'SuisseWorks';
-  font-size: 2.3rem;
+  font-size: 1.6rem;
   font-weight: ${theme.fontWeights.bold};
   line-height: 0;
+
+  @media ${theme.mq.medium} {
+    font-size: 2.3rem;
+  }
 
   a {
     display: flex;
@@ -73,7 +84,7 @@ export const Logo = styled(AnimatedFlex)`
 
     display: none;
 
-    @media ${theme.mq.medium} {
+    @media (min-width: 881px) {
       display: inherit;
     }
   }
@@ -92,7 +103,7 @@ export const Marquee = styled(Flex)`
   text-align: center;
   line-height: 1;
   letter-spacing: 2px;
-  
+
   border-right: ${theme.border};
   height: ${theme.headerHeight};
   padding: 0 ${theme.space[5]};
@@ -121,7 +132,7 @@ export const ReserveBtn = styled(Flex)`
   padding: 0 ${theme.space[4]};
 
   cursor: pointer;
-  transition: ${theme.transition.all};
+  transition: all 0.333s ease-in-out;
 
   span {
     font-size: ${theme.fontSizes[2]};
@@ -138,6 +149,10 @@ export const ReserveBtn = styled(Flex)`
     span {
       margin-left: ${theme.space[4]};
     }
+  }
+
+  &.active {
+    background: ${theme.colors.primary};
   }
 `
 

@@ -3,8 +3,8 @@
 // ___________________________________________________________________
 
 import styled from 'styled-components'
+import { darken } from 'polished'
 
-// Elements
 import { Box, Flex, Heading } from '../../elements'
 
 import theme from '../../../config/theme'
@@ -28,7 +28,7 @@ export const Content = styled(Flex)`
   justify-content: flex-end;
 
   width: 100%;
-  padding: ${theme.space[3]} 0;
+  padding-top: ${theme.space[3]};
 
   background: ${theme.colors.background};
   border-left: ${theme.border};
@@ -41,7 +41,6 @@ export const Content = styled(Flex)`
         2px
     );
     min-width: inherit;
-    padding: ${theme.space[3]} 0;
   }
 `
 
@@ -104,4 +103,48 @@ export const Services = styled(Flex)`
   }
 `
 
-// ___________________________________________________________________ Styles
+export const ReserveBtn = styled(Flex)`
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  color: ${theme.colors.white};
+  text-transform: uppercase;
+  font-size: ${theme.fontSizes[3]};
+  font-weight: ${theme.fontWeights.medium};
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2px;
+
+  background: ${theme.colors.secondary};
+  height: calc(${theme.headerHeight} - 2px);
+  padding: ${theme.space[7]} ${theme.space[4]};
+
+  cursor: pointer;
+  transition: all 0.333s ease-in-out;
+
+  @media ${theme.mq.small} {
+    padding: 6rem ${theme.space[4]};
+  }
+
+  span {
+    font-size: ${theme.fontSizes[2]};
+    position: relative;
+    top: -4px;
+    margin-left: ${theme.space[3]};
+
+    transition: ${theme.transition.all};
+  }
+
+  &:hover {
+    background: ${darken(0.05, `${theme.colors.secondary}`)};
+
+    span {
+      margin-left: ${theme.space[5]};
+    }
+  }
+
+  &.active {
+    background: ${theme.colors.primary};
+  }
+`

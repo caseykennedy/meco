@@ -1,4 +1,4 @@
-// Cursor:
+// Home:
 
 // ___________________________________________________________________
 
@@ -10,10 +10,10 @@ import Section from '../../components/Section'
 import Sidebar from '../../components/Sidebar'
 import Wiggles from '../../components/Wiggles'
 import Accordion from '../../components/Accordion'
+import Footer from '../../components/Footer'
 
 // Elements
-import { Box, Heading, Text } from '../../elements'
-import Divider from '../../elements/Divider'
+import { Box, Flex, Heading, Text } from '../../elements'
 import HeadingStroked from '../../elements/HeadingStroked'
 
 // Styles
@@ -31,7 +31,12 @@ const AccordionProps = {
   borderColor: theme.colors.text
 }
 
-const Home: React.FC = () => {
+type Props = {
+  isShowing: boolean
+  toggleOverlay: () => void
+}
+
+const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
   // Ref <main> to lock body for modal/overlay
   const mainRef = useRef<HTMLDivElement>(null)
   return (
@@ -108,23 +113,30 @@ const Home: React.FC = () => {
               herbal tea equinox.
             </Text>
           </Section>
-
-          <Section pt={0} pr={0} pl={0} border={false}>
+          <Box>
             {faqs.map((item, index) => (
               <Accordion title={item.title} key={index} {...AccordionProps}>
                 <Box pt={3} px={4}>
-                  <Text as="p">
-                    {item.body}
-                  </Text>
+                  <Text as="p">{item.body}</Text>
                 </Box>
               </Accordion>
             ))}
-          </Section>
+          </Box>
+          <Box>
+            <S.ReserveBtn
+              onClick={toggleOverlay}
+              className={isShowing ? 'active' : ''}
+              aria-label="make a reservation"
+            >
+              {!isShowing ? `Reserve Water` : 'close'} <span>→</span>
+            </S.ReserveBtn>
+          </Box>
         </S.Content>
         <S.Indent>
           <S.Marker>family owned &amp; operated since 1996</S.Marker>
         </S.Indent>
       </S.Container>
+      <Footer />
     </>
   )
 }

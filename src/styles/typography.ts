@@ -174,6 +174,7 @@ const Typography = css`
   h2,
   .text--xl {
     font-size: ${theme.root.font.lg};
+    font-weight: ${theme.fontWeights.regular};
 
     @media ${theme.mq.medium} {
       font-size: ${theme.root.font.xl};
@@ -183,6 +184,7 @@ const Typography = css`
   h3,
   .text--lg {
     font-size: ${theme.root.font.md};
+    font-weight: ${theme.fontWeights.regular};
     /* line-height: ${theme.root.font.bodyLineHeight}; */
 
     @media ${theme.mq.medium} {

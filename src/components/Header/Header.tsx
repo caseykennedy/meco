@@ -6,6 +6,8 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 
+import useOverlay from '../../hooks/useOverlay'
+
 import Overlay from './Overlay'
 import Symbol from '../symbol'
 
@@ -18,17 +20,20 @@ import * as S from './styles.scss'
 
 type HeaderShape = {
   mainRef: React.RefObject<HTMLDivElement>
+  isShowing: boolean
+  toggleOverlay: () => void
 }
 
-const Header: React.FC<HeaderShape> = ({ mainRef }) => {
-  // Navigation toggle
-  const [isNavOpen, setNavOpen] = useState(false)
-  const toggleModal = () => setNavOpen(!isNavOpen)
+const Header: React.FC<HeaderShape> = ({
+  mainRef,
+  isShowing,
+  toggleOverlay
+}) => {
   return (
     <>
       <S.Header as="header">
         <S.Logo>
-          <S.Symbol>
+          <S.Symbol className={isShowing ? 'active' : ''}>
             <Symbol />
           </S.Symbol>
           <Link to="/" aria-label="MECO, back to home">
@@ -38,21 +43,15 @@ const Header: React.FC<HeaderShape> = ({ mainRef }) => {
         </S.Logo>
         <S.Toolbar>
           <S.Marquee>Burning Man 2020 is upon us</S.Marquee>
-          <S.ReserveBtn onClick={toggleModal} aria-label="toggle menu">
-          {!isNavOpen ? `Reserve Water` : 'close'} <span>→</span>
+          <S.ReserveBtn
+            onClick={toggleOverlay}
+            className={isShowing ? 'active' : ''}
+            aria-label="make a reservation"
+          >
+            {!isShowing ? `Reserve Water` : 'close'} <span>→</span>
           </S.ReserveBtn>
         </S.Toolbar>
       </S.Header>
-      <Overlay
-        id="drawer-root"
-        root="root"
-        isOpen={isNavOpen}
-        handleExit={() => setNavOpen(false)}
-        mainRef={mainRef}
-        className={`nav-bg ${isNavOpen ? 'nav-bg--open' : 'nav-bg--closed'}`}
-      >
-        <Heading as="h3">Don't get left in the dust</Heading>
-      </Overlay>
     </>
   )
 }

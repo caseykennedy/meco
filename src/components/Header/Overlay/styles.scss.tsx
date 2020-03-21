@@ -16,7 +16,7 @@ const overlayWidth = '100vw'
 export const Overlay = styled(Box)`
   &.nav-bg {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
 
@@ -24,7 +24,7 @@ export const Overlay = styled(Box)`
 
     width: ${overlayWidth};
     height: 100%;
-    padding: ${theme.space[3]};
+    padding: ${theme.space[3]} 0;
 
     top: ${theme.headerHeight};
     right: -${overlayWidth};

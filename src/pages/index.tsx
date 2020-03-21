@@ -4,25 +4,18 @@
 
 // Libraries
 import React from 'react'
-import { Link } from 'gatsby'
 import { useSpring, config } from 'react-spring'
 
 // Hooks
 import useContentYaml from '../hooks/useContentYaml'
-import useHover from '../hooks/useHover'
+import useOverlay from '../hooks/useOverlay'
 
 // Elements
-import { AnimatedBox, Box, Flex, Heading, Text } from '../elements'
+import { AnimatedBox } from '../elements'
 
 // Components
 import Layout from '../components/Layout'
-import Section from '../components/Section'
 import SEO from '../components/SEO'
-import DribbbleGrid from '../components/DribbbleGrid'
-import ImgMatch from '../components/ImgMatch'
-import Divider from '../elements/Divider'
-import Icon from '../components/Icons'
-import Accordion from '../components/Accordion'
 
 // Sections
 import Home from '../sections/Home'
@@ -33,6 +26,8 @@ import theme from '../../config/theme'
 // ___________________________________________________________________
 
 const IndexPage = () => {
+  // Overlay toggle
+  const {isShowing, toggleOverlay} = useOverlay()
   const data = useContentYaml()
   // Page animation
   const pageAnimation = useSpring({
@@ -42,10 +37,10 @@ const IndexPage = () => {
     to: { transform: theme.transform.matrix.to }
   })
   return (
-    <Layout>
+    <Layout isShowing={isShowing} toggleOverlay={toggleOverlay}>
       <SEO />
       <AnimatedBox style={pageAnimation}>
-        <Home />
+        <Home isShowing={isShowing} toggleOverlay={toggleOverlay} />
       </AnimatedBox>
     </Layout>
   )
