@@ -67,28 +67,26 @@ const ReservationForm: React.SFC<Props> = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Name"
+                placeholder="Your name"
                 required={true}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="date">
-                Date:{' '}
+              <label htmlFor="campName">
+                Name:{' '}
                 <abbr title="required" aria-label="required">
                   *
                 </abbr>
               </label>
-            </Box>
-          </Box>
 
-          <Box width={1} className="form-group">
-            <label htmlFor="comments">Message </label>
-            <textarea
-              name="details"
-              id="details"
-              rows={4}
-              placeholder="Message"
-            />
+              <input
+                type="text"
+                name="campName"
+                id="campName"
+                placeholder="Camp name"
+                required={true}
+              />
+            </Box>
           </Box>
 
           <Box width={1} className="form-group">
@@ -109,22 +107,6 @@ const ReservationForm: React.SFC<Props> = () => {
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
               <label htmlFor="phone">Phone:</label>
-
-              {/* <input
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="(___) ___-____"
-              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-              ref={register({
-                maxLength: 12,
-                pattern: {
-                  value: /[0-9]{3} [0-9]{3} [0-9]{4}/i,
-                  message: 'Invalid phone number'
-                }
-              })}
-            /> */}
-
               <input
                 type="tel"
                 name="phone"
@@ -132,6 +114,62 @@ const ReservationForm: React.SFC<Props> = () => {
                 placeholder="___ ___-____"
               />
             </Box>
+          </Box>
+
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="500Gal"># of 500 gallon tanks needed:</label>
+
+              <input
+                type="text"
+                name="500Gal"
+                id="500Gal"
+                placeholder="500 gallon tanks needed"
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="500Gal">1000 gallon tanks needed:</label>
+
+              <input
+                type="text"
+                name="1000Gal"
+                id="1000Gal"
+                placeholder="1000 gallon tanks needed"
+              />
+            </Box>
+          </Box>
+
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="privateContainers">privateContainers</label>
+
+              <input
+                type="text"
+                name="privateContainers"
+                id="privateContainers"
+                placeholder="privateContainers"
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="rv">Number of RVs:</label>
+
+              <input
+                type="text"
+                name="rv"
+                id="rv"
+                placeholder="Number of RVs"
+              />
+            </Box>
+          </Box>
+
+          <Box width={1} className="form-group">
+            <label htmlFor="comments">Message </label>
+            <textarea
+              name="details"
+              id="details"
+              rows={4}
+              placeholder="Message"
+            />
           </Box>
 
           <Button type="submit" value="Submit Request">

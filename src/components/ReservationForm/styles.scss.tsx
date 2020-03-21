@@ -5,9 +5,7 @@
 
 // Core
 import styled from 'styled-components'
-import { lighten, darken } from 'polished'
-
-import { Icon } from '../Icons'
+import { tint, lighten, darken } from 'polished'
 
 // Constants
 import theme from '../../../config/theme'
@@ -49,19 +47,22 @@ export const Form = styled.form`
       border-bottom: ${theme.border};
       border-left: none;
 
+      color: ${theme.colors.primary};
+
+      box-sizing: border-box;
       margin: 0;
       padding: calc(${theme.root.space} / 6);
       width: 100%;
 
       &:focus {
-        border: 1px solid ${theme.colors.accent};
+        background: ${tint(0.75, `${theme.colors.secondary}`)};
         outline: none;
         /* box-shadow: 0 0 15px 3px white;
         box-shadow: 0 0 0 3px -moz-mac-focusring; */
       }
 
       &::placeholder {
-        color: ${lighten(0.3, `${theme.colors.primary}`)};
+        color: ${tint(0.4, `${theme.colors.primary}`)};
       }
     }
 
@@ -100,10 +101,13 @@ export const Form = styled.form`
       display: flex;
       align-items: flex-start;
       flex-wrap: wrap;
-      padding-bottom: calc(${theme.root.space} / 6);
 
       &__box {
         padding-bottom: calc(${theme.root.space} / 6);
+
+        &:nth-child(odd) {
+          border-right: ${theme.border};
+        }
 
         &:last-child {
           padding-bottom: 0;

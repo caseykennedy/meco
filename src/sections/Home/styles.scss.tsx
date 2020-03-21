@@ -68,6 +68,8 @@ export const Marker = styled(Box)`
   writing-mode: vertical-rl;
   text-orientation: mixed;
   text-transform: uppercase;
+  position: sticky;
+  top: calc(${theme.headerHeight} + ${theme.space[4]});
 `
 
 export const Illustration = styled(Box)`
