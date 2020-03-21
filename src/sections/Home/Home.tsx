@@ -160,7 +160,7 @@ const faqs = [
   {
     title: 'Potable water tank rental',
     body:
-      "We offer customizable alcoholic beverage and food catering packages so The Venue becomes YOUR venue. Need a DJ? We've got you covered. Photographer/Videographer packages available as well."
+      'If you decide to rent one of our potable water tanks we will set up a delivery date with you and get your playa address. Contact MECO Amanda with your playa location as soon as you know it, along with your requested tank delivery date. Deadline August 1st. MECO will then meet you on playa to place and set up your potable water rental tank. BE READY TO PLACE AND RECEIVE YOUR TANK ON YOUR SCHEDULED DELIVERY DATE! Your tank will either have to be set up by the street or you will have to have an access road 12ft wide that the trucks can back down. If you set the tank inside your camp, you will need to keep the access road clear. MECO trucks must be able to get within 15 feet of potable water rental tank. MECO will be by every other day to check your tank and top off if needed. It will be your choice to top off or not. It will be cash at time of delivery at $1.00 a gallon.'
   },
   {
     title: 'Tank delivery schedule',

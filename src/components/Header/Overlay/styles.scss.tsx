@@ -26,14 +26,14 @@ export const Overlay = styled(Box)`
     height: 100%;
     padding: ${theme.space[3]} 0;
 
-    top: ${theme.headerHeight};
-    right: -${overlayWidth};
+    top: calc(${theme.headerHeight} + 2rem);
+    right: 0;
     bottom: 0;
 
     background: ${theme.colors.background};
     visibility: hidden;
-    opacity: 1;
-    transition: all 0.444s ease-out;
+    opacity: 0;
+    transition: all 0.222s ease-out;
 
     @media ${theme.mq.small} {
       width: calc(${overlayWidth} / 2);
@@ -42,9 +42,9 @@ export const Overlay = styled(Box)`
     }
 
     &.nav-bg--open {
+      top: ${theme.headerHeight};
       visibility: visible;
       opacity: 1;
-      right: 0;
     }
   }
 `
