@@ -48,8 +48,8 @@ const ReservationForm: React.SFC<Props> = () => {
         <input type="hidden" name="bot-field" />
         <input
           type="hidden"
-          name="meco-reservation-form"
-          value="meco-reservation-form"
+          name="meco-reservations"
+          value="meco-reservations"
         />
 
         <fieldset>
