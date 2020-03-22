@@ -45,13 +45,6 @@ const ReservationForm: React.SFC<Props> = () => {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="bot-field" />
-        <input
-          type="hidden"
-          name="meco-reservations"
-          value="meco-reservations"
-        />
-
         <fieldset>
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
