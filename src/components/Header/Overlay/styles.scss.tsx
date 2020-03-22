@@ -21,10 +21,11 @@ export const Overlay = styled(Box)`
     align-items: center;
 
     position: fixed;
+    overflow: auto;
 
     width: ${overlayWidth};
-    height: 100%;
-    padding: ${theme.space[3]} 0;
+    height: 100vh;
+    padding: ${theme.space[3]} 0 ${theme.headerHeight};
 
     top: calc(${theme.headerHeight} + 2rem);
     right: 0;

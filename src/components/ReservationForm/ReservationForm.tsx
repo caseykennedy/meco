@@ -12,7 +12,7 @@ import * as S from './styles.scss'
 import Section from '../Section'
 
 // Elements
-import { Box, AnimatedBox, Heading } from '../../elements'
+import { Box, Flex, AnimatedBox, Heading } from '../../elements'
 import Button from '../../elements/Button'
 
 // Config
@@ -40,17 +40,16 @@ const ReservationForm: React.SFC<Props> = () => {
         </Heading>
       </Section>
       <S.Form
-        name="the-venue-contact-form"
+        name="meco-reservation-form"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        // onSubmit={onSubmit}
       >
         <input type="hidden" name="bot-field" />
         <input
           type="hidden"
-          name="the-venue-contact-form"
-          value="the-venue-contact-form"
+          name="meco-reservation-form"
+          value="meco-reservation-form"
         />
 
         <fieldset>
@@ -118,7 +117,7 @@ const ReservationForm: React.SFC<Props> = () => {
 
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="500Gal"># of 500 gallon tanks needed:</label>
+              <label htmlFor="500Gal">500 gallon tanks needed:</label>
 
               <input
                 type="text"
@@ -172,9 +171,11 @@ const ReservationForm: React.SFC<Props> = () => {
             />
           </Box>
 
-          <Button type="submit" value="Submit Request">
-            Submit Request
-          </Button>
+          <button type="submit" value="Submit Request">
+            <Flex width={1} py={8}>
+              Submit
+            </Flex>
+          </button>
         </fieldset>
       </S.Form>
     </AnimatedBox>

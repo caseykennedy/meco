@@ -1,7 +1,6 @@
 // Sidebar Styles:
 
-// Imports
-//////////////////////////////////////////////////////////////////////
+// ___________________________________________________________________
 
 // Core
 import styled from 'styled-components'
@@ -13,10 +12,7 @@ import theme from '../../../config/theme'
 // Elements
 import { Box, Flex } from '../../elements'
 
-// Begin Styles
-//////////////////////////////////////////////////////////////////////
-
-// export const AccordionContainer = styled.div<{ chevronColor: string }>`
+// ___________________________________________________________________
 
 export const Form = styled.form`
   margin: 0 auto;
@@ -106,7 +102,11 @@ export const Form = styled.form`
         padding-bottom: calc(${theme.root.space} / 6);
 
         &:nth-child(odd) {
-          border-right: ${theme.border};
+          border-right: none;
+
+          @media ${theme.mq.medium} {
+            border-right: ${theme.border};
+          }
         }
 
         &:last-child {
@@ -114,7 +114,7 @@ export const Form = styled.form`
           padding-left: 0;
         }
 
-        @media (min-width: calc(${theme.breakpoints[1]} + 1px)) {
+        @media ${theme.mq.small} {
           padding-bottom: 0;
         }
 
@@ -190,6 +190,3 @@ export const Form = styled.form`
     width: 100%;
   }
 `
-
-//////////////////////////////////////////////////////////////////////
-// End Styles
