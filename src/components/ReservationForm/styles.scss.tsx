@@ -10,12 +10,15 @@ import { tint, lighten, darken } from 'polished'
 import theme from '../../../config/theme'
 
 // Elements
-import { Box, Flex } from '../../elements'
+import { Box, AnimatedBox } from '../../elements'
 
 // ___________________________________________________________________
 
+export const Container = styled(AnimatedBox)`
+  overflow: auto;
+`
+
 export const Form = styled.form`
-  margin: 0 auto;
   width: 100%;
 
   legend {
@@ -28,6 +31,7 @@ export const Form = styled.form`
     border: none;
     margin: 0 auto;
     padding: 0;
+    flex-grow: 1;
     width: 100%;
 
     label {
@@ -51,7 +55,7 @@ export const Form = styled.form`
       width: 100%;
 
       &:focus {
-        background: ${tint(0.75, `${theme.colors.secondary}`)};
+        background: #f0f8ff;
         outline: none;
         /* box-shadow: 0 0 15px 3px white;
         box-shadow: 0 0 0 3px -moz-mac-focusring; */
@@ -99,8 +103,6 @@ export const Form = styled.form`
       flex-wrap: wrap;
 
       &__box {
-        padding-bottom: calc(${theme.root.space} / 6);
-
         &:nth-child(odd) {
           border-right: none;
 
@@ -112,10 +114,6 @@ export const Form = styled.form`
         &:last-child {
           padding-bottom: 0;
           padding-left: 0;
-        }
-
-        @media ${theme.mq.small} {
-          padding-bottom: 0;
         }
 
         &--select {
@@ -180,6 +178,7 @@ export const Form = styled.form`
     font-size: 0.9rem;
     font-weight: 500;
     color: red;
+
     padding-top: calc(${theme.root.space} / 6);
     padding-bottom: 0;
     margin: 0;
@@ -188,5 +187,27 @@ export const Form = styled.form`
 
   .react-datepicker-wrapper {
     width: 100%;
+  }
+
+  button {
+    width: 100%;
+    padding: ${theme.space[7]} ${theme.space[3]};
+
+    background: ${theme.colors.secondary};
+    border: none;
+
+    color: ${theme.colors.white};
+    font-size: ${theme.fontSizes[3]};
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    transition: ${theme.transition.all};
+
+    &:hover {
+      background: ${darken(0.05, `${theme.colors.secondary}`)};
+    }
   }
 `

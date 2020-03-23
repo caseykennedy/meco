@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({
           isOpen={isShowing}
           handleExit={toggleOverlay}
           mainRef={mainRef}
-          className={`nav-bg ${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}
+          className={`${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}
         >
           {isShowing && <ReservationForm />}
         </Overlay>

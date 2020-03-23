@@ -12,7 +12,7 @@ import * as S from './styles.scss'
 import Section from '../Section'
 
 // Elements
-import { Box, Flex, AnimatedBox, Heading } from '../../elements'
+import { Box, Flex, AnimatedFlex, Heading } from '../../elements'
 import Button from '../../elements/Button'
 
 // Config
@@ -31,7 +31,7 @@ const ReservationForm: React.SFC<Props> = () => {
     to: { opacity: 1, transform: theme.transform.matrix.to }
   })
   return (
-    <AnimatedBox width={1} style={pageAnimation}>
+    <S.Container style={pageAnimation}>
       <Section pt={4} border={true}>
         <Heading as="h3" mb={0}>
           Don't get left
@@ -123,7 +123,9 @@ const ReservationForm: React.SFC<Props> = () => {
               <label htmlFor="500Gal">1000 gallon tanks needed:</label>
 
               <input
-                type="text"
+                type="number"
+                min="1"
+                max="20"
                 name="1000Gal"
                 id="1000Gal"
                 placeholder="1000 gallon tanks needed"
@@ -155,23 +157,21 @@ const ReservationForm: React.SFC<Props> = () => {
           </Box>
 
           <Box width={1} className="form-group">
-            <label htmlFor="comments">Message </label>
+            <label htmlFor="comments">Comments:</label>
             <textarea
               name="details"
               id="details"
               rows={4}
-              placeholder="Message"
+              placeholder="Comments"
             />
           </Box>
-
-          <button type="submit" value="Submit Request">
-            <Flex width={1} py={8}>
-              Submit
-            </Flex>
-          </button>
         </fieldset>
+
+        <button type="submit" value="Submit Request">
+          Submit
+        </button>
       </S.Form>
-    </AnimatedBox>
+    </S.Container>
   )
 }
 

@@ -48,7 +48,7 @@ const Header: React.FC<HeaderShape> = ({
             className={isShowing ? 'active' : ''}
             aria-label="make a reservation"
           >
-            {!isShowing ? `Reserve Water` : 'close'} <span>→</span>
+            {!isShowing ? `reservations` : 'close'} <span>→</span>
           </S.ReserveBtn>
         </S.Toolbar>
       </S.Header>

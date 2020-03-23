@@ -183,7 +183,7 @@ const Typography = css`
 
   h3,
   .text--lg {
-    font-size: ${theme.root.font.md};
+    font-size: ${theme.root.font.lg};
     font-weight: ${theme.fontWeights.regular};
     /* line-height: ${theme.root.font.bodyLineHeight}; */
 

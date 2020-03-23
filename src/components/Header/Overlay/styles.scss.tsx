@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 
-import { Box } from '../../../elements'
+import { Box, Flex } from '../../../elements'
 
 import theme from '../../../../config/theme'
 
@@ -13,21 +13,18 @@ import theme from '../../../../config/theme'
 
 const overlayWidth = '100vw'
 
-export const Overlay = styled(Box)`
-  &.nav-bg {
-    display: flex;
-    justify-content: flex-start;
+export const Overlay = styled(Flex)`
+  justify-content: flex-end;
     flex-direction: column;
-    align-items: center;
 
     position: fixed;
     overflow: auto;
 
     width: ${overlayWidth};
-    height: 100vh;
-    padding: ${theme.space[3]} 0 ${theme.headerHeight};
+    height: calc(100vh - ${theme.headerHeight});
+    padding: 0;
 
-    top: calc(${theme.headerHeight} + 2rem);
+    top: calc(${theme.headerHeight});
     right: 0;
     bottom: 0;
 
@@ -43,9 +40,7 @@ export const Overlay = styled(Box)`
     }
 
     &.nav-bg--open {
-      top: ${theme.headerHeight};
       visibility: visible;
       opacity: 1;
     }
-  }
 `

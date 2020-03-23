@@ -1,5 +1,7 @@
 # MECO | Mckinnies Equipment Co.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bec7efc9-669c-4961-90c2-94a45908a4b3/deploy-status)](https://app.netlify.com/sites/elegant-mcclintock-fd6f1e/deploys)
+
 ## Features
 
 - [x] Configurable
