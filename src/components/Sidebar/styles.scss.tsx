@@ -22,27 +22,43 @@ export const Sidebar = styled(AnimatedFlex)`
   flex-direction: column;
   justify-content: center;
 
-  /* right: 0; */
   width: ${theme.siteWidth};
   padding: 0 0 2px 2px;
 
   transition: all 0.333s ease-in-out;
-  
+
   @media ${theme.mq.small} {
-    flex-direction: row;
-    position: sticky;
-    top: ${theme.headerHeight};
-    display: initial;
     width: ${theme.sidebarWidth};
+
+    display: initial;
+    position: fixed;
+    top: ${theme.headerHeight};
+    right: 0;
   }
 `
 
-export const MakeReservation = styled(Box)`
-  text-align: center;
+export const SidebarInner = styled(AnimatedFlex)`
+  flex-direction: column;
+  justify-content: center;
+
   width: 100%;
-  background: gray;
+  height: calc(100vh - ${theme.headerHeight});
+
+  @media ${theme.mq.small} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+`
+
+export const MakeReservation = styled(Flex)`
+  justify-content: center;
+
   color: ${theme.colors.white};
   font-size: ${theme.fontSizes[4]};
+
+  width: 100%;
+  background: ${theme.colors.primary};
   cursor: pointer;
 
   display: none;

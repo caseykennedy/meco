@@ -7,7 +7,6 @@ import React, { useRef } from 'react'
 
 // Components
 import Section from '../../components/Section'
-import Sidebar from '../../components/Sidebar'
 import Wiggles from '../../components/Wiggles'
 import Accordion from '../../components/Accordion'
 import Footer from '../../components/Footer'
@@ -42,7 +41,6 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
   return (
     <>
       <S.Container>
-        <Sidebar />
         <S.Content>
           <Section pt={0} border={false}>
             <Heading as="h1" color="secondary">

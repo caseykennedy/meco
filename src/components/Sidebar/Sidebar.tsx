@@ -22,10 +22,12 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <S.Sidebar as="aside">
-        <Box className="gallery">
-          <Gallery />
-        </Box>
-        {/* <S.MakeReservation>make a reservation</S.MakeReservation> */}
+        <S.SidebarInner>
+          <Box width={1} style={{ overflow: 'hidden' }} className="gallery">
+            <Gallery />
+          </Box>
+          <S.MakeReservation>make a reservation</S.MakeReservation>
+        </S.SidebarInner>
       </S.Sidebar>
     </>
   )

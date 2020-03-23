@@ -32,8 +32,6 @@ export const Main = styled(animated.main)`
   /* min-width: 0; slick-slider overflow fix */
 
   position: relative;
-  z-index: 22;
-
   width: calc(${theme.siteWidth});
 
   @media ${theme.mq.medium} {

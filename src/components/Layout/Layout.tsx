@@ -7,9 +7,9 @@ import React, { useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import Header from '../Header'
+import Sidebar from '../Sidebar'
 import Overlay from '../Header/Overlay'
 import ReservationForm from '../ReservationForm'
-import { Heading } from '../../elements'
 
 import theme from '../../../config/theme'
 import GlobalStyles from '../../styles/global'
@@ -48,6 +48,7 @@ const Layout: React.FC<LayoutProps> = ({
           {children}
           {/* <Footer /> */}
         </S.Main>
+        <Sidebar />
         <Overlay
           id="drawer-root"
           root="root"
