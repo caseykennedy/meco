@@ -8,6 +8,7 @@ import React, { useRef } from 'react'
 // Components
 import Section from '../../components/Section'
 import Wiggles from '../../components/Wiggles'
+import Circles from '../../components/Circles'
 import Accordion from '../../components/Accordion'
 import Footer from '../../components/Footer'
 
@@ -70,7 +71,8 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
             </Box>
           </Section>
           <Section border={true}>
-            <Heading as="h4">
+            <Heading as="h5" color="secondary" mb={5}>Mission</Heading>
+            <Heading as="h3">
               Our mission here ar MECO Sales &amp; Rentals is Awareness spiral
               east-west, rolfing peacock feather synchronicity. Dead sea
               minerals Spirit Rock.
@@ -85,14 +87,17 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
             <S.Illustration pb={8} px={4}>
               <Wiggles />
             </S.Illustration>
-            <Heading as="h4" mb={0}>
-              Our services include, but are not limited to:
+            <Heading as="h5" color="secondary" mb={5}>Services</Heading>
+            <Heading as="h3" mb={0}>
+              Our services include,
+              <br />
+              but are not limited to:
             </Heading>
           </Section>
 
           <S.Services as="ul">
             {services.map((service, idx) => (
-              <li key={idx}>
+              <li className="text--sm" key={idx}>
                 <span>○</span> {service}
               </li>
             ))}
@@ -100,9 +105,10 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
 
           <Section border={true}>
             <S.Illustration pb={8} px={4}>
-              <Wiggles />
+              <Circles />
             </S.Illustration>
-            <Heading as="h4">
+            <Heading as="h5" color="secondary" mb={5}>Burning Man</Heading>
+            <Heading as="h3">
               Supplying the Playa’s Water Needs for nearly 20 Years!
             </Heading>
             <Text as="p">
@@ -115,7 +121,7 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
             {faqs.map((item, index) => (
               <Accordion title={item.title} key={index} {...AccordionProps}>
                 <Box pt={3} px={4}>
-                  <Text as="p">{item.body}</Text>
+                  <Text as="p" dangerouslySetInnerHTML={{ __html: item.body }} />
                 </Box>
               </Accordion>
             ))}

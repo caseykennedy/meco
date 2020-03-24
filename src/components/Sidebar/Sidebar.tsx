@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
     <>
       <S.Sidebar as="aside">
         <S.SidebarInner>
-          <Box width={1} style={{ overflow: 'hidden' }} className="gallery">
+          <Box width={1} className="gallery">
             <Gallery />
           </Box>
           <S.MakeReservation>make a reservation</S.MakeReservation>

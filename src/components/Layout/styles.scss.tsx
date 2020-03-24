@@ -28,7 +28,7 @@ export const Wrapper = styled(Flex)`
 
 export const Main = styled(animated.main)`
   max-height: 100%;
-  margin-bottom: 0rem;
+  margin-bottom: ${theme.headerHeight};
   /* min-width: 0; slick-slider overflow fix */
 
   position: relative;

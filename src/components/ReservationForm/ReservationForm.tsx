@@ -33,7 +33,7 @@ const ReservationForm: React.SFC<Props> = () => {
   return (
     <S.Container style={pageAnimation}>
       <Section pt={4} border={true}>
-        <Heading as="h3" mb={0}>
+        <Heading fontSize={4} mb={0}>
           Don't get left
           <br />
           in the dust.

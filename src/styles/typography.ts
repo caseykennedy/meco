@@ -183,12 +183,11 @@ const Typography = css`
 
   h3,
   .text--lg {
-    font-size: ${theme.root.font.lg};
-    font-weight: ${theme.fontWeights.regular};
-    /* line-height: ${theme.root.font.bodyLineHeight}; */
+    font-size: ${theme.root.font.md};
+    line-height: ${theme.root.font.bodyLineHeight};
+    margin: 0 0 1em;
 
     @media ${theme.mq.medium} {
-      font-size: ${theme.root.font.lg};
     }
   }
 
@@ -199,7 +198,15 @@ const Typography = css`
     margin: 0 0 1em;
   }
 
-  .text--sm,
+  h5,
+  .text--sm {
+    font-size: calc(${theme.root.font.baseSize} / 1.3);
+    letter-spacing: 2px;
+    line-height: ${theme.root.font.bodyLineHeight};
+    text-transform: uppercase;
+    margin: 0;
+  }
+
   small {
     font-size: ${theme.root.font.sm};
   }
@@ -209,7 +216,7 @@ const Typography = css`
   }
 
   p {
-    font-size: ${theme.fontSizes[2]};
+    font-size: ${theme.root.font.baseSize};
     line-height: ${theme.root.font.bodyLineHeight};
     margin-bottom: 0.8em;
 

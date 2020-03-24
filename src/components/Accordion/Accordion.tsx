@@ -57,7 +57,7 @@ const Accordion: React.FC<AccordionProps> = ({
           color={color}
           colorActive={colorActive}
         >
-          <Heading as="h4" fontSize={[2]} mb={0}>
+          <Heading as="h5">
             {title}
           </Heading>
           <S.Carat
