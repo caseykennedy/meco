@@ -33,9 +33,6 @@ export const Main = styled(animated.main)`
 
   position: relative;
   width: calc(${theme.siteWidth});
-
-  @media ${theme.mq.medium} {
-  }
 `
 
 // ___________________________________________________________________

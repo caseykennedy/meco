@@ -4,7 +4,7 @@
 
 // Core
 import React, { useState } from 'react'
-import { useSpring, config } from 'react-spring'
+import { useTransition } from 'react-spring'
 
 // Styles
 import * as S from './styles.scss'
@@ -12,7 +12,7 @@ import * as S from './styles.scss'
 import Section from '../Section'
 
 // Elements
-import { Box, Flex, AnimatedFlex, Heading } from '../../elements'
+import { Box, Flex, AnimatedBox, Heading, Text } from '../../elements'
 import Button from '../../elements/Button'
 
 // Config
@@ -20,24 +20,30 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type Props = {}
+type TransitionProps = {
+  transition: any
+}
 
-const ReservationForm: React.SFC<Props> = () => {
-  // Page animation
-  const pageAnimation = useSpring({
-    config: config.slow,
-    delay: 200,
-    from: { opacity: 0 },
-    to: { opacity: 1 }
-  })
+type Props = {
+  isShowing: boolean
+}
+
+const Form = ({ transition }: TransitionProps) => {
   return (
-    <S.Container style={pageAnimation}>
+    <S.Container style={transition}>
       <Section pt={4} border={true}>
         <Heading fontSize={4} mb={0}>
           Don't get left
           <br />
           in the dust.
         </Heading>
+      </Section>
+      <Section pt={4} border={true}>
+        <Text as="p">
+          Our mission here ar MECO Sales &amp; Rentals is Awareness spiral
+          east-west, rolfing peacock feather synchronicity. Dead sea minerals
+          Spirit Rock.
+        </Text>
       </Section>
       <S.Form
         name="meco-reservation-form"
@@ -178,6 +184,26 @@ const ReservationForm: React.SFC<Props> = () => {
         </button>
       </S.Form>
     </S.Container>
+  )
+}
+
+const ReservationForm: React.FC<Props> = ({ isShowing }) => {
+  const transitions = useTransition(isShowing, null, {
+    from: {
+      opacity: 0
+    },
+    enter: {
+      opacity: 1
+    },
+    leave: {
+      opacity: 0
+    },
+    trail: 250,
+    unique: true,
+    reset: true
+  })
+  return transitions.map(
+    ({ item, key, props }) => item && <Form key={key} transition={props} />
   )
 }
 

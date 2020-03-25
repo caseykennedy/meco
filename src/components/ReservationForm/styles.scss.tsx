@@ -63,7 +63,7 @@ export const Form = styled.form`
       }
 
       &::placeholder {
-        color: ${tint(0.4, `${theme.colors.primary}`)};
+        color: ${tint(0.2, `${theme.colors.primary}`)};
       }
     }
 

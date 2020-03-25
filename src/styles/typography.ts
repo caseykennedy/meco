@@ -225,6 +225,10 @@ const Typography = css`
     }
   }
 
+  strong {
+    font-weight: 500;
+  }
+
   .t--dual-col {
     column-count: 1;
 
