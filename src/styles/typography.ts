@@ -200,8 +200,8 @@ const Typography = css`
 
   h5,
   .text--sm {
-    font-size: calc(${theme.root.font.baseSize} / 1.3);
-    letter-spacing: 2px;
+    font-size: calc(${theme.root.font.sm} / 1);
+    letter-spacing: 1.5px;
     line-height: ${theme.root.font.bodyLineHeight};
     text-transform: uppercase;
     margin: 0;

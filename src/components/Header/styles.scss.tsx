@@ -102,7 +102,7 @@ export const Marquee = styled(Flex)`
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 
   border-right: ${theme.border};
   height: ${theme.headerHeight};
@@ -125,7 +125,7 @@ export const ReserveBtn = styled(Flex)`
   font-weight: ${theme.fontWeights.medium};
   text-align: center;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 
   background: ${theme.colors.secondary};
   height: calc(${theme.headerHeight} - 2px);

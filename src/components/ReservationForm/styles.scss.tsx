@@ -46,6 +46,7 @@ export const Form = styled.form`
       border-right: none;
       border-bottom: ${theme.border};
       border-left: none;
+      border-radius: 0;
 
       color: ${theme.colors.primary};
 
@@ -201,7 +202,7 @@ export const Form = styled.form`
     font-weight: 500;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 
     cursor: pointer;
     transition: ${theme.transition.all};

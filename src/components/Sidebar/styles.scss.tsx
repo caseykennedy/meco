@@ -4,13 +4,13 @@
 
 // Core
 import styled from 'styled-components'
-import { readableColor, lighten } from 'polished'
+import { darken } from 'polished'
 
 // Theme
 import theme from '../../../config/theme'
 
 // Elements
-import { Box, Flex, AnimatedFlex } from '../../elements'
+import { Box, Flex, AnimatedBox, AnimatedFlex } from '../../elements'
 
 // Styles
 import { Rotate } from '../../styles/transitions'
@@ -18,20 +18,18 @@ import { Rotate } from '../../styles/transitions'
 // Begin Styles
 // ___________________________________________________________________
 
-export const Sidebar = styled(AnimatedFlex)`
-  flex-direction: column;
-  justify-content: center;
-
+export const Sidebar = styled(AnimatedBox)`
   width: ${theme.siteWidth};
   padding: 0 0 2px 2px;
+  z-index: 10;
 
   transition: all 0.333s ease-in-out;
 
   @media ${theme.mq.small} {
-    width: ${theme.sidebarWidth};
-
-    display: initial;
+    /* display: initial; */
     position: fixed;
+
+    width: ${theme.sidebarWidth};
     top: ${theme.headerHeight};
     right: 0;
   }
@@ -39,33 +37,64 @@ export const Sidebar = styled(AnimatedFlex)`
 
 export const SidebarInner = styled(AnimatedFlex)`
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 
   width: 100%;
-  height: calc(100vh - ${theme.headerHeight});
+  height: inherit;
+  overflow: auto;
 
   @media ${theme.mq.small} {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
+    height: calc(100vh - ${theme.headerHeight});
   }
 `
 
-export const MakeReservation = styled(Flex)`
+export const ReserveBtn = styled(Flex)`
+  align-items: center;
   justify-content: center;
+  flex-grow: 1;
 
   color: ${theme.colors.white};
-  font-size: ${theme.fontSizes[4]};
+  text-transform: uppercase;
+  font-size: ${theme.fontSizes[3]};
+  font-weight: ${theme.fontWeights.medium};
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 1.5px;
 
-  width: 100%;
-  background: ${theme.colors.primary};
-  cursor: pointer;
+  /* background: ${theme.colors.secondary}; */
+  padding: ${theme.space[4]} ${theme.space[4]};
+  margin-top: 2px;
 
   display: none;
 
-  @media ${theme.mq.medium} {
-    display: inherit;
+  cursor: pointer;
+  transition: all 0.333s ease-in-out;
+
+  @media ${theme.mq.small} {
+    display: flex;
+    padding: ${theme.space[7]} ${theme.space[4]};
   }
+
+  span {
+    font-size: ${theme.fontSizes[2]};
+    position: relative;
+    top: -4px;
+    margin-left: ${theme.space[3]};
+
+    transition: ${theme.transition.all};
+  }
+
+  &:hover {
+    background: ${darken(0.05, `${theme.colors.primary}`)};
+
+    span {
+      margin-left: ${theme.space[5]};
+    }
+  }
+
+  /* &.active {
+    background: ${theme.colors.primary};
+  } */
 `
 
 // export const Toggle = styled.div`

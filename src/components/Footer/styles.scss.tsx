@@ -54,7 +54,7 @@ export const Indent = styled(Flex)`
 export const Marker = styled(Box)`
   color: ${theme.colors.background};
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   text-transform: uppercase;

@@ -11,15 +11,16 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-export const Container = styled(Flex)`
+export const HomeContainer = styled(Flex)`
   flex-direction: column;
   justify-content: flex-end;
 
   position: relative;
-  margin-top: calc(${theme.headerHeight});
+  margin-top: 0;
 
   @media ${theme.mq.small} {
     flex-direction: row-reverse;
+    margin-top: calc(${theme.headerHeight});
   }
 `
 
@@ -33,7 +34,7 @@ export const Content = styled(Flex)`
   background: ${theme.colors.background};
   border-left: ${theme.border};
 
-  z-index: 99;
+  /* z-index: 99; */
 
   @media ${theme.mq.small} {
     width: calc(
@@ -64,7 +65,7 @@ export const Indent = styled(Flex)`
 
 export const Marker = styled(Box)`
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   text-transform: uppercase;
@@ -116,7 +117,7 @@ export const ReserveBtn = styled(Flex)`
   font-weight: ${theme.fontWeights.medium};
   text-align: center;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 
   background: ${theme.colors.secondary};
   height: calc(${theme.headerHeight} - 2px);

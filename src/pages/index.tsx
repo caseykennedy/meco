@@ -16,9 +16,7 @@ import { AnimatedBox } from '../elements'
 // Components
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-
-// Sections
-import Home from '../sections/Home'
+import Home from '../components/Home'
 
 // Theme
 import theme from '../../config/theme'

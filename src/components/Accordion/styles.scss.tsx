@@ -42,11 +42,15 @@ export const AccordionToggle = styled(Box)<{ colorActive: string, color: string 
   display: flex;
   border: none;
   outline: none;
-  padding: ${theme.space[3]} ${theme.space[4]};
+  padding: ${theme.space[4]} ${theme.space[4]};
   transition: background-color 0.6s ease;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &:hover {
+    color: ${p => p.colorActive}
   }
 
   &.active {

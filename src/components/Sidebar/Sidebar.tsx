@@ -4,12 +4,11 @@
 // ___________________________________________________________________
 
 import React, { useState } from 'react'
-
 import { useSpring, config } from 'react-spring'
 
-import Overlay from './Overlay'
 import Icon from '../Icons'
 import Gallery from '../Gallery'
+import ImgMatch from '../ImgMatch'
 
 import { Box, Text } from '../../elements'
 
@@ -18,7 +17,12 @@ import * as S from './styles.scss'
 
 // ___________________________________________________________________
 
-const Sidebar: React.FC = () => {
+type SidebarProps = {
+  isShowing: boolean
+  toggleOverlay: () => void
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isShowing, toggleOverlay }) => {
   return (
     <>
       <S.Sidebar as="aside">
@@ -26,7 +30,13 @@ const Sidebar: React.FC = () => {
           <Box width={1} className="gallery">
             <Gallery />
           </Box>
-          <S.MakeReservation>make a reservation</S.MakeReservation>
+          <S.ReserveBtn
+            onClick={toggleOverlay}
+            className={isShowing ? 'active' : ''}
+            aria-label="make a reservation"
+          >
+            Reserve Water <span>→</span>
+          </S.ReserveBtn>
         </S.SidebarInner>
       </S.Sidebar>
     </>

@@ -27,8 +27,8 @@ const ReservationForm: React.SFC<Props> = () => {
   const pageAnimation = useSpring({
     config: config.slow,
     delay: 200,
-    from: { opacity: 0, transform: theme.transform.matrix.from },
-    to: { opacity: 1, transform: theme.transform.matrix.to }
+    from: { opacity: 0 },
+    to: { opacity: 1 }
   })
   return (
     <S.Container style={pageAnimation}>
