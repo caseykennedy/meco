@@ -28,7 +28,17 @@ function encode(data: any) {
 const Form = () => {
   // Handle form submit
   // TODO: use correct types for (e)
-  const [state, setState] = React.useState({})
+  const [state, setState] = React.useState({
+    name: '',
+    campName: '',
+    email: '',
+    tel: '',
+    fiveHunGal: '',
+    thousandGal: '',
+    privateContainers: '',
+    rv: '',
+    details: ''
+  })
   const handleChange = (e: any) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
@@ -46,6 +56,7 @@ const Form = () => {
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
+  console.log(state)
   return (
     <S.Form
       name="Reservations"
@@ -72,12 +83,12 @@ const Form = () => {
               placeholder="Your name"
               required={true}
               onChange={handleChange}
-              value={name}
+              value={state.name}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
             <label htmlFor="campName">
-              Name:{' '}
+              Camp Name:{' '}
               <abbr title="required" aria-label="required">
                 *
               </abbr>
@@ -89,7 +100,7 @@ const Form = () => {
               placeholder="Camp name"
               required={true}
               onChange={handleChange}
-              value={name}
+              value={state.campName}
             />
           </Box>
         </Box>
@@ -107,7 +118,7 @@ const Form = () => {
               type="email"
               required={true}
               onChange={handleChange}
-              value={name}
+              value={state.email}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -118,33 +129,33 @@ const Form = () => {
               id="phone"
               placeholder="___ ___-____"
               onChange={handleChange}
-              value={name}
+              value={state.tel}
             />
           </Box>
         </Box>
         <Box width={1} className="form-group">
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="500Gal"># of 500 gal tanks needed:</label>
+            <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
             <input
               type="number"
-              name="500Gal"
-              id="500Gal"
+              name="fiveHunGal"
+              id="fiveHunGal"
               placeholder="# of 500 gal. tanks needed"
               onChange={handleChange}
-              value={name}
+              value={state.fiveHunGal}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="1000Gal"># of 1000 gal. tanks:</label>
+            <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
             <input
               type="number"
               min="1"
               max="20"
-              name="1000Gal"
-              id="1000Gal"
+              name="thousandGal"
+              id="thousandGal"
               placeholder="# of 1000 gal. tanks needed"
               onChange={handleChange}
-              value={name}
+              value={state.thousandGal}
             />
           </Box>
         </Box>
@@ -157,13 +168,20 @@ const Form = () => {
               id="privateContainers"
               placeholder="# of private containers"
               onChange={handleChange}
-              value={name}
+              value={state.privateContainers}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
             <label htmlFor="rv"># of RVs:</label>
 
-            <input type="number" name="rv" id="rv" placeholder="# of RVs" />
+            <input
+              type="number"
+              name="rv"
+              id="rv"
+              placeholder="# of RVs"
+              onChange={handleChange}
+              value={state.rv}
+            />
           </Box>
         </Box>
         <Box width={1} className="form-group">
@@ -174,7 +192,7 @@ const Form = () => {
             rows={4}
             placeholder="Comments"
             onChange={handleChange}
-            value={name}
+            value={state.details}
           />
         </Box>
       </fieldset>
