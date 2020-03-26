@@ -24,7 +24,7 @@ export const Header = styled(AnimatedFlex)`
 
   position: fixed;
   left: 0;
-  width: ${theme.siteWidth};
+  width: 100vw;
   height: ${theme.headerHeight};
   padding: 0;
 

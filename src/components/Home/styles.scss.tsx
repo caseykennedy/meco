@@ -11,7 +11,7 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-export const HomeContainer = styled(Flex)`
+export const HomePage = styled(Flex)`
   flex-direction: column;
   justify-content: flex-end;
 
@@ -38,10 +38,7 @@ export const Content = styled(Flex)`
 
   @media ${theme.mq.small} {
     border-left: ${theme.border};
-    width: calc(
-      calc(${theme.siteWidth} - ${theme.headerHeight}) - ${theme.sidebarWidth} +
-        2px
-    );
+    width: calc(calc(${theme.siteWidth} - ${theme.headerHeight}) + 2px);
     min-width: inherit;
   }
 `
@@ -72,6 +69,27 @@ export const Marker = styled(Box)`
   text-transform: uppercase;
   position: sticky;
   top: calc(${theme.headerHeight} + ${theme.space[4]});
+`
+
+export const Drips = styled(Box)`
+  position: fixed;
+  width: 54vw;
+
+  top: 50vh;
+  right: 0;
+
+  z-index: 99;
+
+  @media ${theme.mq.medium} {
+    width: 30vw;
+    top: 37vh;
+    right: 0;
+    transform: translateX(50%);
+  }
+
+  svg {
+    width: 100%;
+  }
 `
 
 export const Illustration = styled(Box)`

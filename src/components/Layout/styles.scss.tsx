@@ -32,7 +32,11 @@ export const Main = styled(animated.main)`
   /* min-width: 0; slick-slider overflow fix */
 
   position: relative;
-  width: calc(${theme.siteWidth});
+  width: calc(${theme.siteWidth} * 2);
+
+  @media ${theme.mq.medium} {
+    width: ${theme.siteWidth};
+  }
 `
 
 // ___________________________________________________________________

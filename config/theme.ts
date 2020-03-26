@@ -147,7 +147,7 @@ const theme: ThemeShape = {
   // ___________________________________________________________________
 
   maxWidth: '1680px',
-  siteWidth: '100vw',
+  siteWidth: '50vw',
   indentWidth: '18px',
   sidebarWidth: '50vw',
 

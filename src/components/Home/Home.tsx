@@ -8,9 +8,8 @@ import React, { useRef } from 'react'
 // Components
 import Section from '../../components/Section'
 import Wiggles from '../../components/Wiggles'
-import Circles from '../../components/Circles'
-import Accordion from '../../components/Accordion'
 import Footer from '../../components/Footer'
+import Drips from '../../components/Drips'
 
 // Elements
 import { Box, Flex, Heading, Text } from '../../elements'
@@ -44,7 +43,7 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
   const mainRef = useRef<HTMLDivElement>(null)
   return (
     <>
-      <S.HomeContainer>
+      <S.HomePage>
         <S.Content>
           <Section pt={0} border={false}>
             <Heading as="h1" color="secondary">
@@ -55,6 +54,10 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
               services
             </Heading>
             <Heading as="h4">+ equipment rentals</Heading>
+
+            <S.Drips>
+              <Drips />
+            </S.Drips>
 
             <Box
               py={7}
@@ -125,7 +128,7 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
         <S.Indent>
           <S.Marker>family owned &amp; operated since 1996</S.Marker>
         </S.Indent>
-      </S.HomeContainer>
+      </S.HomePage>
       <Footer />
     </>
   )

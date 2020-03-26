@@ -80,7 +80,7 @@ const Form = ({ transition }: TransitionProps) => {
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="bot-field" onChange={handleChange} />
-        <input name="form-name" value="reservations" />
+        <input type="hidden" name="form-name" value="reservations" />
         <fieldset>
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">

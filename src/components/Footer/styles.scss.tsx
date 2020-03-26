@@ -28,10 +28,7 @@ export const Content = styled(Flex)`
   z-index: 99;
 
   @media ${theme.mq.small} {
-    width: calc(
-      calc(${theme.siteWidth} - ${theme.headerHeight}) - ${theme.sidebarWidth} +
-        2px
-    );
+    width: calc(calc(${theme.siteWidth} - ${theme.headerHeight}) + 2px);
     min-width: inherit;
     padding: ${theme.space[3]} ${theme.space[4]};
   }
@@ -47,8 +44,6 @@ export const Indent = styled(Flex)`
   height: auto;
   padding: ${theme.space[4]} 0;
   background: ${theme.colors.primary};
-
-
 `
 
 export const Marker = styled(Box)`

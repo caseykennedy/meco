@@ -15,7 +15,6 @@ import { AnimatedBox, Flex } from '../../elements'
 // Styles
 import { Rotate } from '../../styles/transitions'
 
-// Begin Styles
 // ___________________________________________________________________
 
 export const Gallery = styled(AnimatedBox)`
@@ -44,11 +43,6 @@ export const Gallery = styled(AnimatedBox)`
           svg {
             transform: scale(1);
             transition: ${theme.transition.all};
-            /* stroke: white;
-            stroke-width: 4px;
-            stroke-dashoffset: 5px;
-            stroke-dasharray: 5px;
-            transition: all 20s ease; */
 
             @media ${theme.mq.medium} {
               transform: scale(2);
@@ -57,8 +51,6 @@ export const Gallery = styled(AnimatedBox)`
             &:hover {
               cursor: none;
               transform: translateX(1rem) scale(1);
-              /* stroke-dashoffset: 0px;
-              stroke-dasharray: 300px; */
 
               @media ${theme.mq.medium} {
                 transform: translateX(1rem) scale(2);
@@ -77,24 +69,6 @@ export const Gallery = styled(AnimatedBox)`
 
     .slick-slide {
       position: relative;
-
-      /* &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 160px;
-        background: black;
-        z-index: 9999;
-        bottom: 0;
-        opacity: 0;
-        transform: ${theme.transform.matrix.to};
-        transition: all 0.777s ease-in-out;
-
-        @media ${theme.mq.medium} {
-          height: 220px;
-          opacity: 1;
-        }
-      } */
 
       &.slick-current {
         &::after {
@@ -137,5 +111,3 @@ export const Gallery = styled(AnimatedBox)`
     }
   }
 `
-
-// ___________________________________________________________________ Styles

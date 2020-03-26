@@ -19,10 +19,10 @@ import { Rotate } from '../../styles/transitions'
 // ___________________________________________________________________
 
 export const Sidebar = styled(AnimatedBox)`
-  width: ${theme.siteWidth};
+  width: calc(${theme.siteWidth} * 2);
   padding-left: 0;
   margin-bottom: -2px;
-  z-index: 10;
+  z-index: 0;
 
   transition: all 0.333s ease-in-out;
 
@@ -98,25 +98,3 @@ export const ReserveBtn = styled(Flex)`
     background: ${theme.colors.primary};
   } */
 `
-
-// export const Toggle = styled.div`
-//   font-size: calc(${theme.fontSizes[3]});
-//   font-weight: 400;
-
-//   &.nav-bg--open {
-//     color: ${theme.colors.background};
-//   }
-
-//   /* &::after {
-//     content: '';
-//     position: relative;
-//     background: transparent;
-//   } */
-
-//   /* @media ${theme.mq.medium} {
-//     transform-origin: 5px 5px;
-//     width: ${theme.space[6]};
-//   } */
-// `
-
-// ___________________________________________________________________

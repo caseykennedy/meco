@@ -9,7 +9,7 @@ import { Link } from 'gatsby'
 import useOverlay from '../../hooks/useOverlay'
 
 import Overlay from './Overlay'
-import Symbol from '../symbol'
+import Symbol from '../Symbol'
 
 import { Heading } from '../../elements'
 
