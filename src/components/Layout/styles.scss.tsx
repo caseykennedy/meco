@@ -2,18 +2,12 @@
 
 // ___________________________________________________________________
 
-// Libraries
 import styled from 'styled-components'
 import { animated } from 'react-spring'
-import { lighten } from 'polished'
 
-// Theme
+import { Box, Flex } from '../../elements'
 import theme from '../../../config/theme'
 
-// Elements
-import { Box, Flex } from '../../elements'
-
-// Begin Styles
 // ___________________________________________________________________
 
 export const Wrapper = styled(Flex)`

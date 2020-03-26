@@ -1,4 +1,4 @@
-// Home:
+// Burning Man:
 
 // ___________________________________________________________________
 
@@ -51,14 +51,16 @@ const BurningMan: React.FC = () => {
       <Box>
         <Accordion title="Potable Water Tank Rental" {...AccordionProps}>
           <Box pt={3} px={4}>
-            <Flex flexWrap="wrap" justifyContent="space-between" mb={4}>
+            <Flex flexWrap="wrap" justifyContent="space-between" my={4}>
               <S.Highlight>
                 <Text as="p">
                   <Text className="rental__title">500 Gallon Tank</Text>
                   <Text fontSize={1}>
-                    includes: first fill, pump and 15ft garden hose
+                    <strong>includes</strong>: first fill, pump and 15ft garden
+                    hose
                     <br />
-                    dimensions: 5 feet in diameter, 4 feet tall
+                    <br />
+                    <strong>dimensions</strong>: 5 feet in diameter, 4 feet tall
                   </Text>
                   <Text className="rental__price">$1000</Text>
                 </Text>
@@ -68,9 +70,11 @@ const BurningMan: React.FC = () => {
                 <Text as="p">
                   <Text className="rental__title">1000 Gallon Tank</Text>
                   <Text fontSize={1}>
-                    includes: first fill, pump and 15ft garden hose
+                    <strong>includes</strong>: first fill, pump and 15ft garden
+                    hose
                     <br />
-                    dimensions: 6 feet in diameter, 6.5 feet tall
+                    <br />
+                    <strong>dimensions</strong>: 5 feet in diameter, 4 feet tall
                   </Text>
                   <Text className="rental__price">$2000</Text>
                 </Text>
@@ -97,7 +101,7 @@ const BurningMan: React.FC = () => {
               If you decide to rent one of our potable water tanks, we will set
               up a delivery date with you and get your playa address.
             </Text>
-            <Text as="p">
+            <Text as="p" mb={7}>
               Contact MECO Amanda with your playa location as soon as you know
               it, along with your requested tank delivery date.{' '}
               <strong>Deadline August 1st.</strong>
@@ -108,7 +112,7 @@ const BurningMan: React.FC = () => {
                 DELIVERY DATE!
               </Text>
             </S.Highlight>
-            <Text as="p">
+            <Text as="p" mt={7}>
               Your tank will either have to be set up by the street or you will
               have to have an access road 12ft wide that the trucks can back
               down. If you set the tank inside your camp, you will need to keep
@@ -168,7 +172,7 @@ const BurningMan: React.FC = () => {
           {...AccordionProps}
         >
           <Box pt={3} px={4}>
-            <Flex flexWrap="wrap" justifyContent="space-between">
+            <Flex flexWrap="wrap" justifyContent="space-between" mt={4}>
               <S.Highlight>
                 <Text as="p">
                   <Text className="rental__title">Fill or top off</Text>
@@ -208,7 +212,7 @@ const BurningMan: React.FC = () => {
         </Accordion>
         <Accordion title="RV Potable Water" {...AccordionProps}>
           <Box pt={3} px={4}>
-            <Flex flexWrap="wrap" justifyContent="space-between">
+            <Flex flexWrap="wrap" justifyContent="space-between" mt={4}>
               <S.Highlight>
                 <Text as="p">
                   <Text className="rental__title">Fill or top off</Text>

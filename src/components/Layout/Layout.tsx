@@ -47,7 +47,6 @@ const Layout: React.FC<LayoutProps> = ({
         <Sidebar isShowing={isShowing} toggleOverlay={toggleOverlay} />
         <S.Main ref={mainRef}>
           {children}
-          {/* <Footer /> */}
         </S.Main>
         <Overlay
           id="drawer-root"

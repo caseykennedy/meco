@@ -71,6 +71,12 @@ export const Marker = styled(Box)`
   top: calc(${theme.headerHeight} + ${theme.space[4]});
 `
 
+export const VerticalText = styled(Box)`
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: ${theme.space[7]} 0;
+`
+
 export const Drips = styled(Box)`
   position: fixed;
   width: 54vw;
@@ -175,10 +181,15 @@ export const Highlight = styled(Box)`
   width: 100%;
   padding: ${theme.space[4]};
   border: ${theme.border};
-  border-bottom-width: 4px;
+  border-right-width: 6px;
+  border-bottom-width: 6px;
 
   &:nth-child(odd) {
     margin-bottom: ${theme.space[4]};
+
+    @media ${theme.mq.small} {
+      margin-bottom: 0;
+    }
   }
 
   @media ${theme.mq.small} {
@@ -195,7 +206,7 @@ export const Highlight = styled(Box)`
     &__price {
       padding: ${theme.space[1]};
       margin-top: ${theme.space[4]};
-      background: ${theme.colors.primary};
+      background: ${theme.colors.secondary};
       color: ${theme.colors.background};
       font-size: ${theme.fontSizes[1]};
       text-align: right;

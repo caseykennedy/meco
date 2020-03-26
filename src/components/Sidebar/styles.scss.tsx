@@ -2,20 +2,13 @@
 
 // ___________________________________________________________________
 
-// Core
 import styled from 'styled-components'
 import { darken } from 'polished'
 
-// Theme
 import theme from '../../../config/theme'
 
-// Elements
 import { Box, Flex, AnimatedBox, AnimatedFlex } from '../../elements'
 
-// Styles
-import { Rotate } from '../../styles/transitions'
-
-// Begin Styles
 // ___________________________________________________________________
 
 export const Sidebar = styled(AnimatedBox)`
@@ -93,8 +86,4 @@ export const ReserveBtn = styled(Flex)`
       margin-left: ${theme.space[5]};
     }
   }
-
-  /* &.active {
-    background: ${theme.colors.primary};
-  } */
 `
