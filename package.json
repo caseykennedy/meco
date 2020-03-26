@@ -111,6 +111,10 @@
     "*.{ts,tsx}": [
       "tslint --fix",
       "git add"
+    ],
+    "*.{js,jsx}": [
+      "xo --fix",
+      "git add"
     ]
   }
 }
