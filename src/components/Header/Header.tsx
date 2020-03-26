@@ -6,7 +6,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-// import Symbol from '../Symbol'
+import Drop from '../Drop'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderShape> = ({
       <S.Header as="header">
         <S.Logo>
           <S.Symbol className={isShowing ? 'active' : ''}>
-            {/* <Symbol /> */}
+            <Drop />
           </S.Symbol>
           <Link to="/" aria-label="MECO, back to home">
             MECO
