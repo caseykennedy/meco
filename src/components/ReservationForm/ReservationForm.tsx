@@ -7,16 +7,12 @@ import React, { useState } from 'react'
 import { navigate } from 'gatsby-link'
 import { useTransition } from 'react-spring'
 
-// Styles
-import * as S from './styles.scss'
-
 import Section from '../Section'
 
-// Elements
 import { Box, Flex, AnimatedBox, Heading, Text } from '../../elements'
 import Button from '../../elements/Button'
 
-// Config
+import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
 // ___________________________________________________________________

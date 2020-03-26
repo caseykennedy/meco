@@ -11,7 +11,7 @@ import Circles from '../../../components/Circles'
 import Accordion from '../../../components/Accordion'
 
 // Elements
-import { Box, Heading, Text } from '../../../elements'
+import { Box, Flex, Heading, Text } from '../../../elements'
 import Divider from '../../../elements/Divider'
 
 // Styles
@@ -51,39 +51,47 @@ const BurningMan: React.FC = () => {
       <Box>
         <Accordion title="Potable Water Tank Rental" {...AccordionProps}>
           <Box pt={3} px={4}>
-            <Text as="p" mt={3}>
-              <Text as="span" fontWeight={500} mb={0}>
-                500 Gallon Tank — $1000
-              </Text>
-              <Text as="span" fontSize={1}>
-                includes: first fill, pump and 15ft garden hose
-                <br />
-                dimensions: 5 feet in diameter, 4 feet tall
-              </Text>
-            </Text>
-            <Divider bg="primary" py="1px" />
-            <Text as="p" mt={3}>
-              <Text as="span" fontWeight={500} mb={0}>
-                1000 Gallon Tank — $2000
-              </Text>
-              <Text as="span" fontSize={1}>
-                includes: first fill, pump and 15ft garden hose
-                <br />
-                dimensions: 6 feet in diameter, 6.5 feet tall
-              </Text>
-            </Text>
-            <Divider bg="primary" py="1px" />
-            <Text as="p" mt={3}>
-              <Text as="span" fontWeight={500} mb={0}>
-                Bulk tank rentals refill and top off — $1.00 /gal
-              </Text>
-            </Text>
-            <Divider bg="primary" py="1px" />
-            <Text as="p" mt={3}>
-              <Text as="span" fontSize={1}>
-                payment: cash at time of fillup
-              </Text>
-            </Text>
+            <Flex flexWrap="wrap" justifyContent="space-between" mb={4}>
+              <S.Highlight>
+                <Text as="p">
+                  <Text className="rental__title">500 Gallon Tank</Text>
+                  <Text fontSize={1}>
+                    includes: first fill, pump and 15ft garden hose
+                    <br />
+                    dimensions: 5 feet in diameter, 4 feet tall
+                  </Text>
+                  <Text className="rental__price">$1000</Text>
+                </Text>
+              </S.Highlight>
+
+              <S.Highlight>
+                <Text as="p">
+                  <Text className="rental__title">1000 Gallon Tank</Text>
+                  <Text fontSize={1}>
+                    includes: first fill, pump and 15ft garden hose
+                    <br />
+                    dimensions: 6 feet in diameter, 6.5 feet tall
+                  </Text>
+                  <Text className="rental__price">$2000</Text>
+                </Text>
+              </S.Highlight>
+            </Flex>
+
+            <Flex flexWrap="wrap" justifyContent="space-between">
+              <S.Highlight>
+                <Text as="p">
+                  <Text className="rental__title">Bulk Tank Rentals</Text>
+                  <Text fontSize={1}>Refill and top off</Text>
+                  <Text className="rental__price">$1 / gal</Text>
+                </Text>
+              </S.Highlight>
+
+              <S.Highlight>
+                <Text as="p">
+                  <Text fontSize={3}>Payment due at time of service.</Text>
+                </Text>
+              </S.Highlight>
+            </Flex>
 
             <Text as="p" mt={7}>
               If you decide to rent one of our potable water tanks, we will set
@@ -94,10 +102,12 @@ const BurningMan: React.FC = () => {
               it, along with your requested tank delivery date.{' '}
               <strong>Deadline August 1st.</strong>
             </Text>
-            <Text as="p" fontWeight={500} color="secondary">
-              BE READY TO PLACE AND RECEIVE YOUR TANK ON YOUR SCHEDULED DELIVERY
-              DATE!
-            </Text>
+            <S.Highlight>
+              <Text as="p" fontWeight={500} color="secondary">
+                BE READY TO PLACE AND RECEIVE YOUR TANK ON YOUR SCHEDULED
+                DELIVERY DATE!
+              </Text>
+            </S.Highlight>
             <Text as="p">
               Your tank will either have to be set up by the street or you will
               have to have an access road 12ft wide that the trucks can back
@@ -158,15 +168,20 @@ const BurningMan: React.FC = () => {
           {...AccordionProps}
         >
           <Box pt={3} px={4}>
-            <Text as="p">
-              <Text as="span" fontWeight={500} mb={0}>
-                Fill or top off — $1.50 /gal
-              </Text>
-              <Text as="span" fontSize={1}>
-                payment: cash at time of fillup
-              </Text>
-            </Text>
-            <Divider bg="primary" py="1px" />
+            <Flex flexWrap="wrap" justifyContent="space-between">
+              <S.Highlight>
+                <Text as="p">
+                  <Text className="rental__title">Fill or top off</Text>
+                  <Text className="rental__price">$1.50 /gal</Text>
+                </Text>
+              </S.Highlight>
+
+              <S.Highlight>
+                <Text as="p">
+                  <Text fontSize={3}>Payment due at time of service.</Text>
+                </Text>
+              </S.Highlight>
+            </Flex>
             <Text as="p" mt={7}>
               If you decide to bring your own bulk storage and have MECO fill
               it, MECO will set up a date with you to deliver your potable water
@@ -193,15 +208,20 @@ const BurningMan: React.FC = () => {
         </Accordion>
         <Accordion title="RV Potable Water" {...AccordionProps}>
           <Box pt={3} px={4}>
-            <Text as="p">
-              <Text as="span" fontWeight={500} mb={0}>
-                Fill or top off — $2.00 gallon
-              </Text>
-              <Text as="span" fontSize={1}>
-                payment: cash at time of fillup
-              </Text>
-            </Text>
-            <Divider bg="primary" py="1px" />
+            <Flex flexWrap="wrap" justifyContent="space-between">
+              <S.Highlight>
+                <Text as="p">
+                  <Text className="rental__title">Fill or top off</Text>
+                  <Text className="rental__price">$2.00 /gal</Text>
+                </Text>
+              </S.Highlight>
+
+              <S.Highlight>
+                <Text as="p">
+                  <Text fontSize={3}>Payment due at time of service.</Text>
+                </Text>
+              </S.Highlight>
+            </Flex>
             <Text as="p" mt={7}>
               MECO requires a 5 RV minimum in order to make a reservation. All
               must be within the same location. Anything less than 5 RV’s will

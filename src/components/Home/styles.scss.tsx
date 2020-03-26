@@ -170,3 +170,35 @@ export const ReserveBtn = styled(Flex)`
     background: ${theme.colors.primary};
   }
 `
+
+export const Highlight = styled(Box)`
+  width: 100%;
+  padding: ${theme.space[4]};
+  border: ${theme.border};
+  border-bottom-width: 4px;
+
+  &:nth-child(odd) {
+    margin-bottom: ${theme.space[4]};
+  }
+
+  @media ${theme.mq.small} {
+    width: calc(50% - calc(${theme.space[4]} / 2));
+  }
+
+  .rental {
+    &__title {
+      font-weight: 500;
+      border-bottom: ${theme.border};
+      margin-bottom: ${theme.space[4]};
+    }
+
+    &__price {
+      padding: ${theme.space[1]};
+      margin-top: ${theme.space[4]};
+      background: ${theme.colors.primary};
+      color: ${theme.colors.background};
+      font-size: ${theme.fontSizes[1]};
+      text-align: right;
+    }
+  }
+`

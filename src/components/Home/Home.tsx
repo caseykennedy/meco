@@ -11,17 +11,13 @@ import Wiggles from '../../components/Wiggles'
 import Footer from '../../components/Footer'
 import Drips from '../../components/Drips'
 
-// Elements
 import { Box, Flex, Heading, Text } from '../../elements'
 import HeadingStroked from '../../elements/HeadingStroked'
 
-// Sections
 import BurningMan from './Sections/BurningMan'
 
-// Styles
 import * as S from './styles.scss'
 
-// Theme
 import theme from '../../../config/theme'
 
 // ___________________________________________________________________
