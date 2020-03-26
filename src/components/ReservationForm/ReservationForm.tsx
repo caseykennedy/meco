@@ -32,7 +32,7 @@ const Form = () => {
     name: '',
     campName: '',
     email: '',
-    tel: '',
+    phone: '',
     fiveHunGal: '',
     thousandGal: '',
     privateContainers: '',
@@ -53,7 +53,7 @@ const Form = () => {
         ...state
       })
     })
-      .then(() => navigate(form.getAttribute('action')))
+      // .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
   console.log(state)
@@ -62,6 +62,7 @@ const Form = () => {
       name="Reservations"
       method="post"
       data-netlify="true"
+      // action="/"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
@@ -129,7 +130,7 @@ const Form = () => {
               id="phone"
               placeholder="___ ___-____"
               onChange={handleChange}
-              value={state.tel}
+              value={state.phone}
             />
           </Box>
         </Box>
