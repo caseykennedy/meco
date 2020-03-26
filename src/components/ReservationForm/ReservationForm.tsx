@@ -17,15 +17,16 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-// Encode form
-// TODO: use correct types
-function encode(data: any) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
-    .join('&')
-}
-
 const Form = () => {
+  // Encode form
+  // TODO: use correct types
+  function encode(data: any) {
+    return Object.keys(data)
+      .map(
+        key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`
+      )
+      .join('&')
+  }
   // Handle form submit
   // TODO: use correct types for (e)
   const [state, setState] = React.useState({
@@ -43,19 +44,28 @@ const Form = () => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
   const handleSubmit = (e: any) => {
+    // alert(`A name was submitted: ${state}`);
     e.preventDefault()
     const form = e.target
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': 'Reservations',
+        'form-name': form.getAttribute('name'),
         ...state
-        // form.getAttribute('value')
       })
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
+      .then(response => {
+        console.log('====================================')
+        console.log(`${JSON.stringify(response, null, 2)}`)
+        console.log('====================================')
+        navigate(form.getAttribute('action'))
+      })
+      .catch(error => {
+        console.log('====================================')
+        console.log(`error in submiting the form data:${error}`)
+        console.log('====================================')
+      })
   }
   console.log(state)
   return (
@@ -63,12 +73,14 @@ const Form = () => {
       name="Reservations"
       method="post"
       data-netlify="true"
-      action="/"
+      // action="/"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="bot-field" onChange={handleChange} />
-      <input type="hidden" name="form-name" value="Reservations" />
+      <div style={{ display: 'none'}}>
+        <input name="form-name" value="Reservations" onChange={handleChange} />
+      </div>
       <fieldset>
         <Box width={1} className="form-group">
           <Box width={[1, 1, 1 / 2]} className="form-group__box">

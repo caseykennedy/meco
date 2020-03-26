@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           please contact Amanda McKinnies.
         </Heading>
         <Text as="p" mt={10}>
-          <Text fontWeight={500}>Amanda McKinnies</Text>
+          <Text as="span" fontWeight={500}>Amanda McKinnies</Text>
           P: (775) 762-3963
           <br />
           E: MecoAmanda775@gmail.com

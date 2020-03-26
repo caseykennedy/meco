@@ -54,29 +54,29 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between" my={4}>
               <S.Highlight>
                 <Text as="p">
-                  <Text className="rental__title">500 Gallon Tank</Text>
-                  <Text fontSize={1}>
+                  <Text as="span" className="rental__title">500 Gallon Tank</Text>
+                  <Text as="span" fontSize={1}>
                     <strong>includes</strong>: first fill, pump and 15ft garden
                     hose
                     <br />
                     <br />
                     <strong>dimensions</strong>: 5 feet in diameter, 4 feet tall
                   </Text>
-                  <Text className="rental__price">$1000</Text>
+                  <Text as="span" className="rental__price">$1000</Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text className="rental__title">1000 Gallon Tank</Text>
-                  <Text fontSize={1}>
+                  <Text as="span" className="rental__title">1000 Gallon Tank</Text>
+                  <Text as="span" fontSize={1}>
                     <strong>includes</strong>: first fill, pump and 15ft garden
                     hose
                     <br />
                     <br />
                     <strong>dimensions</strong>: 5 feet in diameter, 4 feet tall
                   </Text>
-                  <Text className="rental__price">$2000</Text>
+                  <Text as="span" className="rental__price">$2000</Text>
                 </Text>
               </S.Highlight>
             </Flex>
@@ -84,15 +84,15 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between">
               <S.Highlight>
                 <Text as="p">
-                  <Text className="rental__title">Bulk Tank Rentals</Text>
-                  <Text fontSize={1}>Refill and top off</Text>
-                  <Text className="rental__price">$1 / gal</Text>
+                  <Text as="span" className="rental__title">Bulk Tank Rentals</Text>
+                  <Text as="span" fontSize={1}>Refill and top off</Text>
+                  <Text as="span" className="rental__price">$1 / gal</Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text fontSize={3}>Payment due at time of service.</Text>
+                  <Text as="span" fontSize={3}>Payment due at time of service.</Text>
                 </Text>
               </S.Highlight>
             </Flex>
@@ -175,14 +175,14 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between" mt={4}>
               <S.Highlight>
                 <Text as="p">
-                  <Text className="rental__title">Fill or top off</Text>
-                  <Text className="rental__price">$1.50 /gal</Text>
+                  <Text as="span" className="rental__title">Fill or top off</Text>
+                  <Text as="span" className="rental__price">$1.50 /gal</Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text fontSize={3}>Payment due at time of service.</Text>
+                  <Text as="span" fontSize={3}>Payment due at time of service.</Text>
                 </Text>
               </S.Highlight>
             </Flex>
@@ -215,14 +215,14 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between" mt={4}>
               <S.Highlight>
                 <Text as="p">
-                  <Text className="rental__title">Fill or top off</Text>
-                  <Text className="rental__price">$2.00 /gal</Text>
+                  <Text as="span" className="rental__title">Fill or top off</Text>
+                  <Text as="span" className="rental__price">$2.00 /gal</Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text fontSize={3}>Payment due at time of service.</Text>
+                  <Text as="span" fontSize={3}>Payment due at time of service.</Text>
                 </Text>
               </S.Highlight>
             </Flex>
