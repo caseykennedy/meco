@@ -93,10 +93,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/caseykennedy/core37"
+    "url": "https://github.com/caseykennedy/meno"
   },
   "bugs": {
-    "url": "https://github.com/caseykennedy/core37/issues"
+    "url": "https://github.com/caseykennedy/meco/issues"
   },
   "husky": {
     "hooks": {

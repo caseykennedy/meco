@@ -1,7 +1,20 @@
 {
-  "extends": ["tslint-config-airbnb", "tslint-config-prettier", "tslint-react", "tslint-plugin-cypress"],
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-config-prettier",
+    "tslint-react",
+    "tslint-plugin-cypress"
+  ],
   "rules": {
-    "prettier": [true, { "trailingComma": "es5", "singleQuote": true, "semi": false, "printWidth": 120 }],
+    "prettier": [
+      true,
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "semi": false,
+        "printWidth": 120
+      }
+    ],
     "no-console": false,
     "no-use-before-declare": false,
     "quotemark": [true, "single", "avoid-escape", "jsx-double"],

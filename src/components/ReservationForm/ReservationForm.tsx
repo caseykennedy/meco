@@ -175,7 +175,6 @@ const Form = () => {
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
             <label htmlFor="rv"># of RVs:</label>
-
             <input
               type="number"
               name="rv"
