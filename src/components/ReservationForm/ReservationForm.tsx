@@ -46,17 +46,6 @@ const Form = () => {
   }
 
   return (
-    <>
-    <form
-        name="test-formcomp"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="test-formcomp" />
-        <input type="text" name="name" />
-      </form>
     <S.Form
       name="reservations"
       method="post"
@@ -176,7 +165,6 @@ const Form = () => {
         Submit
       </button>
     </S.Form>
-    </>
   )
 }
 
@@ -196,16 +184,6 @@ const ReservationForm: React.FC = () => {
         </Text>
       </Section>
       <Form />
-      <form
-        name="test-resform"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="test-resform" />
-        <input type="text" name="name" />
-      </form>
     </S.ReservationForm>
   )
 }
