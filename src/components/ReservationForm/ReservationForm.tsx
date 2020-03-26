@@ -48,15 +48,14 @@ const Form = () => {
   }
   return (
     <S.Form
-      name="reservations"
+      name="Reservations"
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      action="/"
     >
       <input type="hidden" name="bot-field" onChange={handleChange} />
-      <input type="hidden" name="form-name" value="reservations" />
+      <input type="hidden" name="form-name" value="Reservations" />
       <fieldset>
         <Box width={1} className="form-group">
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -73,6 +72,7 @@ const Form = () => {
               placeholder="Your name"
               required={true}
               onChange={handleChange}
+              value={name}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -89,6 +89,7 @@ const Form = () => {
               placeholder="Camp name"
               required={true}
               onChange={handleChange}
+              value={name}
             />
           </Box>
         </Box>
@@ -106,6 +107,7 @@ const Form = () => {
               type="email"
               required={true}
               onChange={handleChange}
+              value={name}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -116,6 +118,7 @@ const Form = () => {
               id="phone"
               placeholder="___ ___-____"
               onChange={handleChange}
+              value={name}
             />
           </Box>
         </Box>
@@ -128,6 +131,7 @@ const Form = () => {
               id="500Gal"
               placeholder="# of 500 gal. tanks needed"
               onChange={handleChange}
+              value={name}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -140,6 +144,7 @@ const Form = () => {
               id="1000Gal"
               placeholder="# of 1000 gal. tanks needed"
               onChange={handleChange}
+              value={name}
             />
           </Box>
         </Box>
@@ -152,6 +157,7 @@ const Form = () => {
               id="privateContainers"
               placeholder="# of private containers"
               onChange={handleChange}
+              value={name}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -168,6 +174,7 @@ const Form = () => {
             rows={4}
             placeholder="Comments"
             onChange={handleChange}
+            value={name}
           />
         </Box>
       </fieldset>
