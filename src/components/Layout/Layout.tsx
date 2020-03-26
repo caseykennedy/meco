@@ -57,15 +57,21 @@ const Layout: React.FC<LayoutProps> = ({
         >
           <ReservationForm />
         </Overlay>
-        <div style={{ display: 'none'}}>
+        <div style={{ display: 'none' }}>
           <form
-            name="reservations"
+            name="Reservations"
             method="post"
+            action="/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="reservations" />
+            <div style={{ display: 'none' }}>
+              <input
+                name="form-name"
+                value="Reservations"
+              />
+            </div>
             <fieldset>
               <Box width={1} className="form-group">
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -126,22 +132,22 @@ const Layout: React.FC<LayoutProps> = ({
               </Box>
               <Box width={1} className="form-group">
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="500Gal"># of 500 gal tanks needed:</label>
+                  <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
                   <input
                     type="number"
-                    name="500Gal"
-                    id="500Gal"
+                    name="fiveHunGal"
+                    id="fiveHunGal"
                     placeholder="# of 500 gal. tanks needed"
                   />
                 </Box>
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="1000Gal"># of 1000 gal. tanks:</label>
+                  <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
                   <input
                     type="number"
                     min="1"
                     max="20"
-                    name="1000Gal"
-                    id="1000Gal"
+                    name="thousandGal"
+                    id="thousandGal"
                     placeholder="# of 1000 gal. tanks needed"
                   />
                 </Box>

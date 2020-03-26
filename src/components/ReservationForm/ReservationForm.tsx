@@ -72,8 +72,8 @@ const Form = () => {
     <S.Form
       name="Reservations"
       method="post"
-      data-netlify="true"
       action="/"
+      data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
