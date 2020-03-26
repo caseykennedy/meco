@@ -20,7 +20,14 @@ import theme from '../../../config/theme'
 const Form = () => {
   // Encode form
   // TODO: use correct types
-  function encode(data: any) {
+  // function encode(data: any) {
+  //   return Object.keys(data)
+  //     .map(
+  //       key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`
+  //     )
+  //     .join('&')
+  // }
+  const encode = data => {
     return Object.keys(data)
       .map(
         key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`
@@ -43,29 +50,45 @@ const Form = () => {
   const handleChange = (e: any) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
-  const handleSubmit = (e: any) => {
-    // alert(`A name was submitted: ${state}`);
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
+  // const handleSubmit = (e: any) => {
+  //   // alert(`A name was submitted: ${state}`);
+  //   e.preventDefault()
+  //   const form = e.target
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: encode({
+  //       'form-name': form.getAttribute('name'),
+  //       ...state
+  //     })
+  //   })
+  //     .then(response => {
+  //       console.log('====================================')
+  //       console.log(`${JSON.stringify(response, null, 2)}`)
+  //       console.log('====================================')
+  //       navigate(form.getAttribute('action'))
+  //     })
+  //     .catch(error => {
+  //       console.log('====================================')
+  //       console.log(`error in submiting the form data:${error}`)
+  //       console.log('====================================')
+  //     })
+  // }
+  function handleFormSubmit(event: any) {
+    event.preventDefault()
+    const data = [...event.target.elements]
+      .filter(element => Boolean(element.name))
+      .reduce((json, element) => {
+        json[element.name] = element.value
+        return json
+      }, {})
+    fetch(event.target.action, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state
-      })
+      body: encode(data)
     })
-      .then(response => {
-        console.log('====================================')
-        console.log(`${JSON.stringify(response, null, 2)}`)
-        console.log('====================================')
-        navigate(form.getAttribute('action'))
-      })
-      .catch(error => {
-        console.log('====================================')
-        console.log(`error in submiting the form data:${error}`)
-        console.log('====================================')
-      })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error))
   }
   console.log(state)
   return (
@@ -75,11 +98,14 @@ const Form = () => {
       action="/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
+      onSubmit={handleFormSubmit}
     >
-      <input type="hidden" name="bot-field" onChange={handleChange} />
+      <input type="hidden" name="form-name" value="Reservations" />
       <div style={{ display: 'none' }}>
-        <input name="form-name" value="Reservations" onChange={handleChange} />
+        <label>
+          Don’t fill this out:{' '}
+          <input name="bot-field" onChange={handleChange} />
+        </label>
       </div>
       <fieldset>
         <Box width={1} className="form-group">
