@@ -3,15 +3,10 @@
 
 // ___________________________________________________________________
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 
-import useOverlay from '../../hooks/useOverlay'
-
-import Overlay from './Overlay'
 import Symbol from '../Symbol'
-
-import { Heading } from '../../elements'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
