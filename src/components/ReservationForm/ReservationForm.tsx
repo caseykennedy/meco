@@ -4,6 +4,7 @@
 
 // Core
 import React, { useState } from 'react'
+import { navigate } from 'gatsby-link'
 import { useTransition } from 'react-spring'
 
 // Styles
@@ -28,7 +29,34 @@ type Props = {
   isShowing: boolean
 }
 
+function encode(data: any) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const Form = ({ transition }: TransitionProps) => {
+  const [state, setState] = React.useState({})
+
+  const handleChange = (e: any) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state
+      })
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch(error => alert(error))
+  }
+
   return (
     <S.Container style={transition}>
       <Section pt={4} border={true}>
@@ -43,9 +71,47 @@ const Form = ({ transition }: TransitionProps) => {
           Spirit Rock.
         </Text>
       </Section>
-      <S.Form
-        name="Reservation Form"
-        method="POST"
+
+      <form
+        name="contact"
+        method="post"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" onChange={handleChange} />
+        <p>
+          <label>
+            Your name:
+            <br />
+            <input type="text" name="name" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your email:
+            <br />
+            <input type="email" name="email" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message:
+            <br />
+            <textarea name="message" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
+      {/* <S.Form
+        name="reservations"
+        method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
@@ -53,7 +119,7 @@ const Form = ({ transition }: TransitionProps) => {
         <input
           type="hidden"
           name="form-name"
-          value="Reservation Form"
+          value="reservations"
         />
         <fieldset>
           <Box width={1} className="form-group">
@@ -166,7 +232,7 @@ const Form = ({ transition }: TransitionProps) => {
         <button type="submit" value="Submit Request">
           Submit
         </button>
-      </S.Form>
+      </S.Form> */}
     </S.Container>
   )
 }
