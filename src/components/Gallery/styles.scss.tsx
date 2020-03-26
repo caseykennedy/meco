@@ -18,9 +18,7 @@ import { Rotate } from '../../styles/transitions'
 // Begin Styles
 // ___________________________________________________________________
 
-export const Container = styled(AnimatedBox)`
-  /* flex: 1; */
-
+export const Gallery = styled(AnimatedBox)`
   .slick-slider {
     .slick-arrow {
       &.slick-prev {

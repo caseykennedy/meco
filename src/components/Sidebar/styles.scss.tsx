@@ -20,7 +20,8 @@ import { Rotate } from '../../styles/transitions'
 
 export const Sidebar = styled(AnimatedBox)`
   width: ${theme.siteWidth};
-  padding: 0 0 2px 2px;
+  padding-left: 0;
+  margin-bottom: -2px;
   z-index: 10;
 
   transition: all 0.333s ease-in-out;
@@ -28,6 +29,7 @@ export const Sidebar = styled(AnimatedBox)`
   @media ${theme.mq.small} {
     /* display: initial; */
     position: fixed;
+    padding-left: 2px;
 
     width: ${theme.sidebarWidth};
     top: ${theme.headerHeight};

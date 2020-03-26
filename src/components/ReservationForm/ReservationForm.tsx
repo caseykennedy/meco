@@ -32,10 +32,8 @@ const Form = ({ transition }: TransitionProps) => {
   return (
     <S.Container style={transition}>
       <Section pt={4} border={true}>
-        <Heading fontSize={4} mb={0}>
-          Don't get left
-          <br />
-          in the dust.
+        <Heading fontSize={[4, 5]} pr={[0, 6]} mb={0}>
+          Don't get left in the dust.
         </Heading>
       </Section>
       <Section pt={4} border={true}>
@@ -46,7 +44,7 @@ const Form = ({ transition }: TransitionProps) => {
         </Text>
       </Section>
       <S.Form
-        name="meco-reservation-form"
+        name="Reservation Form"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
@@ -54,8 +52,8 @@ const Form = ({ transition }: TransitionProps) => {
         <input type="hidden" name="bot-field" />
         <input
           type="hidden"
-          name="meco-reservation-form"
-          value="meco-reservation-form"
+          name="form-name"
+          value="Reservation Form"
         />
         <fieldset>
           <Box width={1} className="form-group">
@@ -66,7 +64,6 @@ const Form = ({ transition }: TransitionProps) => {
                   *
                 </abbr>
               </label>
-
               <input
                 type="text"
                 name="name"
@@ -82,7 +79,6 @@ const Form = ({ transition }: TransitionProps) => {
                   *
                 </abbr>
               </label>
-
               <input
                 type="text"
                 name="campName"
@@ -92,7 +88,6 @@ const Form = ({ transition }: TransitionProps) => {
               />
             </Box>
           </Box>
-
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
               <label htmlFor="email">
@@ -101,7 +96,6 @@ const Form = ({ transition }: TransitionProps) => {
                   *
                 </abbr>
               </label>
-
               <input
                 name="email"
                 placeholder="Your email"
@@ -119,55 +113,46 @@ const Form = ({ transition }: TransitionProps) => {
               />
             </Box>
           </Box>
-
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="500Gal">500 gallon tanks needed:</label>
-
+              <label htmlFor="500Gal"># of 500 gal tanks needed:</label>
               <input
-                type="text"
+                type="number"
                 name="500Gal"
                 id="500Gal"
-                placeholder="500 gallon tanks needed"
+                placeholder="# of 500 gal tanks needed"
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="500Gal">1000 gallon tanks needed:</label>
-
+              <label htmlFor="1000Gal"># of 1000 gal. tanks:</label>
               <input
                 type="number"
                 min="1"
                 max="20"
                 name="1000Gal"
                 id="1000Gal"
-                placeholder="1000 gallon tanks needed"
+                placeholder="# of 1000 gal. tanks needed"
               />
             </Box>
           </Box>
-
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="privateContainers">privateContainers</label>
-
+              <label htmlFor="privateContainers">
+                # of private containers:
+              </label>
               <input
-                type="text"
+                type="number"
                 name="privateContainers"
                 id="privateContainers"
-                placeholder="privateContainers"
+                placeholder="# of private containers"
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="rv">Number of RVs:</label>
+              <label htmlFor="rv"># of RVs:</label>
 
-              <input
-                type="text"
-                name="rv"
-                id="rv"
-                placeholder="Number of RVs"
-              />
+              <input type="number" name="rv" id="rv" placeholder="# of RVs" />
             </Box>
           </Box>
-
           <Box width={1} className="form-group">
             <label htmlFor="comments">Comments:</label>
             <textarea
@@ -178,7 +163,6 @@ const Form = ({ transition }: TransitionProps) => {
             />
           </Box>
         </fieldset>
-
         <button type="submit" value="Submit Request">
           Submit
         </button>

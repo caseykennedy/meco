@@ -32,11 +32,12 @@ export const Content = styled(Flex)`
   padding-top: ${theme.space[3]};
 
   background: ${theme.colors.background};
-  border-left: ${theme.border};
+  border-left: none;
 
   /* z-index: 99; */
 
   @media ${theme.mq.small} {
+    border-left: ${theme.border};
     width: calc(
       calc(${theme.siteWidth} - ${theme.headerHeight}) - ${theme.sidebarWidth} +
         2px

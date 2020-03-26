@@ -127,7 +127,7 @@ const Gallery: React.FC = () => {
     to: { transform: theme.transform.matrix.to }
   })
   return (
-    <S.Container width={1} style={pageAnimation}>
+    <S.Gallery width={1} style={pageAnimation}>
       <Slider {...settings}>
         {images.map(({ node: image }) => (
           <Box width={1} key={image.id}>
@@ -135,7 +135,7 @@ const Gallery: React.FC = () => {
           </Box>
         ))}
       </Slider>
-    </S.Container>
+    </S.Gallery>
   )
 }
 
