@@ -47,16 +47,6 @@ const Layout: React.FC<LayoutProps> = ({
         <Sidebar isShowing={isShowing} toggleOverlay={toggleOverlay} />
         <S.Main ref={mainRef}>
           {children}
-          <form
-            name="test"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="test" />
-            <input type="text" name="name" />
-          </form>
         </S.Main>
         <Overlay
           id="drawer-root"
@@ -66,7 +56,7 @@ const Layout: React.FC<LayoutProps> = ({
           mainRef={mainRef}
           className={`${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}
         >
-          <ReservationForm isShowing={isShowing} />
+          <ReservationForm />
         </Overlay>
       </S.Wrapper>
     </ThemeProvider>

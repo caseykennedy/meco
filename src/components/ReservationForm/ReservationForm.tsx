@@ -17,21 +17,13 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type TransitionProps = {
-  transition: any
-}
-
-type Props = {
-  isShowing: boolean
-}
-
 function encode(data: any) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
-const Form = ({ transition }: TransitionProps) => {
+const Form = () => {
   const [state, setState] = React.useState({})
 
   const handleChange = (e: any) => {
@@ -54,7 +46,131 @@ const Form = ({ transition }: TransitionProps) => {
   }
 
   return (
-    <S.ReservationForm style={transition}>
+    <S.Form
+      name="reservations"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+    >
+      <input type="hidden" name="bot-field" onChange={handleChange} />
+      <input type="hidden" name="form-name" value="reservations" />
+      <fieldset>
+        <Box width={1} className="form-group">
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="name">
+              Name:{' '}
+              <abbr title="required" aria-label="required">
+                *
+              </abbr>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              required={true}
+            />
+          </Box>
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="campName">
+              Name:{' '}
+              <abbr title="required" aria-label="required">
+                *
+              </abbr>
+            </label>
+            <input
+              type="text"
+              name="campName"
+              id="campName"
+              placeholder="Camp name"
+              required={true}
+            />
+          </Box>
+        </Box>
+        <Box width={1} className="form-group">
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="email">
+              Email:
+              <abbr title="required" aria-label="required">
+                *
+              </abbr>
+            </label>
+            <input
+              name="email"
+              placeholder="Your email"
+              type="email"
+              required={true}
+            />
+          </Box>
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="phone">Phone:</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="___ ___-____"
+            />
+          </Box>
+        </Box>
+        <Box width={1} className="form-group">
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="500Gal"># of 500 gal tanks needed:</label>
+            <input
+              type="number"
+              name="500Gal"
+              id="500Gal"
+              placeholder="# of 500 gal. tanks needed"
+            />
+          </Box>
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="1000Gal"># of 1000 gal. tanks:</label>
+            <input
+              type="number"
+              min="1"
+              max="20"
+              name="1000Gal"
+              id="1000Gal"
+              placeholder="# of 1000 gal. tanks needed"
+            />
+          </Box>
+        </Box>
+        <Box width={1} className="form-group">
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="privateContainers"># of private containers:</label>
+            <input
+              type="number"
+              name="privateContainers"
+              id="privateContainers"
+              placeholder="# of private containers"
+            />
+          </Box>
+          <Box width={[1, 1, 1 / 2]} className="form-group__box">
+            <label htmlFor="rv"># of RVs:</label>
+
+            <input type="number" name="rv" id="rv" placeholder="# of RVs" />
+          </Box>
+        </Box>
+        <Box width={1} className="form-group">
+          <label htmlFor="comments">Comments:</label>
+          <textarea
+            name="details"
+            id="details"
+            rows={4}
+            placeholder="Comments"
+          />
+        </Box>
+      </fieldset>
+      <button type="submit" value="Submit Request">
+        Submit
+      </button>
+    </S.Form>
+  )
+}
+
+const ReservationForm: React.FC = () => {
+  return (
+    <S.ReservationForm>
       <Section pt={4} border={true}>
         <Heading fontSize={[4, 5]} pr={[0, 6]} mb={0}>
           Don't get left in the dust.
@@ -67,150 +183,8 @@ const Form = ({ transition }: TransitionProps) => {
           Spirit Rock.
         </Text>
       </Section>
-
-      <form
-        className="form-reservations"
-        name="reservations"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="bot-field" onChange={handleChange} />
-        <input type="hidden" name="form-name" value="reservations" />
-        <fieldset>
-          <Box width={1} className="form-group">
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="name">
-                Name:{' '}
-                <abbr title="required" aria-label="required">
-                  *
-                </abbr>
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Your name"
-                required={true}
-              />
-            </Box>
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="campName">
-                Name:{' '}
-                <abbr title="required" aria-label="required">
-                  *
-                </abbr>
-              </label>
-              <input
-                type="text"
-                name="campName"
-                id="campName"
-                placeholder="Camp name"
-                required={true}
-              />
-            </Box>
-          </Box>
-          <Box width={1} className="form-group">
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="email">
-                Email:
-                <abbr title="required" aria-label="required">
-                  *
-                </abbr>
-              </label>
-              <input
-                name="email"
-                placeholder="Your email"
-                type="email"
-                required={true}
-              />
-            </Box>
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="phone">Phone:</label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="___ ___-____"
-              />
-            </Box>
-          </Box>
-          <Box width={1} className="form-group">
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="500Gal"># of 500 gal tanks needed:</label>
-              <input
-                type="number"
-                name="500Gal"
-                id="500Gal"
-                placeholder="# of 500 gal. tanks needed"
-              />
-            </Box>
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="1000Gal"># of 1000 gal. tanks:</label>
-              <input
-                type="number"
-                min="1"
-                max="20"
-                name="1000Gal"
-                id="1000Gal"
-                placeholder="# of 1000 gal. tanks needed"
-              />
-            </Box>
-          </Box>
-          <Box width={1} className="form-group">
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="privateContainers">
-                # of private containers:
-              </label>
-              <input
-                type="number"
-                name="privateContainers"
-                id="privateContainers"
-                placeholder="# of private containers"
-              />
-            </Box>
-            <Box width={[1, 1, 1 / 2]} className="form-group__box">
-              <label htmlFor="rv"># of RVs:</label>
-
-              <input type="number" name="rv" id="rv" placeholder="# of RVs" />
-            </Box>
-          </Box>
-          <Box width={1} className="form-group">
-            <label htmlFor="comments">Comments:</label>
-            <textarea
-              name="details"
-              id="details"
-              rows={4}
-              placeholder="Comments"
-            />
-          </Box>
-        </fieldset>
-        <button type="submit" value="Submit Request">
-          Submit
-        </button>
-      </form>
+      <Form />
     </S.ReservationForm>
-  )
-}
-
-const ReservationForm: React.FC<Props> = ({ isShowing }) => {
-  const transitions = useTransition(isShowing, null, {
-    from: {
-      opacity: 0
-    },
-    enter: {
-      opacity: 1
-    },
-    leave: {
-      opacity: 0
-    },
-    trail: 250,
-    unique: true,
-    reset: true
-  })
-  return transitions.map(
-    ({ item, key, props }) => item && <Form key={key} transition={props} />
   )
 }
 
