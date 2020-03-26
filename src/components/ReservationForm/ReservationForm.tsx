@@ -3,7 +3,7 @@
 // ___________________________________________________________________
 
 // Core
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { navigate } from 'gatsby-link'
 import { useTransition } from 'react-spring'
 
@@ -73,12 +73,12 @@ const Form = () => {
       name="Reservations"
       method="post"
       data-netlify="true"
-      // action="/"
+      action="/"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="bot-field" onChange={handleChange} />
-      <div style={{ display: 'none'}}>
+      <div style={{ display: 'none' }}>
         <input name="form-name" value="Reservations" onChange={handleChange} />
       </div>
       <fieldset>
