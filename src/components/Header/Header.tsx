@@ -52,5 +52,3 @@ const Header: React.FC<HeaderShape> = ({
 }
 
 export default Header
-
-// ___________________________________________________________________

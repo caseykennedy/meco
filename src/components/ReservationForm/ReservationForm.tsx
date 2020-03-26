@@ -54,7 +54,7 @@ const Form = ({ transition }: TransitionProps) => {
   }
 
   return (
-    <S.Container style={transition}>
+    <S.ReservationForm style={transition}>
       <Section pt={4} border={true}>
         <Heading fontSize={[4, 5]} pr={[0, 6]} mb={0}>
           Don't get left in the dust.
@@ -68,7 +68,8 @@ const Form = ({ transition }: TransitionProps) => {
         </Text>
       </Section>
 
-      <S.Form
+      <form
+        className="form-reservations"
         name="reservations"
         method="post"
         data-netlify="true"
@@ -188,8 +189,8 @@ const Form = ({ transition }: TransitionProps) => {
         <button type="submit" value="Submit Request">
           Submit
         </button>
-      </S.Form>
-    </S.Container>
+      </form>
+    </S.ReservationForm>
   )
 }
 
