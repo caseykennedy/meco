@@ -66,61 +66,21 @@ const Form = ({ transition }: TransitionProps) => {
       </Section>
       <Section pt={4} border={true}>
         <Text as="p">
-          Our mission here ar MECO Sales &amp; Rentals is Awareness spiral
+          Our mission here at MECO Sales &amp; Rentals is Awareness spiral
           east-west, rolfing peacock feather synchronicity. Dead sea minerals
           Spirit Rock.
         </Text>
       </Section>
 
-      <form
-        name="contact"
-        method="post"
-        action="/thanks/"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="hidden" name="bot-field" onChange={handleChange} />
-        <p>
-          <label>
-            Your name:
-            <br />
-            <input type="text" name="name" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your email:
-            <br />
-            <input type="email" name="email" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message:
-            <br />
-            <textarea name="message" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-
-      {/* <S.Form
+      <S.Form
         name="reservations"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
-        <input type="hidden" name="bot-field" />
-        <input
-          type="hidden"
-          name="form-name"
-          value="reservations"
-        />
+        <input type="hidden" name="bot-field" onChange={handleChange} />
+        <input name="form-name" value="reservations" />
         <fieldset>
           <Box width={1} className="form-group">
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -186,7 +146,7 @@ const Form = ({ transition }: TransitionProps) => {
                 type="number"
                 name="500Gal"
                 id="500Gal"
-                placeholder="# of 500 gal tanks needed"
+                placeholder="# of 500 gal. tanks needed"
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -232,7 +192,7 @@ const Form = ({ transition }: TransitionProps) => {
         <button type="submit" value="Submit Request">
           Submit
         </button>
-      </S.Form> */}
+      </S.Form>
     </S.Container>
   )
 }
