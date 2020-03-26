@@ -17,19 +17,21 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
+// Encode form
+// TODO: use correct types
 function encode(data: any) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
     .join('&')
 }
 
 const Form = () => {
+  // Handle form submit
+  // TODO: use correct types for (e)
   const [state, setState] = React.useState({})
-
   const handleChange = (e: any) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
-
   const handleSubmit = (e: any) => {
     e.preventDefault()
     const form = e.target
@@ -44,7 +46,6 @@ const Form = () => {
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
-
   return (
     <S.Form
       name="reservations"
@@ -52,6 +53,7 @@ const Form = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      action="/"
     >
       <input type="hidden" name="bot-field" onChange={handleChange} />
       <input type="hidden" name="form-name" value="reservations" />
@@ -70,6 +72,7 @@ const Form = () => {
               id="name"
               placeholder="Your name"
               required={true}
+              onChange={handleChange}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -85,6 +88,7 @@ const Form = () => {
               id="campName"
               placeholder="Camp name"
               required={true}
+              onChange={handleChange}
             />
           </Box>
         </Box>
@@ -101,6 +105,7 @@ const Form = () => {
               placeholder="Your email"
               type="email"
               required={true}
+              onChange={handleChange}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -110,6 +115,7 @@ const Form = () => {
               name="phone"
               id="phone"
               placeholder="___ ___-____"
+              onChange={handleChange}
             />
           </Box>
         </Box>
@@ -121,6 +127,7 @@ const Form = () => {
               name="500Gal"
               id="500Gal"
               placeholder="# of 500 gal. tanks needed"
+              onChange={handleChange}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -132,6 +139,7 @@ const Form = () => {
               name="1000Gal"
               id="1000Gal"
               placeholder="# of 1000 gal. tanks needed"
+              onChange={handleChange}
             />
           </Box>
         </Box>
@@ -143,6 +151,7 @@ const Form = () => {
               name="privateContainers"
               id="privateContainers"
               placeholder="# of private containers"
+              onChange={handleChange}
             />
           </Box>
           <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -158,6 +167,7 @@ const Form = () => {
             id="details"
             rows={4}
             placeholder="Comments"
+            onChange={handleChange}
           />
         </Box>
       </fieldset>
