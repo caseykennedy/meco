@@ -65,12 +65,17 @@ const Layout: React.FC<LayoutProps> = ({
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
-            <input type="hidden" name="bot-field" />
+            <input
+              type="hidden"
+              readOnly={true}
+              name="form-name"
+              value="Reservations"
+            />
             <div style={{ display: 'none' }}>
-              <input
-                name="form-name"
-                value="Reservations"
-              />
+              <label>
+                Don’t fill this out:{' '}
+                <input name="bot-field" />
+              </label>
             </div>
             <fieldset>
               <Box width={1} className="form-group">
