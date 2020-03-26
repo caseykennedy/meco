@@ -49,11 +49,12 @@ const Form = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        'form-name': 'Reservations',
         ...state
+        // form.getAttribute('value')
       })
     })
-      // .then(() => navigate(form.getAttribute('action')))
+      .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
   console.log(state)
@@ -62,7 +63,7 @@ const Form = () => {
       name="Reservations"
       method="post"
       data-netlify="true"
-      // action="/"
+      action="/"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
