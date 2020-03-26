@@ -72,17 +72,6 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
         </S.Indent>
       </S.HomePage>
       <Footer />
-
-      <form
-        name="test-home"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="test-home" />
-        <input type="text" name="name" />
-      </form>
     </>
   )
 }
