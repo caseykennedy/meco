@@ -40,27 +40,9 @@ const Layout: React.FC<LayoutProps> = ({
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <S.Wrapper>
-        <Header
-          isShowing={isShowing}
-          toggleOverlay={toggleOverlay}
-          mainRef={mainRef}
-        />
-        <Sidebar isShowing={isShowing} toggleOverlay={toggleOverlay} />
-        <S.Main ref={mainRef}>{children}</S.Main>
-        <Overlay
-          id="drawer-root"
-          root="root"
-          isOpen={isShowing}
-          handleExit={toggleOverlay}
-          mainRef={mainRef}
-          className={`${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}
-        >
-          <ReservationForm />
-        </Overlay>
-        <ReservationForm />
-        {/* <div style={{ display: 'none' }}>
+      <div>
           <form
-            name="Reservations New"
+            name="Reservations Newest"
             method="post"
             action="/success/"
             data-netlify="true"
@@ -69,7 +51,7 @@ const Layout: React.FC<LayoutProps> = ({
             <input
               type="hidden"
               name="form-name"
-              value="Reservations"
+              value="Reservations Newest"
             />
             <div style={{ display: 'none' }}>
               <label>
@@ -106,7 +88,6 @@ const Layout: React.FC<LayoutProps> = ({
                     name="campName"
                     id="campName"
                     placeholder="Camp name"
-                    required={true}
                   />
                 </Box>
               </Box>
@@ -194,7 +175,24 @@ const Layout: React.FC<LayoutProps> = ({
               Submit
             </button>
           </form>
-        </div> */}
+        </div>
+        <Header
+          isShowing={isShowing}
+          toggleOverlay={toggleOverlay}
+          mainRef={mainRef}
+        />
+        <Sidebar isShowing={isShowing} toggleOverlay={toggleOverlay} />
+        <S.Main ref={mainRef}>{children}</S.Main>
+        <Overlay
+          id="drawer-root"
+          root="root"
+          isOpen={isShowing}
+          handleExit={toggleOverlay}
+          mainRef={mainRef}
+          className={`${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}
+        >
+          <ReservationForm />
+        </Overlay>
       </S.Wrapper>
     </ThemeProvider>
   )

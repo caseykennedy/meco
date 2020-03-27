@@ -25,7 +25,7 @@ function encode(data: any) {
     .join('&')
 }
 
-const ReservationForm: React.FC = () => {
+const ReservationForm = () => {
   const [state, setState] = React.useState({})
   const handleChange = (e: any) => {
     setState({ ...state, [e.target.name]: e.target.value })
