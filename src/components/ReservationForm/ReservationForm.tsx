@@ -4,7 +4,7 @@
 
 // Core
 import React, { useState, useRef } from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form } from 'formik'
 import { navigate } from 'gatsby-link'
 import { useTransition } from 'react-spring'
 
@@ -27,44 +27,6 @@ const encode = (data: any) => {
 }
 
 const ReservationForm = () => {
-  // const [state, setState] = React.useState({})
-  // const handleChange = (e: any) => {
-  //   setState({ ...state, [e.target.name]: e.target.value })
-  // }
-  // const handleSubmit = (e: any) => {
-  //   e.preventDefault()
-  //   const form = e.target
-
-  //   console.log('====================================')
-  //   console.log(
-  //     encode({
-  //       'form-name': form.getAttribute('name'),
-  //       ...state
-  //     })
-  //   )
-  //   console.log('====================================')
-
-  //   fetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: encode({
-  //       'form-name': form.getAttribute('name'),
-  //       ...state
-  //     })
-  //   })
-  //     .then(response => {
-  //       console.log('====================================')
-  //       console.log(`${JSON.stringify(response, null, 2)}`)
-  //       console.log('====================================')
-  //     })
-  //     // .then(() => alert('success'))
-  //     .catch(error => {
-  //       console.log('====================================')
-  //       console.log(`error in submiting the form data:${error}`)
-  //       console.log('====================================')
-  //     })
-  // }
-  // console.log(state)
   return (
     <S.ReservationForm>
       <Section pt={4} border={true}>
@@ -79,198 +41,125 @@ const ReservationForm = () => {
           Spirit Rock.
         </Text>
       </Section>
-      <Formik
-        initialValues={{
-          name: '',
-          campName: '',
-          phone: '',
-          email: '',
-          fiveHunGal: '',
-          thousandGal: '',
-          privateContainers: '',
-          rv: '',
-          details: ''
-        }}
-        // validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          fetch('/?no-cache=1', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({
-              'form-name': 'Formik',
-              ...values
-            })
-          })
-            .then(response => {
-              console.log('====================================')
-              console.log(`${JSON.stringify(response, null, 2)}`)
-              console.log('====================================')
-            })
-            .then(() => {
-              navigate('/')
-              setSubmitting(false)
-            })
-            // .then(() => alert('success'))
-            .catch(error => {
-              console.log('====================================')
-              console.log(`error in submiting the form data:${error}`)
-              console.log('====================================')
-            })
-            .catch(error => {
-              console.log(error)
-              alert('Error: Please Try Again!')
-              setSubmitting(false)
-            })
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 1000)
-        }}
+      <S.Form
+        // Using class instead of SC for Netlify form
+        name="Static Form"
+        data-netlify="true"
+        data-netlify-honeypot="bot-input"
       >
-        {({ errors, touched, isSubmitting, handleSubmit, handleReset }) => (
-          <Form
-            // Using class instead of SC for Netlify form
-            className="reservation-form"
-            name="Formik"
-            onSubmit={handleSubmit}
-            onReset={handleReset}
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input
-              type="hidden"
-              // readOnly={true}
-              name="form-name"
-              value="Formik"
-            />
-            <div style={{ display: 'none' }}>
-              <label>
-                Don’t fill this out: <input name="bot-field" />
+        <input type="hidden" name="bot-input" />
+        <input type="hidden" name="form-name" value="Static Form" />
+        <fieldset>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="name">
+                Name:{' '}
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
               </label>
-            </div>
-            <fieldset>
-              <Box width={1} className="form-group">
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="name">
-                    Name:{' '}
-                    <abbr title="required" aria-label="required">
-                      *
-                    </abbr>
-                  </label>
-                  <Field
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Your name"
-                    required={true}
-                  />
-                </Box>
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="campName">
-                    Camp Name:{' '}
-                    <abbr title="required" aria-label="required">
-                      *
-                    </abbr>
-                  </label>
-                  <Field
-                    type="text"
-                    name="campName"
-                    id="campName"
-                    placeholder="Camp name"
-                    required={true}
-                  />
-                </Box>
-              </Box>
-              <Box width={1} className="form-group">
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="email">
-                    Email:
-                    <abbr title="required" aria-label="required">
-                      *
-                    </abbr>
-                  </label>
-                  <Field
-                    name="email"
-                    placeholder="Your email"
-                    type="email"
-                    required={true}
-                  />
-                </Box>
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="phone">Phone:</label>
-                  <Field
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    placeholder="___ ___-____"
-                  />
-                </Box>
-              </Box>
-              <Box width={1} className="form-group">
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
-                  <Field
-                    type="number"
-                    name="fiveHunGal"
-                    id="fiveHunGal"
-                    placeholder="# of 500 gal. tanks needed"
-                  />
-                </Box>
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
-                  <Field
-                    type="number"
-                    min="1"
-                    max="20"
-                    name="thousandGal"
-                    id="thousandGal"
-                    placeholder="# of 1000 gal. tanks needed"
-                  />
-                </Box>
-              </Box>
-              <Box width={1} className="form-group">
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="privateContainers">
-                    # of private containers:
-                  </label>
-                  <Field
-                    type="number"
-                    name="privateContainers"
-                    id="privateContainers"
-                    placeholder="# of private containers"
-                  />
-                </Box>
-                <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                  <label htmlFor="rv"># of RVs:</label>
-                  <Field
-                    type="number"
-                    name="rv"
-                    id="rv"
-                    placeholder="# of RVs"
-                  />
-                </Box>
-              </Box>
-              <Box width={1} className="form-group">
-                <label htmlFor="comments">Comments:</label>
-                <Field
-                  as="textarea"
-                  name="details"
-                  id="details"
-                  rows={4}
-                  placeholder="Comments"
-                />
-              </Box>
-            </fieldset>
-            <button
-              type="submit"
-              value="Submit Request"
-              disabled={isSubmitting}
-            >
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your name"
+                required={true}
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="campName">
+                Camp Name:{' '}
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
+              </label>
+              <input
+                type="text"
+                name="campName"
+                id="campName"
+                placeholder="Camp name"
+                required={true}
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="email">
+                Email:
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
+              </label>
+              <input
+                name="email"
+                placeholder="Your email"
+                type="email"
+                required={true}
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="phone">Phone:</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="___ ___-____"
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
+              <input
+                type="number"
+                name="fiveHunGal"
+                id="fiveHunGal"
+                placeholder="# of 500 gal. tanks needed"
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
+              <input
+                type="number"
+                min="1"
+                max="20"
+                name="thousandGal"
+                id="thousandGal"
+                placeholder="# of 1000 gal. tanks needed"
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="privateContainers">
+                # of private containers:
+              </label>
+              <input
+                type="number"
+                name="privateContainers"
+                id="privateContainers"
+                placeholder="# of private containers"
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="rv"># of RVs:</label>
+              <input type="number" name="rv" id="rv" placeholder="# of RVs" />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <label htmlFor="comments">Comments:</label>
+            <textarea
+              name="details"
+              id="details"
+              rows={4}
+              placeholder="Comments"
+            />
+          </Box>
+        </fieldset>
+        <button type="submit" value="Submit Request">
+          Submit
+        </button>
+      </S.Form>
     </S.ReservationForm>
   )
 }
