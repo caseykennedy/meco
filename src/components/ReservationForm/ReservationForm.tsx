@@ -26,17 +26,7 @@ function encode(data: any) {
 }
 
 const ReservationForm: React.FC = () => {
-  const [state, setState] = React.useState({
-    name: '',
-    campName: '',
-    email: '',
-    phone: '',
-    fiveHunGal: '',
-    thousandGal: '',
-    privateContainers: '',
-    rv: '',
-    details: ''
-  })
+  const [state, setState] = React.useState({})
   const handleChange = (e: any) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
@@ -48,15 +38,18 @@ const ReservationForm: React.FC = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        'form-name': 'Reservations New',
         ...state
       })
     })
-      .then(response => {
-        console.log('====================================')
-        console.log(`${JSON.stringify(response, null, 2)}`)
-        console.log('====================================')
-        navigate(form.getAttribute('action'))
+      .then(() => {
+        setState({
+          name: '',
+          email: '',
+          phone: '',
+          details: ''
+        })
+        alert('Success!')
       })
       .catch(error => {
         console.log('====================================')
@@ -82,7 +75,7 @@ const ReservationForm: React.FC = () => {
       <form
         // Using class instead of SC for Netlify form
         className="reservation-form"
-        name="Reservations"
+        name="Reservations New"
         method="post"
         action="/"
         data-netlify="true"
@@ -117,7 +110,6 @@ const ReservationForm: React.FC = () => {
                 placeholder="Your name"
                 required={true}
                 onChange={handleChange}
-                value={state.name}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -134,7 +126,6 @@ const ReservationForm: React.FC = () => {
                 placeholder="Camp name"
                 required={true}
                 onChange={handleChange}
-                value={state.campName}
               />
             </Box>
           </Box>
@@ -152,7 +143,6 @@ const ReservationForm: React.FC = () => {
                 type="email"
                 required={true}
                 onChange={handleChange}
-                value={state.email}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -163,7 +153,6 @@ const ReservationForm: React.FC = () => {
                 id="phone"
                 placeholder="___ ___-____"
                 onChange={handleChange}
-                value={state.phone}
               />
             </Box>
           </Box>
@@ -176,7 +165,6 @@ const ReservationForm: React.FC = () => {
                 id="fiveHunGal"
                 placeholder="# of 500 gal. tanks needed"
                 onChange={handleChange}
-                value={state.fiveHunGal}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -189,7 +177,6 @@ const ReservationForm: React.FC = () => {
                 id="thousandGal"
                 placeholder="# of 1000 gal. tanks needed"
                 onChange={handleChange}
-                value={state.thousandGal}
               />
             </Box>
           </Box>
@@ -204,7 +191,6 @@ const ReservationForm: React.FC = () => {
                 id="privateContainers"
                 placeholder="# of private containers"
                 onChange={handleChange}
-                value={state.privateContainers}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -215,7 +201,6 @@ const ReservationForm: React.FC = () => {
                 id="rv"
                 placeholder="# of RVs"
                 onChange={handleChange}
-                value={state.rv}
               />
             </Box>
           </Box>
@@ -227,7 +212,6 @@ const ReservationForm: React.FC = () => {
               rows={4}
               placeholder="Comments"
               onChange={handleChange}
-              value={state.details}
             />
           </Box>
         </fieldset>

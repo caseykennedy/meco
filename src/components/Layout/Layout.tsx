@@ -59,7 +59,7 @@ const Layout: React.FC<LayoutProps> = ({
         </Overlay>
         <div style={{ display: 'none' }}>
           <form
-            name="Reservations"
+            name="Reservations New"
             method="post"
             action="/"
             data-netlify="true"
