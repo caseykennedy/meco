@@ -80,7 +80,17 @@ const ReservationForm = () => {
         </Text>
       </Section>
       <Formik
-        initialValues={{ name: '', email: '', message: '' }}
+        initialValues={{
+          name: '',
+          campName: '',
+          phone: '',
+          email: '',
+          fiveHunGal: '',
+          thousandGal: '',
+          privateContainers: '',
+          rv: '',
+          details: ''
+        }}
         // validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           fetch('/?no-cache=1', {
@@ -94,6 +104,12 @@ const ReservationForm = () => {
             .then(() => {
               alert('Success!')
               setSubmitting(false)
+            })
+            .then(response => {
+              console.log('====================================')
+              console.log(`${JSON.stringify(response, null, 2)}`)
+              console.log(values)
+              console.log('====================================')
             })
             .catch(error => {
               console.log(error)
@@ -240,7 +256,11 @@ const ReservationForm = () => {
                 />
               </Box>
             </fieldset>
-            <button type="submit" value="Submit Request" disabled={isSubmitting}>
+            <button
+              type="submit"
+              value="Submit Request"
+              disabled={isSubmitting}
+            >
               Submit
             </button>
           </form>
