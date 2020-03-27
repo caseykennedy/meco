@@ -42,14 +42,11 @@ const ReservationForm: React.FC = () => {
         ...state
       })
     })
-      .then(() => {
-        setState({
-          name: '',
-          email: '',
-          phone: '',
-          details: ''
-        })
-        alert('Success!')
+      .then(response => {
+        console.log('====================================')
+        console.log(`${JSON.stringify(response, null, 2)}`)
+        console.log('====================================')
+        navigate(form.getAttribute('action'))
       })
       .catch(error => {
         console.log('====================================')
@@ -77,7 +74,7 @@ const ReservationForm: React.FC = () => {
         className="reservation-form"
         name="Reservations New"
         method="post"
-        action="/"
+        action="/success/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
@@ -110,6 +107,7 @@ const ReservationForm: React.FC = () => {
                 placeholder="Your name"
                 required={true}
                 onChange={handleChange}
+
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -126,6 +124,7 @@ const ReservationForm: React.FC = () => {
                 placeholder="Camp name"
                 required={true}
                 onChange={handleChange}
+
               />
             </Box>
           </Box>

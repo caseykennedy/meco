@@ -61,7 +61,7 @@ const Layout: React.FC<LayoutProps> = ({
           <form
             name="Reservations New"
             method="post"
-            action="/"
+            action="/success/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
