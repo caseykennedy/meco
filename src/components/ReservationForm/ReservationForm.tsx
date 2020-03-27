@@ -79,7 +79,9 @@ const ReservationForm: React.FC = () => {
           Spirit Rock.
         </Text>
       </Section>
-      <S.Form
+      <form
+        // Using class instead of SC for Netlify form
+        className="reservation-form"
         name="Reservations"
         method="post"
         action="/"
@@ -232,7 +234,7 @@ const ReservationForm: React.FC = () => {
         <button type="submit" value="Submit Request">
           Submit
         </button>
-      </S.Form>
+      </form>
     </S.ReservationForm>
   )
 }
