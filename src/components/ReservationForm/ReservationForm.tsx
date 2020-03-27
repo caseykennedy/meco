@@ -45,7 +45,7 @@ const ReservationForm = () => {
 
     fetch('/?no-cache=1', {
       method: 'POST',
-      // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
         ...state
