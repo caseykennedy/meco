@@ -17,43 +17,7 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-// Encode form
-// TODO: use correct types
-function encode(data: any) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
-    .join('&')
-}
-
-const ReservationForm = () => {
-  const [state, setState] = React.useState({})
-  const handleChange = (e: any) => {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'Reservations Newer',
-        ...state
-      })
-    })
-      .then(response => {
-        console.log('====================================')
-        console.log(`${JSON.stringify(response, null, 2)}`)
-        console.log('====================================')
-        navigate(form.getAttribute('action'))
-      })
-      .catch(error => {
-        console.log('====================================')
-        console.log(`error in submiting the form data:${error}`)
-        console.log('====================================')
-      })
-  }
-  console.log(state)
+const ReservationForm: React.FC = () => {
   return (
     <S.ReservationForm>
       <Section pt={4} border={true}>
@@ -71,23 +35,16 @@ const ReservationForm = () => {
       <form
         // Using class instead of SC for Netlify form
         className="reservation-form"
-        name="Reservations Newer"
+        name="Reservations Vanilla"
         method="post"
         action="/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
       >
-        <input
-          type="hidden"
-          // readOnly={true}
-          name="form-name"
-          value="Reservations Newer"
-        />
+        <input type="hidden" name="form-name" value="Reservations Vanilla" />
         <div style={{ display: 'none' }}>
           <label>
-            Don’t fill this out:{' '}
-            <input name="bot-field" onChange={handleChange} />
+            Don’t fill this out: <input name="bot-field" />
           </label>
         </div>
         <fieldset>
@@ -105,8 +62,6 @@ const ReservationForm = () => {
                 id="name"
                 placeholder="Your name"
                 required={true}
-                onChange={handleChange}
-
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -122,8 +77,6 @@ const ReservationForm = () => {
                 id="campName"
                 placeholder="Camp name"
                 required={true}
-                onChange={handleChange}
-
               />
             </Box>
           </Box>
@@ -140,7 +93,6 @@ const ReservationForm = () => {
                 placeholder="Your email"
                 type="email"
                 required={true}
-                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -150,7 +102,6 @@ const ReservationForm = () => {
                 name="phone"
                 id="phone"
                 placeholder="___ ___-____"
-                onChange={handleChange}
               />
             </Box>
           </Box>
@@ -162,7 +113,6 @@ const ReservationForm = () => {
                 name="fiveHunGal"
                 id="fiveHunGal"
                 placeholder="# of 500 gal. tanks needed"
-                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -174,7 +124,6 @@ const ReservationForm = () => {
                 name="thousandGal"
                 id="thousandGal"
                 placeholder="# of 1000 gal. tanks needed"
-                onChange={handleChange}
               />
             </Box>
           </Box>
@@ -188,18 +137,11 @@ const ReservationForm = () => {
                 name="privateContainers"
                 id="privateContainers"
                 placeholder="# of private containers"
-                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
               <label htmlFor="rv"># of RVs:</label>
-              <input
-                type="number"
-                name="rv"
-                id="rv"
-                placeholder="# of RVs"
-                onChange={handleChange}
-              />
+              <input type="number" name="rv" id="rv" placeholder="# of RVs" />
             </Box>
           </Box>
           <Box width={1} className="form-group">
@@ -209,7 +151,6 @@ const ReservationForm = () => {
               id="details"
               rows={4}
               placeholder="Comments"
-              onChange={handleChange}
             />
           </Box>
         </fieldset>
