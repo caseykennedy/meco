@@ -4,7 +4,7 @@
 
 // Core
 import React, { useState, useRef } from 'react'
-import { Formik } from 'formik'
+import { Formik, Form, Field } from 'formik'
 import { navigate } from 'gatsby-link'
 import { useTransition } from 'react-spring'
 
@@ -97,18 +97,23 @@ const ReservationForm = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: encode({
-              'form-name': 'res formik',
+              'form-name': 'contact',
               ...values
             })
           })
-            .then(() => {
-              alert('Success!')
-              setSubmitting(false)
-            })
             .then(response => {
               console.log('====================================')
               console.log(`${JSON.stringify(response, null, 2)}`)
-              console.log(values)
+              console.log('====================================')
+            })
+            .then(() => {
+              navigate('/')
+              setSubmitting(false)
+            })
+            // .then(() => alert('success'))
+            .catch(error => {
+              console.log('====================================')
+              console.log(`error in submiting the form data:${error}`)
               console.log('====================================')
             })
             .catch(error => {
@@ -116,15 +121,14 @@ const ReservationForm = () => {
               alert('Error: Please Try Again!')
               setSubmitting(false)
             })
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2))
+            setSubmitting(false)
+          }, 1000)
         }}
-        render={({
-          errors,
-          touched,
-          isSubmitting,
-          handleSubmit,
-          handleReset
-        }) => (
-          <form
+      >
+        {({ errors, touched, isSubmitting, handleSubmit, handleReset }) => (
+          <Form
             // Using class instead of SC for Netlify form
             className="reservation-form"
             name="res formik"
@@ -153,7 +157,7 @@ const ReservationForm = () => {
                       *
                     </abbr>
                   </label>
-                  <input
+                  <Field
                     type="text"
                     name="name"
                     id="name"
@@ -168,7 +172,7 @@ const ReservationForm = () => {
                       *
                     </abbr>
                   </label>
-                  <input
+                  <Field
                     type="text"
                     name="campName"
                     id="campName"
@@ -185,7 +189,7 @@ const ReservationForm = () => {
                       *
                     </abbr>
                   </label>
-                  <input
+                  <Field
                     name="email"
                     placeholder="Your email"
                     type="email"
@@ -194,7 +198,7 @@ const ReservationForm = () => {
                 </Box>
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
                   <label htmlFor="phone">Phone:</label>
-                  <input
+                  <Field
                     type="tel"
                     name="phone"
                     id="phone"
@@ -205,7 +209,7 @@ const ReservationForm = () => {
               <Box width={1} className="form-group">
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
                   <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
-                  <input
+                  <Field
                     type="number"
                     name="fiveHunGal"
                     id="fiveHunGal"
@@ -214,7 +218,7 @@ const ReservationForm = () => {
                 </Box>
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
                   <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
-                  <input
+                  <Field
                     type="number"
                     min="1"
                     max="20"
@@ -229,7 +233,7 @@ const ReservationForm = () => {
                   <label htmlFor="privateContainers">
                     # of private containers:
                   </label>
-                  <input
+                  <Field
                     type="number"
                     name="privateContainers"
                     id="privateContainers"
@@ -238,7 +242,7 @@ const ReservationForm = () => {
                 </Box>
                 <Box width={[1, 1, 1 / 2]} className="form-group__box">
                   <label htmlFor="rv"># of RVs:</label>
-                  <input
+                  <Field
                     type="number"
                     name="rv"
                     id="rv"
@@ -248,7 +252,8 @@ const ReservationForm = () => {
               </Box>
               <Box width={1} className="form-group">
                 <label htmlFor="comments">Comments:</label>
-                <textarea
+                <Field
+                  as="textarea"
                   name="details"
                   id="details"
                   rows={4}
@@ -263,9 +268,9 @@ const ReservationForm = () => {
             >
               Submit
             </button>
-          </form>
+          </Form>
         )}
-      />
+      </Formik>
     </S.ReservationForm>
   )
 }
