@@ -31,14 +31,13 @@ const ReservationForm: React.FC = () => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
   const handleSubmit = (e: any) => {
-    // alert(`A name was submitted: ${state}`);
     e.preventDefault()
     const form = e.target
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': 'Reservations New',
+        'form-name': 'Reservations Newer',
         ...state
       })
     })
@@ -72,9 +71,9 @@ const ReservationForm: React.FC = () => {
       <form
         // Using class instead of SC for Netlify form
         className="reservation-form"
-        name="Reservations New"
+        name="Reservations Newer"
         method="post"
-        action="/success/"
+        action="/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}

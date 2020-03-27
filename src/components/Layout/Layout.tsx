@@ -57,7 +57,8 @@ const Layout: React.FC<LayoutProps> = ({
         >
           <ReservationForm />
         </Overlay>
-        <div style={{ display: 'none' }}>
+        <ReservationForm />
+        {/* <div style={{ display: 'none' }}>
           <form
             name="Reservations New"
             method="post"
@@ -193,7 +194,7 @@ const Layout: React.FC<LayoutProps> = ({
               Submit
             </button>
           </form>
-        </div>
+        </div> */}
       </S.Wrapper>
     </ThemeProvider>
   )
