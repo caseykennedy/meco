@@ -37,7 +37,6 @@ const ReservationForm: React.FC = () => {
         className="reservation-form"
         name="Reservations Vanilla"
         method="post"
-        action="/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >

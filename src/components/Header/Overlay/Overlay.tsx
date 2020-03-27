@@ -1,8 +1,6 @@
 // Overlay:
-// Navigation Overlay
+// Drawer Overlay
 // https://timcchang.com/blog/building-an-accessible-modal-using-hooks-and-higher-ordered-components/
-
-// TODO: https://upmostly.com/tutorials/modal-components-react-custom-hooks
 
 // ___________________________________________________________________
 

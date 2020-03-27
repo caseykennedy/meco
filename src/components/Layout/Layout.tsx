@@ -47,14 +47,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
         <Sidebar isShowing={isShowing} toggleOverlay={toggleOverlay} />
         <S.Main ref={mainRef}>{children}</S.Main>
-        <Overlay
-          id="drawer-root"
-          root="root"
-          isOpen={isShowing}
-          handleExit={toggleOverlay}
-          mainRef={mainRef}
-          className={`${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}
-        >
+        <Overlay className={`${isShowing ? 'nav-bg--open' : 'nav-bg--closed'}`}>
           <ReservationForm />
         </Overlay>
       </S.Wrapper>
