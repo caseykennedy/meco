@@ -17,7 +17,56 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-const ReservationForm: React.FC = () => {
+// Encode form
+// TODO: use correct types
+function encode(data: any) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
+    .join('&')
+}
+
+const ReservationForm = () => {
+  const [state, setState] = React.useState({})
+  const handleChange = (e: any) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    const form = e.target
+
+    console.log('====================================')
+    console.log(
+      encode({
+        'form-name': form.getAttribute('name'),
+        ...state
+      })
+    )
+    console.log('====================================')
+
+    fetch('/?no-cache=1', {
+      method: 'POST',
+      // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state
+      })
+    })
+      .then(response => {
+        console.log('====================================')
+        console.log(`${JSON.stringify(response, null, 2)}`)
+        console.log('====================================')
+        navigate(form.getAttribute('action'))
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log('====================================')
+        console.log(`error in submiting the form data:${error}`)
+        console.log('====================================')
+      })
+  }
+  console.log(state)
   return (
     <S.ReservationForm>
       <Section pt={4} border={true}>
@@ -35,15 +84,23 @@ const ReservationForm: React.FC = () => {
       <form
         // Using class instead of SC for Netlify form
         className="reservation-form"
-        name="Reservations Vanilla"
+        name="res ajax"
         method="post"
+        action="/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
-        <input type="hidden" name="form-name" value="Reservations Vanilla" />
+        <input
+          type="hidden"
+          // readOnly={true}
+          name="form-name"
+          value="res ajax"
+        />
         <div style={{ display: 'none' }}>
           <label>
-            Don’t fill this out: <input name="bot-field" />
+            Don’t fill this out:{' '}
+            <input name="bot-field" onChange={handleChange} />
           </label>
         </div>
         <fieldset>
@@ -61,6 +118,7 @@ const ReservationForm: React.FC = () => {
                 id="name"
                 placeholder="Your name"
                 required={true}
+                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -76,6 +134,7 @@ const ReservationForm: React.FC = () => {
                 id="campName"
                 placeholder="Camp name"
                 required={true}
+                onChange={handleChange}
               />
             </Box>
           </Box>
@@ -92,6 +151,7 @@ const ReservationForm: React.FC = () => {
                 placeholder="Your email"
                 type="email"
                 required={true}
+                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -101,6 +161,7 @@ const ReservationForm: React.FC = () => {
                 name="phone"
                 id="phone"
                 placeholder="___ ___-____"
+                onChange={handleChange}
               />
             </Box>
           </Box>
@@ -112,6 +173,7 @@ const ReservationForm: React.FC = () => {
                 name="fiveHunGal"
                 id="fiveHunGal"
                 placeholder="# of 500 gal. tanks needed"
+                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -123,6 +185,7 @@ const ReservationForm: React.FC = () => {
                 name="thousandGal"
                 id="thousandGal"
                 placeholder="# of 1000 gal. tanks needed"
+                onChange={handleChange}
               />
             </Box>
           </Box>
@@ -136,11 +199,18 @@ const ReservationForm: React.FC = () => {
                 name="privateContainers"
                 id="privateContainers"
                 placeholder="# of private containers"
+                onChange={handleChange}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
               <label htmlFor="rv"># of RVs:</label>
-              <input type="number" name="rv" id="rv" placeholder="# of RVs" />
+              <input
+                type="number"
+                name="rv"
+                id="rv"
+                placeholder="# of RVs"
+                onChange={handleChange}
+              />
             </Box>
           </Box>
           <Box width={1} className="form-group">
@@ -150,6 +220,7 @@ const ReservationForm: React.FC = () => {
               id="details"
               rows={4}
               placeholder="Comments"
+              onChange={handleChange}
             />
           </Box>
         </fieldset>
