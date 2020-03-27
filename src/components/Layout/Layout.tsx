@@ -67,7 +67,6 @@ const Layout: React.FC<LayoutProps> = ({
           >
             <input
               type="hidden"
-              readOnly={true}
               name="form-name"
               value="Reservations"
             />

@@ -94,7 +94,6 @@ const Form = () => {
     >
       <input
         type="hidden"
-        readOnly={true}
         name="form-name"
         value="Reservations"
       />
