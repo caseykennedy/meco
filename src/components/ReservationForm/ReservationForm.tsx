@@ -97,7 +97,7 @@ const ReservationForm = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: encode({
-              'form-name': 'res formik',
+              'form-name': 'Formik',
               ...values
             })
           })
@@ -131,7 +131,7 @@ const ReservationForm = () => {
           <Form
             // Using class instead of SC for Netlify form
             className="reservation-form"
-            name="res formik"
+            name="Formik"
             onSubmit={handleSubmit}
             onReset={handleReset}
             data-netlify="true"
@@ -141,7 +141,7 @@ const ReservationForm = () => {
               type="hidden"
               // readOnly={true}
               name="form-name"
-              value="res formik"
+              value="Formik"
             />
             <div style={{ display: 'none' }}>
               <label>
