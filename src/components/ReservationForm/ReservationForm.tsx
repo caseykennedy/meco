@@ -17,25 +17,15 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-const Form = () => {
-  // Encode form
-  // TODO: use correct types
-  function encode(data: any) {
-    return Object.keys(data)
-      .map(
-        key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`
-      )
-      .join('&')
-  }
-  // const encode = data => {
-  //   return Object.keys(data)
-  //     .map(
-  //       key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`
-  //     )
-  //     .join('&')
-  // }
-  // Handle form submit
-  // TODO: use correct types for (e)
+// Encode form
+// TODO: use correct types
+function encode(data: any) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
+    .join('&')
+}
+
+const ReservationForm: React.FC = () => {
   const [state, setState] = React.useState({
     name: '',
     campName: '',
@@ -74,175 +64,7 @@ const Form = () => {
         console.log('====================================')
       })
   }
-  // function handleFormSubmit(event: any) {
-  //   event.preventDefault()
-  //   const data = [...event.target.elements]
-  //     .filter(element => Boolean(element.name))
-  //     .reduce((json, element) => {
-  //       json[element.name] = element.value
-  //       return json
-  //     }, {})
-  //   fetch(event.target.action, {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: encode(data)
-  //   })
-  //     .then(() => alert('Success!'))
-  //     .catch(error => alert(error))
-  // }
   console.log(state)
-  return (
-    <S.Form
-      name="Reservations"
-      method="post"
-      action="/"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-    >
-      <input type="hidden" readOnly={true} name="form-name" value="Reservations" />
-      <div style={{ display: 'none' }}>
-        <label>
-          Don’t fill this out:{' '}
-          <input name="bot-field" onChange={handleChange} />
-        </label>
-      </div>
-      <fieldset>
-        <Box width={1} className="form-group">
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="name">
-              Name:{' '}
-              <abbr title="required" aria-label="required">
-                *
-              </abbr>
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your name"
-              required={true}
-              onChange={handleChange}
-              value={state.name}
-            />
-          </Box>
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="campName">
-              Camp Name:{' '}
-              <abbr title="required" aria-label="required">
-                *
-              </abbr>
-            </label>
-            <input
-              type="text"
-              name="campName"
-              id="campName"
-              placeholder="Camp name"
-              required={true}
-              onChange={handleChange}
-              value={state.campName}
-            />
-          </Box>
-        </Box>
-        <Box width={1} className="form-group">
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="email">
-              Email:
-              <abbr title="required" aria-label="required">
-                *
-              </abbr>
-            </label>
-            <input
-              name="email"
-              placeholder="Your email"
-              type="email"
-              required={true}
-              onChange={handleChange}
-              value={state.email}
-            />
-          </Box>
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="phone">Phone:</label>
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="___ ___-____"
-              onChange={handleChange}
-              value={state.phone}
-            />
-          </Box>
-        </Box>
-        <Box width={1} className="form-group">
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
-            <input
-              type="number"
-              name="fiveHunGal"
-              id="fiveHunGal"
-              placeholder="# of 500 gal. tanks needed"
-              onChange={handleChange}
-              value={state.fiveHunGal}
-            />
-          </Box>
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
-            <input
-              type="number"
-              min="1"
-              max="20"
-              name="thousandGal"
-              id="thousandGal"
-              placeholder="# of 1000 gal. tanks needed"
-              onChange={handleChange}
-              value={state.thousandGal}
-            />
-          </Box>
-        </Box>
-        <Box width={1} className="form-group">
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="privateContainers"># of private containers:</label>
-            <input
-              type="number"
-              name="privateContainers"
-              id="privateContainers"
-              placeholder="# of private containers"
-              onChange={handleChange}
-              value={state.privateContainers}
-            />
-          </Box>
-          <Box width={[1, 1, 1 / 2]} className="form-group__box">
-            <label htmlFor="rv"># of RVs:</label>
-            <input
-              type="number"
-              name="rv"
-              id="rv"
-              placeholder="# of RVs"
-              onChange={handleChange}
-              value={state.rv}
-            />
-          </Box>
-        </Box>
-        <Box width={1} className="form-group">
-          <label htmlFor="comments">Comments:</label>
-          <textarea
-            name="details"
-            id="details"
-            rows={4}
-            placeholder="Comments"
-            onChange={handleChange}
-            value={state.details}
-          />
-        </Box>
-      </fieldset>
-      <button type="submit" value="Submit Request">
-        Submit
-      </button>
-    </S.Form>
-  )
-}
-
-const ReservationForm: React.FC = () => {
   return (
     <S.ReservationForm>
       <Section pt={4} border={true}>
@@ -257,7 +79,160 @@ const ReservationForm: React.FC = () => {
           Spirit Rock.
         </Text>
       </Section>
-      <Form />
+      <S.Form
+        name="Reservations"
+        method="post"
+        action="/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <input
+          type="hidden"
+          readOnly={true}
+          name="form-name"
+          value="Reservations"
+        />
+        <div style={{ display: 'none' }}>
+          <label>
+            Don’t fill this out:{' '}
+            <input name="bot-field" onChange={handleChange} />
+          </label>
+        </div>
+        <fieldset>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="name">
+                Name:{' '}
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your name"
+                required={true}
+                onChange={handleChange}
+                value={state.name}
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="campName">
+                Camp Name:{' '}
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
+              </label>
+              <input
+                type="text"
+                name="campName"
+                id="campName"
+                placeholder="Camp name"
+                required={true}
+                onChange={handleChange}
+                value={state.campName}
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="email">
+                Email:
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
+              </label>
+              <input
+                name="email"
+                placeholder="Your email"
+                type="email"
+                required={true}
+                onChange={handleChange}
+                value={state.email}
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="phone">Phone:</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="___ ___-____"
+                onChange={handleChange}
+                value={state.phone}
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="fiveHunGal"># of 500 gal tanks needed:</label>
+              <input
+                type="number"
+                name="fiveHunGal"
+                id="fiveHunGal"
+                placeholder="# of 500 gal. tanks needed"
+                onChange={handleChange}
+                value={state.fiveHunGal}
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="thousandGal"># of 1000 gal. tanks:</label>
+              <input
+                type="number"
+                min="1"
+                max="20"
+                name="thousandGal"
+                id="thousandGal"
+                placeholder="# of 1000 gal. tanks needed"
+                onChange={handleChange}
+                value={state.thousandGal}
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="privateContainers">
+                # of private containers:
+              </label>
+              <input
+                type="number"
+                name="privateContainers"
+                id="privateContainers"
+                placeholder="# of private containers"
+                onChange={handleChange}
+                value={state.privateContainers}
+              />
+            </Box>
+            <Box width={[1, 1, 1 / 2]} className="form-group__box">
+              <label htmlFor="rv"># of RVs:</label>
+              <input
+                type="number"
+                name="rv"
+                id="rv"
+                placeholder="# of RVs"
+                onChange={handleChange}
+                value={state.rv}
+              />
+            </Box>
+          </Box>
+          <Box width={1} className="form-group">
+            <label htmlFor="comments">Comments:</label>
+            <textarea
+              name="details"
+              id="details"
+              rows={4}
+              placeholder="Comments"
+              onChange={handleChange}
+              value={state.details}
+            />
+          </Box>
+        </fieldset>
+        <button type="submit" value="Submit Request">
+          Submit
+        </button>
+      </S.Form>
     </S.ReservationForm>
   )
 }
