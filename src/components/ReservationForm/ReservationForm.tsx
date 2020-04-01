@@ -42,7 +42,6 @@ const ReservationForm = () => {
         </Text>
       </Section>
       <S.Form
-        // Using class instead of SC for Netlify form
         name="Static Form"
         data-netlify="true"
         data-netlify-honeypot="bot-input"

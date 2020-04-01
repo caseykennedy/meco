@@ -9,6 +9,7 @@ import React, { useRef } from 'react'
 import Section from '../../../components/Section'
 import Circles from '../../../components/Circles'
 import Accordion from '../../../components/Accordion'
+import ImgMatch from '../../../components/ImgMatch'
 
 // Elements
 import { Box, Flex, Heading, Text } from '../../../elements'
@@ -54,7 +55,9 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between" my={4}>
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" className="rental__title">500 Gallon Tank</Text>
+                  <Text as="span" className="rental__title">
+                    500 Gallon Tank
+                  </Text>
                   <Text as="span" fontSize={1}>
                     <strong>includes</strong>: first fill, pump and 15ft garden
                     hose
@@ -62,62 +65,106 @@ const BurningMan: React.FC = () => {
                     <br />
                     <strong>dimensions</strong>: 5 feet in diameter, 4 feet tall
                   </Text>
-                  <Text as="span" className="rental__price">$1000</Text>
+                  <Text as="span" className="rental__price">
+                    $1000
+                  </Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" className="rental__title">1000 Gallon Tank</Text>
+                  <Text as="span" className="rental__title">
+                    1000 Gallon Tank
+                  </Text>
                   <Text as="span" fontSize={1}>
                     <strong>includes</strong>: first fill, pump and 15ft garden
                     hose
                     <br />
                     <br />
-                    <strong>dimensions</strong>: 5 feet in diameter, 4 feet tall
+                    <strong>dimensions</strong>: 6 feet in diameter, 6.5 feet
+                    tall
                   </Text>
-                  <Text as="span" className="rental__price">$2000</Text>
+                  <Text as="span" className="rental__price">
+                    $2000
+                  </Text>
                 </Text>
               </S.Highlight>
             </Flex>
 
-            <Flex flexWrap="wrap" justifyContent="space-between">
+            <Flex flexWrap="wrap" justifyContent="space-between" mb={7}>
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" className="rental__title">Bulk Tank Rentals</Text>
-                  <Text as="span" fontSize={1}>Refill and top off</Text>
-                  <Text as="span" className="rental__price">$1 / gal</Text>
+                  <Text as="span" className="rental__title">
+                    Bulk Tank Rentals
+                  </Text>
+                  <Text as="span" fontSize={1}>
+                    Refill and top off
+                  </Text>
+                  <Text as="span" className="rental__price">
+                    $1 / gal
+                  </Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" fontSize={3}>Payment due at time of service.</Text>
+                  <Text as="span" fontSize={3}>
+                    Payment due at time of service.
+                  </Text>
                 </Text>
               </S.Highlight>
             </Flex>
 
-            <Text as="p" mt={7}>
+            <Text as="p">
               If you decide to rent one of our potable water tanks, we will set
               up a delivery date with you and get your playa address.
             </Text>
-            <Text as="p" mb={7}>
+            <Text as="p">
               Contact MECO Amanda with your playa location as soon as you know
               it, along with your requested tank delivery date.{' '}
               <strong>Deadline August 1st.</strong>
             </Text>
-            <S.Highlight>
-              <Text as="p" fontWeight={500} color="secondary">
+            <Box px={[0, 6]} mt={7}>
+              <ImgMatch
+                src="placement-map.jpg"
+                altText="Burning Man Placement Map"
+              />
+            </Box>
+            <Flex flexWrap="wrap" justifyContent="space-between" my={7}>
+              <S.Highlight>
+                <Text as="p">
+                  <Text as="span" className="rental__title">
+                    10:00 — 6:30
+                  </Text>
+                  <Text as="span" fontSize={1}>
+                    8/15, 8/17, 8/19, 8/21, 8/23, 8/25 8/27, 8/29, 8/31, 9/2,
+                    9/4, 9/6
+                  </Text>
+                </Text>
+              </S.Highlight>
+              <S.Highlight>
+                <Text as="p">
+                  <Text as="span" className="rental__title">
+                    6:30 — 2:00
+                  </Text>
+                  <Text as="span" fontSize={1}>
+                    8/16, 8/18, 8/20, 8/22, 8/24, 8/26, 8/28, 8/30, 9/1, 9/3,
+                    9/5, 9/7
+                  </Text>
+                </Text>
+              </S.Highlight>
+              <Text as="p" fontWeight={500} color="secondary" mt={7}>
                 BE READY TO PLACE AND RECEIVE YOUR TANK ON YOUR SCHEDULED
                 DELIVERY DATE!
               </Text>
-            </S.Highlight>
-            <Text as="p" mt={7}>
+            </Flex>
+            <Text as="p">
               Your tank will either have to be set up by the street or you will
-              have to have an access road 12ft wide that the trucks can back
-              down. If you set the tank inside your camp, you will need to keep
-              the access road clear. MECO trucks must be able to get within 15
-              feet of potable water rental tank.
+              have to have an access road 12ft wide that the trucks can drive
+              through. The access road needs to be a THROUGH ROAD that trucks
+              can Enter and Exit (we are not backing down into camps anymore).
+              MECO trucks must be able to get within 10 feet of potable water
+              rental tank.
             </Text>
             <Text as="p">
               MECO will be by every other day to check your tank and top off if
@@ -147,23 +194,36 @@ const BurningMan: React.FC = () => {
               The pump that comes with your rental is a 120VAC/6A pump. Make
               sure that your generator can power the pump, if it is under
               powered it will burn up the motor and you will have to purchase
-              the pump. It will be $150 to replace pump. We are now offering 110
+              the pump. It will be $500 to replace pump. We are now offering 110
               volt pumps that are smaller and require less energy.
             </Text>
             <Text as="p">
               The hoses MECO uses on the end of rental pumps are standard ¾
               potable RV water hoses.
             </Text>
+            <Flex flexWrap="wrap" justifyContent="space-between" my={7}>
+              <S.Highlight>
+                <Text as="p">
+                  <Text as="span" fontSize={1}>
+                    As soon as you arrive on playa be sure to map out and mark
+                    exactly where you would like your tank placed. X MARKS THE
+                    SPOT!
+                  </Text>
+                </Text>
+              </S.Highlight>
+              <S.Highlight>
+                <Text as="p">
+                  <Text as="span" fontSize={1}>
+                    If you are not present or ready to receive your tank on your
+                    scheduled delivery date your tank will be delivered on the
+                    next available date/time.
+                  </Text>
+                </Text>
+              </S.Highlight>
+            </Flex>
             <Text as="p">
               <strong>Liability:</strong> The renter is liable for any and all
               lost or damaged equipment.
-            </Text>
-            <Text as="p">
-              The pump that comes with your rental is a 120VAC/6A pump. Make
-              sure that your generator can power the pump, if it is under
-              powered it will burn up the motor and you will have to purchase
-              the pump. It will be $150 to replace pump. We are now offering 110
-              volt pumps that are smaller and require less energy.
             </Text>
           </Box>
         </Accordion>
@@ -175,14 +235,20 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between" mt={4}>
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" className="rental__title">Fill or top off</Text>
-                  <Text as="span" className="rental__price">$1.50 /gal</Text>
+                  <Text as="span" className="rental__title">
+                    Fill or top off
+                  </Text>
+                  <Text as="span" className="rental__price">
+                    $1.50 /gal
+                  </Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" fontSize={3}>Payment due at time of service.</Text>
+                  <Text as="span" fontSize={3}>
+                    Payment due at time of service.
+                  </Text>
                 </Text>
               </S.Highlight>
             </Flex>
@@ -198,7 +264,7 @@ const BurningMan: React.FC = () => {
             <Text as="p">
               Private bulk storage consist of 50 gallons or more, bladders,
               drums, or tanks. MECO uses 2 inch male cam lock hoses to fill
-              bladders, drums, and tanks. MECO must be able to get within 15
+              bladders, drums, and tanks. MECO must be able to get within 10
               feet of what MECO will be filling.
             </Text>
             <Text as="p">
@@ -215,14 +281,20 @@ const BurningMan: React.FC = () => {
             <Flex flexWrap="wrap" justifyContent="space-between" mt={4}>
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" className="rental__title">Fill or top off</Text>
-                  <Text as="span" className="rental__price">$2.00 /gal</Text>
+                  <Text as="span" className="rental__title">
+                    Fill or top off
+                  </Text>
+                  <Text as="span" className="rental__price">
+                    $2.00 /gal
+                  </Text>
                 </Text>
               </S.Highlight>
 
               <S.Highlight>
                 <Text as="p">
-                  <Text as="span" fontSize={3}>Payment due at time of service.</Text>
+                  <Text as="span" fontSize={3}>
+                    Payment due at time of service.
+                  </Text>
                 </Text>
               </S.Highlight>
             </Flex>

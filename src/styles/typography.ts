@@ -249,9 +249,12 @@ const Typography = css`
 
     transition: ${theme.transition.all};
 
+    color: ${theme.colors.primary};
+
     &:hover,
     &:focus {
       text-decoration: none;
+      color: ${theme.colors.secondary};
     }
   }
 
