@@ -4,6 +4,7 @@
 
 import { css } from 'styled-components'
 import theme from '../../config/theme'
+import { darken } from 'polished'
 
 // Aeonik Regular
 import AeonikRegularEot from './fonts/AeonikRegular.eot'
@@ -249,12 +250,12 @@ const Typography = css`
 
     transition: ${theme.transition.all};
 
-    color: ${theme.colors.primary};
+    color: ${theme.colors.secondary};
 
     &:hover,
     &:focus {
       text-decoration: none;
-      color: ${theme.colors.secondary};
+      color: ${darken(0.05, `${theme.colors.secondary}`)};
     }
   }
 

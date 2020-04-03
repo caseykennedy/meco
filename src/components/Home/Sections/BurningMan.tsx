@@ -44,9 +44,7 @@ const BurningMan: React.FC = () => {
           Supplying the Playa’s Water Needs for nearly 20 Years!
         </Heading>
         <Text as="p">
-          Burning man backjack five rhythms rawthentic self my brothers and
-          sisters community, all-encompassing eye gazing. Somatic grass-fed
-          herbal tea equinox.
+          We offer storage tank rentals, fill-ups and top-offs with potable and non-potable water.
         </Text>
       </Section>
       <Box>
@@ -166,6 +164,12 @@ const BurningMan: React.FC = () => {
               MECO trucks must be able to get within 10 feet of potable water
               rental tank.
             </Text>
+            <Box px={[0, 8]} my={7}>
+              <ImgMatch
+                src="water-container.jpg"
+                altText="Burning Man Placement Map"
+              />
+            </Box>
             <Text as="p">
               MECO will be by every other day to check your tank and top off if
               needed. It will be your choice to top off or not. It will be cash

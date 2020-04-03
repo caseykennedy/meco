@@ -28,14 +28,10 @@ const Mission: React.FC = () => {
           Mission
         </Heading>
         <Heading as="h3">
-          Our mission here ar MECO Sales &amp; Rentals is Awareness spiral
-          east-west, rolfing peacock feather synchronicity. Dead sea minerals
-          Spirit Rock.
+          Our mission here at MECO Sales &amp; Rentals is to keep you filthy burners hydrated.
         </Heading>
         <Text as="p">
-          Burning man backjack five rhythms rawthentic self my brothers and
-          sisters community, all-encompassing eye gazing. Somatic grass-fed
-          herbal tea equinox.
+          The desert is a dry place where the number one priority is to stay hydrated. We're here to help! MECO is family owned and operated and has been happily serving the playa's water needs for almost 20 years.
         </Text>
       </Section>
     </>

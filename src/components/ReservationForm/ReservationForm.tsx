@@ -30,15 +30,16 @@ const ReservationForm = () => {
   return (
     <S.ReservationForm>
       <Section pt={4} border={true}>
-        <Heading fontSize={[4, 5]} pr={[0, 6]} mb={0}>
-          Don't get left in the dust.
+        <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
+          {/* Don't get left in the dust. */}
+          MECO <em>will</em> be providing water services at Burning Man 2020
         </Heading>
       </Section>
       <Section pt={4} border={true}>
         <Text as="p">
-          Our mission here at MECO Sales &amp; Rentals is Awareness spiral
-          east-west, rolfing peacock feather synchronicity. Dead sea minerals
-          Spirit Rock.
+          Due to the uncertainty of Covid-19 at this moment, we will be
+          postponing the acceptance of online reservations until further
+          notice. For questions or concerns, contact Amanda McKinnies at <a href="mailto:MECOAmanda775@gmail.com">MECOAmanda775@gmail.com</a>.
         </Text>
       </Section>
       <S.Form
@@ -155,8 +156,8 @@ const ReservationForm = () => {
             />
           </Box>
         </fieldset>
-        <button type="submit" value="Submit Request">
-          Submit
+        <button type="submit" value="Submit Request" className="disabled" disabled={false}>
+          Closed
         </button>
       </S.Form>
     </S.ReservationForm>
