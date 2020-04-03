@@ -156,7 +156,7 @@ const ReservationForm = () => {
             />
           </Box>
         </fieldset>
-        <button type="submit" value="Submit Request" className="disabled" disabled={false}>
+        <button type="submit" value="Submit Request" className="disabled" disabled={true}>
           Closed
         </button>
       </S.Form>
