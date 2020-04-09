@@ -44,7 +44,7 @@ const BurningMan: React.FC = () => {
           Supplying the Playa’s Water Needs for nearly 20 Years!
         </Heading>
         <Text as="p">
-          We offer storage tank rentals, fill-ups and top-offs with potable and non-potable water.
+          We offer storage tank rentals and potable water fill-ups and top-offs.
         </Text>
       </Section>
       <Box>
