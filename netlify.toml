@@ -1,0 +1,19 @@
+[[redirects]]
+  from = "/burning-man-2019/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/online-reservation/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contact/"
+  to = "/"
+  status = 301
