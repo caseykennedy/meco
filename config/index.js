@@ -5,9 +5,9 @@ module.exports = {
   siteTitleAlt: 'MECO | McKinnies Equipment Co. | Burning Man Water', // Alternative Site title for SEO
   siteTitleShort: 'MECO | McKinnies Equipment Co.', // short_name for manifest
   siteHeadline: 'Portable potable Burning Man water tanks & fillup', // Headline for schema.org JSONLD
-  siteUrl: 'https://caseykennedy.me', // Domain of your site. No trailing slash!
+  siteUrl: 'https://meco-reno.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logos/logo.png', // Used for SEO and manifest
+  siteLogo: '/logos/favicon.png', // Used for SEO and manifest
   siteDescription: 'MECO Equipment Sales & Rentals + Burning Man Water Services',
   author: 'Casey Kennedy', // Author for schema.org JSONLD
 
@@ -15,7 +15,7 @@ module.exports = {
   userTwitter: '', // Twitter Username
   ogSiteName: '', // Facebook Site Name
   ogLanguage: 'en_US', // og:language
-  googleAnalyticsID: 'UA-56063719-2',
+  googleAnalyticsID: 'UA-163263575-1',
 
   // Manifest and Progress color
   themeColor: '#132B59',
