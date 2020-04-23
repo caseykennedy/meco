@@ -11,7 +11,6 @@ import Sidebar from '../Sidebar'
 import Overlay from '../Header/Overlay'
 import ReservationForm from '../ReservationForm'
 
-import { Box } from '../../elements'
 import theme from '../../../config/theme'
 import GlobalStyles from '../../styles/global'
 import * as S from './styles.scss'

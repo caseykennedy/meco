@@ -32,14 +32,14 @@ const ReservationForm = () => {
       <Section pt={4} border={true}>
         <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
           {/* Don't get left in the dust. */}
-          MECO <em>will</em> be providing water services at Burning Man 2020
+          MECO <em>will not</em> be providing water services at Burning Man 2020
         </Heading>
       </Section>
       <Section pt={4} border={true}>
         <Text as="p">
-          Due to the uncertainty of Covid-19 at this moment, we will be
-          postponing the acceptance of online reservations until further
-          notice. For questions or concerns, contact Amanda McKinnies at <a href="mailto:MECOAmanda775@gmail.com">MECOAmanda775@gmail.com</a>.
+          At this time, Burning Man 2020 has been cancelled. We would like to say thank you to all of our customers and
+          friends of Black Rock City. We will miss you and look forward to getting
+          back together at Burning Man 2021. Stay Safe &amp; Healthy!
         </Text>
       </Section>
       <S.Form
@@ -156,7 +156,12 @@ const ReservationForm = () => {
             />
           </Box>
         </fieldset>
-        <button type="submit" value="Submit Request" className="disabled" disabled={true}>
+        <button
+          type="submit"
+          value="Submit Request"
+          className="disabled"
+          disabled={true}
+        >
           Closed
         </button>
       </S.Form>
