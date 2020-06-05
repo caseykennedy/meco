@@ -42,9 +42,9 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
               services
             </Heading>
             <Heading as="h4">+ equipment rentals</Heading>
-            <S.Drips>
+            {/* <S.Drips>
               <Drips />
-            </S.Drips>
+            </S.Drips> */}
             <S.VerticalText>
               <HeadingStroked
                 fontWeight={theme.fontWeights.bold}
