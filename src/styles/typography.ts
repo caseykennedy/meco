@@ -12,7 +12,7 @@ import AeonikRegularWoff2 from './fonts/AeonikRegular.woff2'
 import AeonikRegularWoff from './fonts/AeonikRegular.woff'
 import AeonikRegularOtf from './fonts/AeonikRegular.otf'
 
-// Aeonik Bold
+// Aeonik Medium
 import AeonikMediumEot from './fonts/Aeonik-Medium.eot'
 import AeonikMediumWoff2 from './fonts/Aeonik-Medium.woff2'
 import AeonikMediumWoff from './fonts/Aeonik-Medium.woff'
@@ -24,7 +24,7 @@ import AeonikBoldWoff2 from './fonts/AeonikBold.woff2'
 import AeonikBoldWoff from './fonts/AeonikBold.woff'
 import AeonikBoldOtf from './fonts/AeonikBold.otf'
 
-// Suisse Works Bold
+// Suisse Works Book
 import SuisseWorksBookEot from './fonts/SuisseWorks-Book.eot'
 import SuisseWorksBookWoff2 from './fonts/SuisseWorks-Book.woff2'
 import SuisseWorksBookWoff from './fonts/SuisseWorks-Book.woff'

@@ -20,7 +20,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 // Elements
-import { Box, AnimatedBox, Text } from '../../elements'
+import { Box } from '../../elements'
 
 // Theme
 import theme from '../../../config/theme'

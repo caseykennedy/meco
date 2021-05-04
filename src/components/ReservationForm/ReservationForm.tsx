@@ -2,17 +2,9 @@
 
 // ___________________________________________________________________
 
-// Core
-import React, { useState, useRef } from 'react'
-import { Formik, Form } from 'formik'
-import { navigate } from 'gatsby-link'
-import { useTransition } from 'react-spring'
-
+import React from 'react'
 import Section from '../Section'
-
-import { Box, Flex, AnimatedBox, Heading, Text } from '../../elements'
-import Button from '../../elements/Button'
-
+import { Box, Heading, Text } from '../../elements'
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
@@ -20,11 +12,11 @@ import theme from '../../../config/theme'
 
 // Encode form
 // TODO: use correct types
-const encode = (data: any) => {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
-    .join('&')
-}
+// const encode = (data: any) => {
+//   return Object.keys(data)
+//     .map(key => `${encodeURIComponent(key)} = ${encodeURIComponent(data[key])}`)
+//     .join('&')
+// }
 
 const ReservationForm = () => {
   return (
@@ -32,14 +24,15 @@ const ReservationForm = () => {
       <Section pt={4} border={true}>
         <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
           {/* Don't get left in the dust. */}
-          MECO <em>will not</em> be providing water services at Burning Man 2020
+          MECO <em>will</em> be providing water services on the playa this
+          summer.
         </Heading>
       </Section>
       <Section pt={4} border={true}>
         <Text as="p">
-          At this time, Burning Man 2020 has been cancelled. We would like to say thank you to all of our customers and
-          friends of Black Rock City. We will miss you and look forward to getting
-          back together at Burning Man 2021. Stay Safe &amp; Healthy!
+          Burning Man 2021 has been cancelled, but MECO will still be providing
+          Water Services for the Playa during the Months of June-September 2021.
+          Let us know how we can take care of all your Potable Water needs!
         </Text>
       </Section>
       <S.Form
@@ -147,6 +140,15 @@ const ReservationForm = () => {
             </Box>
           </Box>
           <Box width={1} className="form-group">
+            <label htmlFor="comments">Dates of service:</label>
+            <input
+              type="input"
+              name="serviceDates"
+              id="serviceDates"
+              placeholder="Dates of Service"
+            />
+          </Box>
+          <Box width={1} className="form-group">
             <label htmlFor="comments">Comments:</label>
             <textarea
               name="details"
@@ -156,13 +158,8 @@ const ReservationForm = () => {
             />
           </Box>
         </fieldset>
-        <button
-          type="submit"
-          value="Submit Request"
-          className="disabled"
-          disabled={true}
-        >
-          Closed
+        <button type="submit" value="Submit Request">
+          Submit
         </button>
       </S.Form>
     </S.ReservationForm>

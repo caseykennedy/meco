@@ -6,7 +6,6 @@ import React, { useRef } from 'react'
 
 import Section from '../../components/Section'
 import Footer from '../../components/Footer'
-import Drips from '../../components/Drips'
 
 import { Heading } from '../../elements'
 import HeadingStroked from '../../elements/HeadingStroked'
