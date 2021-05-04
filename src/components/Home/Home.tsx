@@ -6,16 +6,13 @@ import React, { useRef } from 'react'
 
 import Section from '../../components/Section'
 import Footer from '../../components/Footer'
-
 import { Heading } from '../../elements'
 import HeadingStroked from '../../elements/HeadingStroked'
-
 import BurningMan from './Sections/BurningMan'
 import Mission from './Sections/Mission'
 import Services from './Sections/Services'
 
 import * as S from './styles.scss'
-
 import theme from '../../../config/theme'
 
 // ___________________________________________________________________
