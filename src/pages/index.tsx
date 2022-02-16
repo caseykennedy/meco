@@ -25,8 +25,7 @@ import theme from '../../config/theme'
 
 const IndexPage = () => {
   // Overlay toggle
-  const {isShowing, toggleOverlay} = useOverlay()
-  const data = useContentYaml()
+  const { isShowing, toggleOverlay } = useOverlay()
   // Page animation
   const pageAnimation = useSpring({
     config: config.slow,
@@ -37,9 +36,7 @@ const IndexPage = () => {
   return (
     <Layout isShowing={isShowing} toggleOverlay={toggleOverlay}>
       <SEO />
-      <AnimatedBox style={pageAnimation}>
-        <Home isShowing={isShowing} toggleOverlay={toggleOverlay} />
-      </AnimatedBox>
+      <Home isShowing={isShowing} toggleOverlay={toggleOverlay} />
     </Layout>
   )
 }

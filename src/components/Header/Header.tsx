@@ -19,6 +19,8 @@ type HeaderShape = {
   toggleOverlay: () => void
 }
 
+const CurrentYear = new Date().getFullYear()
+
 const Header: React.FC<HeaderShape> = ({
   mainRef,
   isShowing,
@@ -37,7 +39,7 @@ const Header: React.FC<HeaderShape> = ({
           <span>McKinnies Equipment Co.</span>
         </S.Logo>
         <S.Toolbar>
-          <S.Marquee>Black Rock Camping 2021</S.Marquee>
+          <S.Marquee>Black Rock Camping {CurrentYear}</S.Marquee>
           <S.ReserveBtn
             onClick={toggleOverlay}
             className={isShowing ? 'active' : ''}

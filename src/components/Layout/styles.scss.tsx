@@ -28,7 +28,7 @@ export const Main = styled(animated.main)`
   position: relative;
   width: calc(${theme.siteWidth} * 2);
 
-  @media ${theme.mq.medium} {
+  @media ${theme.mq.small} {
     width: ${theme.siteWidth};
   }
 `

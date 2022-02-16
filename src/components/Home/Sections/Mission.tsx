@@ -31,7 +31,7 @@ const Mission: React.FC = () => {
           Our mission here at MECO Sales &amp; Rentals is to keep you filthy burners hydrated.
         </Heading>
         <Text as="p">
-          The desert is a dry place where the number one priority is to stay hydrated. We're here to help! MECO is family owned and operated and has been happily serving the playa's water needs for almost 20 years.
+          The desert is a dry place where the number one priority is to stay hydrated. We're here to help! MECO is family owned and operated and has been happily serving the playa's water needs for over 20 years.
         </Text>
       </Section>
     </>

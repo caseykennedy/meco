@@ -18,6 +18,8 @@ import theme from '../../../config/theme'
 //     .join('&')
 // }
 
+const CurrentYear = new Date().getFullYear()
+
 const ReservationForm = () => {
   return (
     <S.ReservationForm>
@@ -30,8 +32,8 @@ const ReservationForm = () => {
       </Section>
       <Section pt={4} border={true}>
         <Text as="p">
-          Burning Man 2021 has been cancelled, but MECO will still be providing
-          Water Services for the Playa during the Months of June-September 2021.
+          Burning Man {CurrentYear} is full steam ahead and MECO will be providing
+          water services for the Playa during the months of <strong>June-September</strong>.
           Let us know how we can take care of all your Potable Water needs!
         </Text>
       </Section>
