@@ -25,14 +25,16 @@ const ReservationForm = () => {
     <S.ReservationForm>
       <Section pt={4} border={true}>
         <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
-          Reservations
+          Don't get left in
+          <br />
+          the dust.
         </Heading>
       </Section>
-      {/* <Section pt={4} border={true}>
-        <Text as="p">
-          Don't gete left in the dust!
+      <Section bg="primary" pt={4} border={true}>
+        <Text as="p" color="background">
+          <strong>Reservations {CurrentYear}</strong>
         </Text>
-      </Section> */}
+      </Section>
       <S.Form
         name="Static Form"
         data-netlify="true"
