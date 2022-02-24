@@ -39,7 +39,7 @@ const Header: React.FC<HeaderShape> = ({
           <span>McKinnies Equipment Co.</span>
         </S.Logo>
         <S.Toolbar>
-          <S.Marquee>Black Rock Camping {CurrentYear}</S.Marquee>
+          <S.Marquee>BURNING MAN {CurrentYear}</S.Marquee>
           <S.ReserveBtn
             onClick={toggleOverlay}
             className={isShowing ? 'active' : ''}

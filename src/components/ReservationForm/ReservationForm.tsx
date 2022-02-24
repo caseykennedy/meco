@@ -25,18 +25,14 @@ const ReservationForm = () => {
     <S.ReservationForm>
       <Section pt={4} border={true}>
         <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
-          {/* Don't get left in the dust. */}
-          MECO <em>will</em> be providing water services on the playa this
-          summer.
+          Reservations
         </Heading>
       </Section>
-      <Section pt={4} border={true}>
+      {/* <Section pt={4} border={true}>
         <Text as="p">
-          Burning Man {CurrentYear} is full steam ahead and MECO will be providing
-          water services for the Playa during the months of <strong>June-September</strong>.
-          Let us know how we can take care of all your Potable Water needs!
+          Don't gete left in the dust!
         </Text>
-      </Section>
+      </Section> */}
       <S.Form
         name="Static Form"
         data-netlify="true"
@@ -141,7 +137,7 @@ const ReservationForm = () => {
               <input type="number" name="rv" id="rv" placeholder="# of RVs" />
             </Box>
           </Box>
-          <Box width={1} className="form-group">
+          {/* <Box width={1} className="form-group">
             <label htmlFor="comments">Dates of service:</label>
             <input
               type="input"
@@ -149,7 +145,7 @@ const ReservationForm = () => {
               id="serviceDates"
               placeholder="Dates of Service"
             />
-          </Box>
+          </Box> */}
           <Box width={1} className="form-group">
             <label htmlFor="comments">Comments:</label>
             <textarea
