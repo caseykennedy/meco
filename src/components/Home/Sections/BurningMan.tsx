@@ -41,7 +41,7 @@ const BurningMan: React.FC = () => {
           Burning Man
         </Heading>
         <Heading as="h3">
-          Supplying the Playa’s Water Needs for nearly 20 Years!
+          Supplying the Playa's Water Needs for over 20 Years!
         </Heading>
         <Text as="p">
           We offer storage tank rentals and potable water fill-ups and top-offs.
