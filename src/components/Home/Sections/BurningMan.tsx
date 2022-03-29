@@ -99,7 +99,7 @@ const BurningMan: React.FC = () => {
                     Refill and top off
                   </Text>
                   <Text as="span" className="rental__price">
-                    $1 / gal
+                    $1.10 / gal
                   </Text>
                 </Text>
               </S.Highlight>
@@ -172,8 +172,7 @@ const BurningMan: React.FC = () => {
             </Box>
             <Text as="p">
               MECO will be by every other day to check your tank and top off if
-              needed. It will be your choice to top off or not. It will be cash
-              at time of delivery at $1.00 a gallon.
+              needed. It will be your choice to top off or not. Please have cash at the time of delivery.
             </Text>
             <Text as="p">
               Your potable water tank rental will only be filled or refilled by
@@ -243,7 +242,7 @@ const BurningMan: React.FC = () => {
                     Fill or top off
                   </Text>
                   <Text as="span" className="rental__price">
-                    $1.50 /gal
+                    $1.60 /gal
                   </Text>
                 </Text>
               </S.Highlight>
@@ -289,7 +288,7 @@ const BurningMan: React.FC = () => {
                     Fill or top off
                   </Text>
                   <Text as="span" className="rental__price">
-                    $2.00 /gal
+                    $2.20 /gal
                   </Text>
                 </Text>
               </S.Highlight>
@@ -310,8 +309,8 @@ const BurningMan: React.FC = () => {
             <Text as="p">
               If you decide to have MECO fill or top off your RV’s with potable
               water, MECO will set up a date with you to deliver your potable
-              water and get your playa address. It will be $2.00 a gallon, cash
-              at time of delivery.
+              water and get your playa address. Please have cash at the time of
+              delivery.
             </Text>
             <Text as="p">
               MECO potable water trucks have digital meters to measure the water
