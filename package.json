@@ -3,7 +3,10 @@
   "private": true,
   "description": "Gatsby TypeScript Starter with Styled System",
   "version": "1.0.0",
-  "license": "MIT",
+  "author": "Casey Kennedy <me@caseykennedy.me>",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
