@@ -99,7 +99,7 @@ const BurningMan: React.FC = () => {
                     Refill and top off
                   </Text>
                   <Text as="span" className="rental__price">
-                    $1.10 / gal
+                    $1.50 / gal
                   </Text>
                 </Text>
               </S.Highlight>
@@ -242,7 +242,7 @@ const BurningMan: React.FC = () => {
                     Fill or top off
                   </Text>
                   <Text as="span" className="rental__price">
-                    $1.60 /gal
+                    $1.75 /gal
                   </Text>
                 </Text>
               </S.Highlight>
@@ -288,7 +288,7 @@ const BurningMan: React.FC = () => {
                     Fill or top off
                   </Text>
                   <Text as="span" className="rental__price">
-                    $2.20 /gal
+                    $2.50 /gal
                   </Text>
                 </Text>
               </S.Highlight>
