@@ -132,7 +132,7 @@ const BurningMan: React.FC = () => {
               <S.Highlight>
                 <Text as="p">
                   <Text as="span" className="rental__title">
-                    10:00 — 6:30
+                    2:00—6:30 Sector
                   </Text>
                   <Text as="span" fontSize={1}>
                     8/15, 8/17, 8/19, 8/21, 8/23, 8/25 8/27, 8/29, 8/31, 9/2,
@@ -143,7 +143,7 @@ const BurningMan: React.FC = () => {
               <S.Highlight>
                 <Text as="p">
                   <Text as="span" className="rental__title">
-                    6:30 — 2:00
+                    6:30—10:00 Sector
                   </Text>
                   <Text as="span" fontSize={1}>
                     8/16, 8/18, 8/20, 8/22, 8/24, 8/26, 8/28, 8/30, 9/1, 9/3,

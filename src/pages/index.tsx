@@ -7,11 +7,7 @@ import React from 'react'
 import { useSpring, config } from 'react-spring'
 
 // Hooks
-import useContentYaml from '../hooks/useContentYaml'
 import useOverlay from '../hooks/useOverlay'
-
-// Elements
-import { AnimatedBox } from '../elements'
 
 // Components
 import Layout from '../components/Layout'
