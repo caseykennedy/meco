@@ -3,7 +3,7 @@
 // ___________________________________________________________________
 
 // Core
-import React, { useRef } from 'react'
+import React from 'react'
 
 // Components
 import Section from '../../../components/Section'
@@ -13,7 +13,6 @@ import ImgMatch from '../../../components/ImgMatch'
 
 // Elements
 import { Box, Flex, Heading, Text } from '../../../elements'
-import Divider from '../../../elements/Divider'
 
 // Styles
 import * as S from '../styles.scss'
@@ -183,7 +182,7 @@ const BurningMan: React.FC = () => {
               a decontamination fee of $500 to clean all equipment. As soon as
               we receive the decontamination fee we will bring you a clean
               rental tank, pump and hose. You will have to pay for the water to
-              refill the cleaned rental tank at a $1.00 a gallon.
+              refill the cleaned rental tank at $1.50 a gallon.
             </Text>
             <Text as="p">
               At the end of the event if there is any unused potable water left
