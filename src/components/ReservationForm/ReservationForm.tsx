@@ -154,6 +154,7 @@ const ReservationForm = () => {
                 name="fiveHunGal"
                 id="fiveHunGal"
                 placeholder="# of 500 gal. tanks needed  (sold out)"
+                value={0}
                 disabled={true}
               />
             </Box>
@@ -166,6 +167,7 @@ const ReservationForm = () => {
                 name="thousandGal"
                 id="thousandGal"
                 placeholder="# of 1000 gal. tanks needed (sold out)"
+                value={0}
                 disabled={true}
               />
             </Box>
@@ -189,6 +191,7 @@ const ReservationForm = () => {
                 name="rv"
                 id="rv"
                 placeholder="# of RVs (sold out)"
+                value={0}
                 disabled={true}
               />
             </Box>
