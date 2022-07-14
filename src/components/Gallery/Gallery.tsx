@@ -6,6 +6,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 // Libraries
 import Slider from 'react-slick'
@@ -29,17 +30,9 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type Fluid = {
-  fluid: {
-    aspectRatio: number
-    src: string
-    srcSet: string
-    sizes: string
-    base64: string
-    tracedSVG: string
-    srcWebp: string
-    srcSetWebp: string
-  }
+type IGatsbyImageData = {
+  gatsbyImageData: any
+  url: string
 }
 
 type QueryShape = {
@@ -47,7 +40,7 @@ type QueryShape = {
     edges: {
       node: {
         id: string
-        childImageSharp: Fluid
+        childImageSharp: IGatsbyImageData
       }
     }[]
   }
@@ -55,7 +48,7 @@ type QueryShape = {
 
 type ImageShape = {
   image: {
-    childImageSharp: Fluid
+    childImageSharp: IGatsbyImageData
   }
 }
 
@@ -79,10 +72,12 @@ type ImageShape = {
 
 const GallerySlide = ({ image }: ImageShape) => {
   return (
-    <Img
+    <GatsbyImage
       alt="MECO | Portable water services for Burning Man"
-      key={image.childImageSharp.fluid.src}
-      fluid={image.childImageSharp.fluid}
+      // key={image.childImageSharp.fluid.src}
+      image={image.childImageSharp.gatsbyImageData}
+      objectFit="cover"
+      objectPosition="50% 50%"
     />
   )
 }
@@ -95,9 +90,11 @@ const Gallery: React.FC = () => {
           node {
             id
             childImageSharp {
-              fluid(quality: 85, maxWidth: 800) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                quality: 80
+              )
             }
           }
         }

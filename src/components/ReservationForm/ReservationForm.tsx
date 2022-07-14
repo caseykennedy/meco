@@ -34,6 +34,9 @@ const ReservationForm = () => {
         </Heading>
         <Heading as="h3">2022 MECO Water Price Update</Heading>
         <Text as="p">
+          <strong>RESERVATION CUTOFF DATE IS AUGUST 1st!!</strong>
+        </Text>
+        <Text as="p">
           Since 2009, MECO has not raised our water rates. We have tried to keep
           our water prices as low as possible for as long as possible.
         </Text>
@@ -54,7 +57,9 @@ const ReservationForm = () => {
           Going forward, all water costs will be the new and updated water
           pricing for Burning Man 2022.
         </Text>
-        <Text as="p" fontWeight={500}>Water per gallon:</Text>
+        <Text as="p" fontWeight={500}>
+          Water per gallon:
+        </Text>
         <Box as="ul" mb={4}>
           <li className="text--sm">
             <span>○</span> Tank Rentals: $1.50
@@ -148,7 +153,8 @@ const ReservationForm = () => {
                 type="number"
                 name="fiveHunGal"
                 id="fiveHunGal"
-                placeholder="# of 500 gal. tanks needed"
+                placeholder="# of 500 gal. tanks needed  (sold out)"
+                disabled={true}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -159,7 +165,8 @@ const ReservationForm = () => {
                 max="20"
                 name="thousandGal"
                 id="thousandGal"
-                placeholder="# of 1000 gal. tanks needed"
+                placeholder="# of 1000 gal. tanks needed (sold out)"
+                disabled={true}
               />
             </Box>
           </Box>
@@ -177,7 +184,13 @@ const ReservationForm = () => {
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
               <label htmlFor="rv"># of RVs:</label>
-              <input type="number" name="rv" id="rv" placeholder="# of RVs" />
+              <input
+                type="number"
+                name="rv"
+                id="rv"
+                placeholder="# of RVs (sold out)"
+                disabled={true}
+              />
             </Box>
           </Box>
           {/* <Box width={1} className="form-group">
