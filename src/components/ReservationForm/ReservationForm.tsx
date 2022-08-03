@@ -25,7 +25,7 @@ const ReservationForm = () => {
     <S.ReservationForm>
       <Section pt={4} border={true}>
         <Heading as="h5" color="secondary" mb={5}>
-          Reservations are now closed.
+          Reservations are now closed
         </Heading>
         <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
           Don't get left in
