@@ -24,12 +24,15 @@ const ReservationForm = () => {
   return (
     <S.ReservationForm>
       <Section pt={4} border={true}>
-        {/* <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
+        <Heading as="h5" color="secondary" mb={5}>
+          Reservations are now closed.
+        </Heading>
+        <Heading as="h2" fontSize={[4]} pr={[0, 6]} mb={0}>
           Don't get left in
           <br />
           the dust.
-        </Heading> */}
-        <Heading as="h5" color="secondary" mb={5}>
+        </Heading>
+        {/* <Heading as="h5" color="secondary" mb={5}>
           Update
         </Heading>
         <Heading as="h3">2022 MECO Water Price Update</Heading>
@@ -74,7 +77,7 @@ const ReservationForm = () => {
         <Text as="p">
           We value and care about all of our customers and Burning Man Camps, we
           hope you understand and thank you for your Business!
-        </Text>
+        </Text> */}
       </Section>
       <Section bg="primary" pt={4} border={true}>
         <Text as="p" color="background">
@@ -154,8 +157,6 @@ const ReservationForm = () => {
                 name="fiveHunGal"
                 id="fiveHunGal"
                 placeholder="# of 500 gal. tanks needed  (sold out)"
-                value={0}
-                disabled={true}
               />
             </Box>
             <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -167,8 +168,6 @@ const ReservationForm = () => {
                 name="thousandGal"
                 id="thousandGal"
                 placeholder="# of 1000 gal. tanks needed (sold out)"
-                value={0}
-                disabled={true}
               />
             </Box>
           </Box>
@@ -191,8 +190,6 @@ const ReservationForm = () => {
                 name="rv"
                 id="rv"
                 placeholder="# of RVs (sold out)"
-                value={0}
-                disabled={true}
               />
             </Box>
           </Box>
@@ -215,8 +212,8 @@ const ReservationForm = () => {
             />
           </Box>
         </fieldset>
-        <button type="submit" value="Submit Request">
-          Submit
+        <button type="submit" value="Submit Request" disabled={true}>
+          Reservations Closed
         </button>
       </S.Form>
     </S.ReservationForm>
