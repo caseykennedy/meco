@@ -20,8 +20,5 @@
   "devDependencies": {
     "lerna": "^3.22.1",
     "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "swiper": "^9.1.0"
   }
 }
