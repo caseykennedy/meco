@@ -9,8 +9,7 @@ import { Autoplay, EffectFade } from 'swiper'
 
 // Styles
 import * as S from './styles.scss'
-import 'swiper/css'
-import 'swiper/css/pagination'
+// import 'swiper/css'
 
 // ___________________________________________________________________
 
