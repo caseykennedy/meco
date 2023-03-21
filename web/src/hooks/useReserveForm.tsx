@@ -11,8 +11,6 @@ type ReserveFormShape = {
       node: {
         _rawMessage: string
         active: boolean
-        resOpen: string
-        resClosed: string
       }
     }[]
   }
@@ -26,8 +24,6 @@ const useReserveForm = () => {
           node {
             _rawMessage
             active
-            resOpen(formatString: "MMMM DD, yyyy")
-            resClosed(formatString: "MMMM DD, yyyy")
           }
         }
       }

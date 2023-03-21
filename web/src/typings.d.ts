@@ -5,6 +5,7 @@ declare module '*.otf'
 declare module '*.woff'
 declare module '*.woff2'
 
+declare module 'react-netlify-forms'
 declare module '@sanity/block-content-to-react'
 declare module 'react-anchor-link-smooth-scroll'
 declare module 'react-id-swiper'

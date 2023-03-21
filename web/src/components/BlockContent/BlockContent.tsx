@@ -34,7 +34,11 @@ const serializers = {
         case 'li':
           return <li>{props.children}</li>
         case 'strong':
-          return <strong>{props.children}</strong>
+          return (
+            <Text as="strong" fontWeight={500}>
+              {props.children}
+            </Text>
+          )
         case 'small':
           return (
             <Text as="p" fontSize={1}>
@@ -58,7 +62,7 @@ const serializers = {
 const BlockContent: React.FC<BlockShape> = ({ blocks }) => (
   <BaseBlockContent
     blocks={blocks}
-    imageOptions={{ w: 320, h: 240, fit: 'max' }}
+    imageOptions={{ fit: 'max' }}
     serializers={serializers}
   />
 )

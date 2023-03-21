@@ -50,10 +50,6 @@ export const Logo = styled.div`
     font-size: 2.3rem;
   }
 
-  .wordmark {
-    border-left: ${theme.border};
-  }
-
   & > * {
     display: flex;
     align-items: center;
@@ -84,27 +80,28 @@ export const Logo = styled.div`
       font-size: 1.2rem;
     }
   }
+`
 
-  .symbol {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const Symbol = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background: ${theme.colors.primary};
+  background: ${theme.colors.primary};
 
-    width: ${theme.headerHeight};
-    height: calc(${theme.headerHeight} - 2px);
+  max-width: ${theme.headerHeight};
+  width: ${theme.headerHeight};
+  height: calc(${theme.headerHeight} - 2px);
 
-    transition: all 0.333s ease-in-out;
+  transition: all 0.333s ease-in-out;
 
-    svg {
-      width: 18px;
-      fill: ${theme.colors.background};
-    }
+  svg {
+    width: 18px;
+    fill: ${theme.colors.background};
+  }
 
-    &.active {
-      background: ${theme.colors.secondary};
-    }
+  &.active {
+    background: ${theme.colors.secondary};
   }
 `
 
@@ -154,20 +151,24 @@ export const ReserveBtn = styled.div`
   cursor: pointer;
   transition: all 0.333s ease-in-out;
 
-  span {
+  .icon {
+    display: flex;
+    align-items: center;
     font-size: ${theme.fontSizes[2]};
     position: relative;
-    top: -2px;
     left: 0;
     margin-left: ${theme.space[2]};
-
     transition: ${theme.transition.all};
+
+    svg {
+      width: 18px;
+    }
   }
 
   &:hover {
-    background: ${darken(0.05, `${theme.colors.secondary}`)};
+    background: ${darken(0.05, `${theme.colors.primary}`)};
 
-    span {
+    .icon {
       left: ${theme.space[2]};
     }
   }

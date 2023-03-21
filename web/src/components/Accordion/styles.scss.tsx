@@ -41,8 +41,10 @@ export const AccordionToggle = styled(motion.div)`
     margin-bottom: 0;
   }
 
+  &.open,
   &:hover {
-    color: ${theme.colors.secondary};
+    background: ${theme.colors.secondary};
+    color: ${theme.colors.background};
   }
 `
 
@@ -64,11 +66,6 @@ export const Carat = styled(motion.div)`
   display: flex;
   align-items: center;
   transition: var(--transition-all);
-
-  &.rotate {
-    transform-origin: center;
-    transform: rotate(90deg);
-  }
 
   svg {
     fill: ${theme.colors.text};

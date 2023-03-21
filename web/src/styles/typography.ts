@@ -188,7 +188,7 @@ const Typography = css`
     ${textCrop(1, 0.02, -0.05)}
 
     font-family: ${theme.fonts.heading};
-    font-weight: ${theme.fontWeights.medium};
+    font-weight: 400;
     line-height: ${theme.root.font.headingLineHeight};
     margin: 0 0 0.25em;
     transition: ${theme.transition.all};
@@ -207,7 +207,7 @@ const Typography = css`
   .text--xxl {
     font-size: calc(${theme.root.font.xl});
     font-weight: ${theme.fontWeights.regular};
-    line-height: calc(${theme.root.font.headingLineHeight} / 1.1);
+    line-height: calc(${theme.root.font.headingLineHeight} / 1.25);
 
     @media ${theme.mq.small} {
       font-size: calc(${theme.root.font.xxl} / 1.15);
@@ -220,19 +220,19 @@ const Typography = css`
 
   h2,
   .text--xl {
-    font-size: ${theme.root.font.lg};
-    font-weight: ${theme.fontWeights.regular};
+    font-size: calc(${theme.fontSizes[4]} / 1.15);
+    margin-bottom: ${theme.space[5]};
 
     @media ${theme.mq.medium} {
-      font-size: ${theme.root.font.xl};
+      font-size: ${theme.fontSizes[4]};
     }
   }
 
   h3,
   .text--lg {
-    font-size: ${theme.root.font.md};
-    line-height: ${theme.root.font.bodyLineHeight};
-    margin: 0 0 1em;
+    font-size: ${theme.fontSizes[3]};
+    font-weight: 500;
+    margin-bottom: ${theme.space[5]};
 
     @media ${theme.mq.medium} {
     }
@@ -241,18 +241,19 @@ const Typography = css`
   h4,
   .text--md {
     font-size: ${theme.root.font.md};
+    font-weight: 500;
     line-height: ${theme.root.font.bodyLineHeight};
-    margin: 0 0 1em;
+    /* margin-bottom: ${theme.space[5]}; */
   }
 
   h5,
   .text--sm {
-    font-size: calc(${theme.root.font.sm} / 1);
+    font-size: calc(${theme.root.font.sm} * 1);
     font-weight: 500;
     letter-spacing: 1.5px;
     line-height: ${theme.root.font.bodyLineHeight};
     text-transform: uppercase;
-    margin: 0;
+    /* margin: 0; */
   }
 
   small {
@@ -264,7 +265,7 @@ const Typography = css`
   }
 
   p {
-    font-size: ${theme.root.font.baseSize};
+    font-size: ${theme.fontSizes[2]};
     line-height: ${theme.root.font.bodyLineHeight};
     margin-bottom: 0.8em;
 

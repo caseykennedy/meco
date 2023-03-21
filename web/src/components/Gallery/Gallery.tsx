@@ -4,17 +4,13 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-
-// Libraries
-import Slider from 'react-slick'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper'
 
 // Styles
 import * as S from './styles.scss'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
-// Elements
-import { Box } from '../../elements'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 // ___________________________________________________________________
 
@@ -68,7 +64,7 @@ const Gallery: React.FC = () => {
                 layout: FULL_WIDTH
                 placeholder: DOMINANT_COLOR
                 quality: 60
-                aspectRatio: 1.25
+                aspectRatio: 1.5
               )
             }
           }
@@ -77,30 +73,22 @@ const Gallery: React.FC = () => {
     }
   `)
   const images = data.content.edges
-  // Slick settings
-  const settings = {
-    fade: true,
-    autoplaySpeed: 4000,
-    speed: 1200,
-    accessibility: true,
-    infinite: true,
-    arrows: false,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: false
-    // nextArrow: <SampleNextArrow className="js-hover" />,
-    // prevArrow: <SamplePrevArrow />
-  }
   return (
     <S.Gallery>
-      <Slider {...settings}>
-        {images.map(({ node: image }) => (
-          <Box key={image.id}>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={1}
+        modules={[Autoplay]}
+        autoplay={true}
+        speed={1000}
+        loop={true}
+      >
+        {images.map(({ node: image }, idx) => (
+          <SwiperSlide key={idx}>
             <GallerySlide image={image} />
-          </Box>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
     </S.Gallery>
   )
 }

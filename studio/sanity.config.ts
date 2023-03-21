@@ -1,13 +1,14 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
+import {MdDynamicForm, MdMessage, MdSettings, MdList, MdPeople} from 'react-icons/md'
 import {schemaTypes} from './schemas'
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 
 // Define the singleton document types
-const singletonTypes = new Set(['reserveForm'])
+const singletonTypes = new Set(['marquee', 'reserveForm', 'siteSettings'])
 
 export default defineConfig({
   name: 'default',
@@ -22,16 +23,33 @@ export default defineConfig({
         S.list()
           .title('Website Content')
           .items([
+            S.listItem()
+              .title('Site Settings')
+              .id('siteSettings')
+              .child(S.document().schemaType('siteSettings').documentId('siteSettings'))
+              .icon(MdSettings),
+
+            S.listItem()
+              .title('Marquee Message')
+              .id('marquee')
+              .child(S.document().schemaType('marquee').documentId('marquee'))
+              .icon(MdMessage),
+
             // Our singleton type has a list item with a custom child
-            S.listItem().title('Reservation Form').id('reserveForm').child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document().schemaType('reserveForm').documentId('reserveForm')
-            ),
+            S.listItem()
+              .title('Reservation Form')
+              .id('reserveForm')
+              .child(
+                // Instead of rendering a list of documents, we render a single
+                // document, specifying the `documentId` manually to ensure
+                // that we're editing the single instance of the document
+                S.document().schemaType('reserveForm').documentId('reserveForm')
+              )
+              .icon(MdDynamicForm),
 
             // Regular document types
-            S.documentTypeListItem('serviceCategory').title('Services'),
+            S.documentTypeListItem('serviceCategory').title('Services').icon(MdList),
+            S.documentTypeListItem('person').title('People').icon(MdPeople),
           ]),
     }),
     visionTool(),

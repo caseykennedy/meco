@@ -17,16 +17,6 @@ export default defineType({
       description: 'Are reservations open?',
     }),
     defineField({
-      name: 'resOpen',
-      title: 'Reservations Open',
-      type: 'date',
-    }),
-    defineField({
-      name: 'resClosed',
-      title: 'Reservations Closed',
-      type: 'date',
-    }),
-    defineField({
       name: 'message',
       title: 'Message',
       type: 'blockContent',

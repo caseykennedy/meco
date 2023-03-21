@@ -3,6 +3,7 @@
 
 import React from 'react'
 import Gallery from '../Gallery'
+import Icon from '../Icons'
 import * as S from './styles.scss'
 
 // ___________________________________________________________________
@@ -13,17 +14,20 @@ type SidebarProps = {
 }
 
 const Sidebar = ({ isShowing, toggleOverlay }: SidebarProps) => (
-  <S.Sidebar as="aside">
+  <S.Sidebar>
     <S.SidebarInner>
       <div className="gallery">
-        {/* <Gallery /> */}
+        <Gallery />
       </div>
       <S.ReserveBtn
         onClick={toggleOverlay}
         className={isShowing ? 'active' : ''}
         aria-label="make a reservation"
       >
-        Reserve Water <span>→</span>
+        <div>Reserve Water</div>
+        <div className="icon">
+          <Icon name="arrow" />
+        </div>
       </S.ReserveBtn>
     </S.SidebarInner>
   </S.Sidebar>

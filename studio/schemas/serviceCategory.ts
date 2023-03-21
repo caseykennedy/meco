@@ -31,6 +31,11 @@ export default defineType({
       title: 'Additional Details',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'tutorial',
+      title: 'Tutorial Video',
+      type: 'videoURL',
+    }),
   ],
 
   preview: {

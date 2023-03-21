@@ -8,7 +8,7 @@ import theme from '../../../config/theme'
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column-reverse nowrap;
   gap: 2px;
   padding-top: ${theme.headerHeight};
 

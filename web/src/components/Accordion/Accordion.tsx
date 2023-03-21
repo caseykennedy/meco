@@ -20,7 +20,7 @@ const Accordion = ({ active, children, title = 'title' }: Props) => {
   const refToggle = useRef<HTMLDivElement>(null)
   const refContent = useRef<HTMLDivElement>(null)
 
-  let isActiveState
+  let isActiveState = false
 
   if (!active) {
     isActiveState = false
@@ -60,8 +60,9 @@ const Accordion = ({ active, children, title = 'title' }: Props) => {
   }
 
   const containerVariants = {
-    active: {
-      maxHeight: `${refContent.current && refContent.current.scrollHeight}px`,
+    open: {
+      height: 'auto',
+      maxHeight: 'auto',
       transition: {
         maxHeight: {
           duration: 1,
@@ -69,7 +70,7 @@ const Accordion = ({ active, children, title = 'title' }: Props) => {
         }
       }
     },
-    disabled: {
+    closed: {
       maxHeight: '0px',
       height: '0px',
       transition: {
@@ -81,35 +82,36 @@ const Accordion = ({ active, children, title = 'title' }: Props) => {
     }
   }
 
-  useEffect(() => {
-    const currentToggler = refToggle.current
-    currentToggler?.addEventListener('click', toggleAccordion)
-    return () => currentToggler?.removeEventListener('click', toggleAccordion)
-  }, [toggleAccordion])
+  // useEffect(() => {
+  //   const currentToggler = refToggle.current
+  //   currentToggler?.addEventListener('click', toggleAccordion)
+  //   return () => currentToggler?.removeEventListener('click', toggleAccordion)
+  // }, [toggleAccordion])
 
   return (
     <S.AccordionContainer
-      initial="active"
-      animate={[isActive ? 'active' : 'disabled']}
-      exit="disabled"
+      initial="open"
+      animate={[isActive ? 'open' : 'closed']}
+      exit="closed"
     >
       <S.AccordionInner>
         <S.AccordionToggle
-          initial="closed"
-          animate={isActive ? 'open' : 'closed'}
-          ref={refToggle}
+          // initial="closed"
+          // animate={isActive ? 'open' : 'closed'}
+          onClick={toggleAccordion}
+          className={`${isActive && 'open'}`}
         >
-          <h5 dangerouslySetInnerHTML={{ __html: title }} className="title" />
+          <div className="text--sm">{title}</div>
 
-          <S.Carat variants={caratVariants}>
-            <Icon name="chevron" />
+          <S.Carat variants={caratVariants} className={`${isActive && 'open'}`}>
+            <Icon name="plus" />
           </S.Carat>
         </S.AccordionToggle>
 
         <S.AccordionContent
-          ref={refContent}
+          // initial="closed"
+          // ref={refContent}
           variants={containerVariants}
-          // style={{ maxHeight: `${setHeight}` }}
         >
           {children}
         </S.AccordionContent>

@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {MdPerson} from 'react-icons/md'
 
 export default defineType({
-  name: 'service',
-  title: 'Service',
+  name: 'person',
+  title: 'Person',
   type: 'document',
+  icon: MdPerson,
   fields: [
     defineField({
       name: 'name',
@@ -11,14 +13,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'price',
-      title: 'Price',
-      type: 'number',
+      name: 'phone',
+      title: 'Phone',
+      type: 'string',
+      description: 'eg: 333-333-3333',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'blockContent',
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+      description: 'eg: amanda@meco.com',
     }),
   ],
 

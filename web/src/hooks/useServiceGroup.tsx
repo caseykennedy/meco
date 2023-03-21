@@ -5,19 +5,26 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // ___________________________________________________________________
 
+export type SanityServiceCategoryNode = {
+  _rawBody: string
+  _rawBody2: string
+  serviceCategoryName: string
+  services: {
+    _rawDescription: string
+    name: string
+    price: number
+  }[]
+  tutorial: {
+    caption: string
+    title: string
+    url: string
+  }
+}
+
 type SanityServiceCategoryShape = {
   serviceCategories: {
     edges: {
-      node: {
-        _rawBody: string
-        _rawBody2: string
-        serviceCategoryName: string
-        services: {
-          _rawDescription: string
-          name: string
-          price: number
-        }[]
-      }
+      node: SanityServiceCategoryNode
     }[]
   }
 }
@@ -37,6 +44,11 @@ const useServiceGroup = () => {
               _rawDescription
               name
               price
+            }
+            tutorial {
+              caption
+              title
+              url
             }
           }
         }

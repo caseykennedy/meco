@@ -4,19 +4,11 @@ import { Box } from '../../elements'
 
 const Figure = (props: any) => {
   return (
-    <Box
-      as="figure"
-      my={6}
-      mx="auto"
-      width="auto"
-      style={{ maxWidth: '600px' }}
-    >
+    <Box as="figure" my={6} mx="auto" width="auto">
       {props.asset && (
         <Image
           {...props}
           alt={props.alt}
-          width={500}
-          // style it how you want it
           style={{
             width: '100%',
             height: '100%',

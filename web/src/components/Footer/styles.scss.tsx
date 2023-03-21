@@ -32,6 +32,14 @@ export const Content = styled.div`
     min-width: inherit;
     padding: ${theme.space[4]};
   }
+
+  p {
+    font-size: ${theme.fontSizes[1]};
+
+    @media (min-width: 450px) {
+      font-size: ${theme.fontSizes[2]};
+    }
+  }
 `
 
 export const Indent = styled(Flex)`

@@ -6,6 +6,10 @@ import React, { useRef } from 'react'
 
 import Section from '../../components/Section'
 import Footer from '../../components/Footer'
+import Icon from '../../components/Icons'
+import Drips from '../../components/Drips'
+import Meco from '../../components/Meco'
+import FadeIn from '../../components/FadeIn'
 
 import { Heading } from '../../elements'
 import HeadingStroked from '../../elements/HeadingStroked'
@@ -31,7 +35,7 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
     <>
       <S.HomePage>
         <S.Content>
-          <Section pt={0} pb={0} border={false}>
+          <Section pt={4} pb={0} border={false}>
             <Heading as="h1" color="secondary">
               Portable
               <br />
@@ -39,20 +43,21 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
               <br />
               services
             </Heading>
-            <Heading as="h4">+ equipment rentals</Heading>
-            {/* <S.Drips>
-              <Drips />
-            </S.Drips> */}
+            <Heading mb={0} className="text--md">
+              + equipment rentals
+            </Heading>
+            <S.HeroArt>
+              <div className="meco">
+                <Meco />
+              </div>
+              <div className="drips">
+                <FadeIn threshold={0.35}>
+                  <Drips />
+                </FadeIn>
+              </div>
+            </S.HeroArt>
           </Section>
-          <S.VerticalText>
-            <HeadingStroked
-              fontWeight={theme.fontWeights.bold}
-              strokeWidth="3px"
-              strokeColor={theme.colors.secondary}
-            >
-              MECO
-            </HeadingStroked>
-          </S.VerticalText>
+          {/* <S.VerticalText>MECO</S.VerticalText> */}
           <Mission />
           <Services />
           <BurningMan />
@@ -61,8 +66,16 @@ const Home: React.FC<Props> = ({ isShowing, toggleOverlay }) => {
             className={isShowing ? 'active' : ''}
             aria-label="make a reservation"
           >
-            {!isShowing ? 'Reserve Water' : 'close'}
-            {!isShowing && <span>→</span>}
+            {!isShowing ? (
+              <>
+                <div>Reserve Water</div>
+                <div className="icon">
+                  <Icon name="arrow" />
+                </div>
+              </>
+            ) : (
+              'close'
+            )}
           </S.ReserveBtn>
         </S.Content>
         <S.Indent>

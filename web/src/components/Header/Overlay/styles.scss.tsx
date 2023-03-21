@@ -35,10 +35,10 @@ export const Overlay = styled(Flex)`
   transition: all 0.333s ease-out;
 
   @media ${theme.mq.medium} {
-    width: calc(${overlayWidth} / 2);
-    right: calc(-${overlayWidth} / 2);
     border-left: ${theme.border};
-    border-width: 1px;
+    border-width: 2px;
+    right: calc(-${overlayWidth} / 2);
+    width: calc(calc(${overlayWidth} - ${theme.headerHeight}) / 2);
 
     visibility: visible;
     opacity: 1;

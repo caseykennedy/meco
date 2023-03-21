@@ -2,8 +2,8 @@
 // ___________________________________________________________________
 
 import styled from 'styled-components'
-import { darken } from 'polished'
-import { Flex } from '../../elements'
+import { darken, transparentize } from 'polished'
+import { Box, Flex } from '../../elements'
 import theme from '../../../config/theme'
 
 // ___________________________________________________________________
@@ -32,7 +32,7 @@ export const Content = styled.div`
   justify-content: flex-end;
 
   /* width: 100%; */
-  padding-top: ${theme.space[4]};
+  /* padding-top: ${theme.space[4]}; */
 
   background: ${theme.colors.background};
 
@@ -72,36 +72,47 @@ export const Marker = styled.div`
 export const VerticalText = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 ${theme.space[4]} ${theme.space[4]};
+  padding: ${theme.space[4]};
 
   font-size: calc(${theme.root.font.xxxl} / 1.75);
   line-height: calc(${theme.root.font.headingLineHeight} / 1.15);
-  /* writing-mode: vertical-lr; */
-  /* text-orientation: mixed; */
+  /* writing-mode: vertical-lr;
+  text-orientation: mixed; */
 
   @media ${theme.mq.medium} {
     font-size: ${theme.root.font.xxl};
   }
 `
 
-export const Drips = styled.div`
-  position: fixed;
-  width: 54vw;
-
-  top: 50vh;
-  right: 0;
-
-  z-index: 99;
+export const HeroArt = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: ${theme.space[7]};
 
   @media ${theme.mq.medium} {
-    width: 30vw;
-    top: 37vh;
-    right: 0;
-    transform: translateX(50%);
   }
 
-  svg {
-    width: 100%;
+  .drips {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 ${theme.space[6]};
+
+    div {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .meco {
+    svg {
+      width: 100%;
+    }
   }
 `
 
@@ -153,26 +164,27 @@ export const ReserveBtn = styled.div`
 
   background: ${theme.colors.secondary};
   height: 164px;
-  padding: ${theme.space[7]} ${theme.space[1]};
+  padding: ${theme.space[7]} 0;
 
   cursor: pointer;
   transition: all 0.333s ease-in-out;
 
-  span {
+  .icon {
+    display: flex;
+    align-items: center;
     font-size: ${theme.fontSizes[2]};
+    
     position: relative;
-    top: -4px;
     left: 0;
     margin-left: ${theme.space[3]};
-
     transition: ${theme.transition.all};
   }
 
   &:hover {
-    background: ${darken(0.05, `${theme.colors.secondary}`)};
+    background: ${darken(0.05, `${theme.colors.primary}`)};
 
-    span {
-      left: ${theme.space[5]};
+    .icon {
+      left: ${theme.space[3]};
     }
   }
 
@@ -181,45 +193,83 @@ export const ReserveBtn = styled.div`
   }
 `
 
-export const Highlight = styled.div`
+export const HighlightGrid = styled(Box)`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  gap: ${theme.space[3]};
+
+  margin-bottom: ${theme.space[6]};
   width: 100%;
-  padding: ${theme.space[4]};
-  border: ${theme.border};
-  border-right-width: 6px;
-  border-bottom-width: 6px;
-
-  &:nth-child(odd) {
-    margin-bottom: ${theme.space[4]};
-
-    @media ${theme.mq.small} {
-      margin-bottom: 0;
-    }
-  }
 
   @media ${theme.mq.small} {
-    width: calc(50% - calc(${theme.space[4]} / 2));
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  &.emphasized {
-    background: ${theme.colors.primary};
-    color: ${theme.colors.background};
-  }
+  .highlight {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 
-  .rental {
-    &__title {
-      font-weight: 500;
-      border-bottom: ${theme.border};
-      margin-bottom: ${theme.space[4]};
+    border: ${theme.border};
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    border-radius: 5px;
+
+    padding: ${theme.space[3]};
+
+    &--emphasized {
+      background: ${transparentize(0.2, theme.colors.primary)};
+      color: ${theme.colors.background};
     }
 
-    &__price {
-      padding: ${theme.space[1]};
-      margin-top: ${theme.space[4]};
-      background: ${theme.colors.secondary};
-      color: ${theme.colors.background};
-      font-size: ${theme.fontSizes[1]};
+    .rental {
+      &__title {
+        font-size: ${theme.fontSizes[3]};
+        font-weight: 500;
+        border-bottom: ${theme.border};
+        margin-bottom: ${theme.space[4]};
+      }
+
+      &__price {
+        padding: ${theme.space[1]};
+        margin-top: ${theme.space[4]};
+        background: ${theme.colors.secondary};
+        color: ${theme.colors.background};
+        font-size: ${theme.fontSizes[1]};
+        font-weight: 600;
+        text-align: right;
+      }
+    }
+
+    .title {
+      border: ${theme.border};
+      border-radius: 6px;
+      padding: ${theme.space[1]} ${theme.space[2]};
+
+      &--service {
+        background: ${theme.colors.primary};
+        color: ${theme.colors.background};
+      }
+
+      &--sector {
+        background: ${theme.colors.background};
+        color: ${theme.colors.text};
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      margin-top: ${theme.space[3]};
       font-weight: 600;
-      text-align: right;
+
+      li {
+        border-bottom: ${theme.border};
+        max-width: 50%;
+        padding: ${theme.space[1]} ${theme.space[2]};
+        width: 50%;
+      }
     }
   }
 `

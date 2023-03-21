@@ -22,8 +22,8 @@ import theme from '../../../../config/theme'
 
 const Mission: React.FC = () => {
   return (
-    <Section pt={0} border={true}>
-      <Heading as="h5" color="secondary" mt={4} mb={5}>
+    <Section border={true}>
+      <Heading className="text--sm" color="secondary" mb={5}>
         Mission
       </Heading>
       <Heading as="h3">

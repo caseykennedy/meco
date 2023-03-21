@@ -10,7 +10,7 @@ import useOverlay from '../hooks/useOverlay'
 // Components
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Home from '../components/Home'
+import Home from '../views/Home'
 
 // ___________________________________________________________________
 

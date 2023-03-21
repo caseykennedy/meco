@@ -8,7 +8,10 @@ import { Link } from 'gatsby'
 
 import { currentYear } from '../../utils'
 
+import useMarquee from '../../hooks/useMarquee'
+
 import Drop from '../Drop'
+import Icon from '../Icons'
 import Marquee from '../Marquee'
 
 import * as S from './styles.scss'
@@ -26,13 +29,14 @@ const Header: React.FC<HeaderShape> = ({
   isShowing,
   toggleOverlay
 }) => {
+  const marquee = useMarquee()
   return (
     <>
       <S.Header as="header" ref={mainRef}>
+        <S.Symbol className={`symbol ${isShowing ? 'active' : ''}`}>
+          <Drop />
+        </S.Symbol>
         <S.Logo>
-          <div className={`symbol ${isShowing ? 'active' : ''}`}>
-            <Drop />
-          </div>
           <div className="wordmark">
             <Link to="/" aria-label="MECO, back to home">
               MECO
@@ -43,7 +47,11 @@ const Header: React.FC<HeaderShape> = ({
         <S.Toolbar>
           <S.Marquee>
             <Marquee>
-              <div>BURNING MAN WATER SERVICES {currentYear}</div>
+              <div>
+                {marquee.message
+                  ? marquee.message
+                  : `BURNING MAN WATER SERVICES ${currentYear}`}
+              </div>
               <div />
             </Marquee>
           </S.Marquee>
@@ -53,7 +61,11 @@ const Header: React.FC<HeaderShape> = ({
             aria-label="make a reservation"
           >
             {!isShowing ? `reserve` : 'close'}
-            {!isShowing && <span>→</span>}
+            {!isShowing && (
+              <div className="icon">
+                <Icon name="arrow" />
+              </div>
+            )}
           </S.ReserveBtn>
         </S.Toolbar>
       </S.Header>
