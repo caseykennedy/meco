@@ -1,7 +1,9 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
+import {dashboardTool} from '@sanity/dashboard'
 import {visionTool} from '@sanity/vision'
 import {MdDynamicForm, MdMessage, MdSettings, MdList, MdPeople} from 'react-icons/md'
+import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
 import {schemaTypes} from './schemas'
 
 // Define the actions that should be available for singleton documents
@@ -18,6 +20,22 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
+    dashboardTool({
+      widgets: [
+        netlifyWidget({
+          title: 'Website Deployments',
+          sites: [
+            {
+              title: 'MECO Website',
+              apiId: 'bec7efc9-669c-4961-90c2-94a45908a4b3',
+              buildHookId: '641a47ad4d05411466e31b3d',
+              name: 'meco-reno',
+              url: 'https://meco-reno.com',
+            },
+          ],
+        }),
+      ],
+    }),
     deskTool({
       structure: (S) =>
         S.list()
