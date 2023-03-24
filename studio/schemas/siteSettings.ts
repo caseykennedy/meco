@@ -78,8 +78,8 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'googleAnalyticsID',
-      title: 'Google Analytics Code',
+      name: 'googleTagID',
+      title: 'Google Tag ID',
       type: 'string',
     }),
     defineField({

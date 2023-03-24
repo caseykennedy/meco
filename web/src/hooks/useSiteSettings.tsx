@@ -21,7 +21,7 @@ type Props = {
           };
         };
         description: string;
-        googleAnalyticsID: string;
+        googleTagID: string;
         headline: string;
         language: string;
         logo: string;
@@ -60,7 +60,7 @@ const useSiteSettings = () => {
               }
             }
             description
-            googleAnalyticsID
+            googleTagID
             headline
             language
             logo
