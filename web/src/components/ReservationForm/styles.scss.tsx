@@ -10,11 +10,11 @@ import { tint, lighten, darken } from 'polished'
 import theme from '../../../config/theme'
 
 // Elements
-import { Box, AnimatedBox } from '../../elements'
+import { Box } from '../../elements'
 
 // ___________________________________________________________________
 
-export const ReservationForm = styled(AnimatedBox)`
+export const ReservationForm = styled.div`
   overflow: auto;
 
   form {

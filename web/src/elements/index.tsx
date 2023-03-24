@@ -4,7 +4,6 @@
 // ___________________________________________________________________
 
 import styled from 'styled-components'
-import { animated } from 'react-spring'
 
 // Theme
 import theme from '../../config/theme'
@@ -92,23 +91,6 @@ export const Box = styled.div<ElementProps>`
 
 Box.displayName = 'Box'
 
-export const AnimatedBox = styled(animated.div)<ElementProps>`
-  box-sizing: border-box;
-
-  ${space}
-  ${width}
-  ${color}
-  ${flex}
-  ${alignSelf}
-  ${textAlign}
-  ${maxWidth}
-  ${fontSize}
-  ${display}
-  ${position}
-`
-
-AnimatedBox.displayName = 'AnimatedBox'
-
 // Flexbox
 
 export const Flex = styled.div<ElementProps>`
@@ -131,24 +113,6 @@ export const Flex = styled.div<ElementProps>`
 `
 
 Flex.displayName = 'Flex'
-
-export const AnimatedFlex = styled(animated.div)<ElementProps>`
-  display: flex;
-
-  ${space}
-  ${color}
-  ${flexWrap}
-  ${flexDirection}
-  ${alignItems}
-  ${justifyContent}
-  ${maxWidth}
-  ${width}
-  ${fontSize}
-  ${textAlign}
-  ${overflow}
-`
-
-AnimatedFlex.displayName = 'AnimatedFlex'
 
 // Button
 

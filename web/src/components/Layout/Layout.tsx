@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({
   const mainRef = useRef<HTMLDivElement>(null)
   // eslint-disable-next-line no-console
   console.log(
-    `%c MECO | McKinnies Equipment Co. `,
+    `%c MECO | McKinnies Equipment Co. | Site by caseykennedy.me `,
     `background: #B8860B; color: #132B59`
   )
   return (
