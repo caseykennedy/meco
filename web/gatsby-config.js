@@ -5,8 +5,6 @@ require('dotenv').config({
 const config = require('./config')
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
-console.log('config', config)
-
 // Get Sanity config
 // const {
 //   api: { projectId, dataset }
