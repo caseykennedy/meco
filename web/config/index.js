@@ -10,7 +10,7 @@ module.exports = {
   author: settings.author, // Author for schema.org JSONLD
 
   // Banner
-  // banner: settings.banner.asset.gatsbyImageData.src,
+  // banner: settings.banner.asset.url,
   banner: '',
 
   siteTitle: settings.title, // Navigation and Site Title
