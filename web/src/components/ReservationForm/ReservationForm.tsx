@@ -46,7 +46,7 @@ const ReservationForm = () => {
           Don't get left in the dust.
         </Heading>
 
-        {active && _rawMessage && (
+        {_rawMessage && (
           <Box mt={5}>
             <BlockContent blocks={_rawMessage || []} />
           </Box>
