@@ -218,8 +218,10 @@ const ReservationForm = () => {
                         type="number"
                         name="fiveHunGal"
                         id="fiveHunGal"
-                        placeholder="# of 500 gal. tanks needed"
+                        // placeholder="# of 500 gal. tanks needed"
+                        placeholder="out of 500 gal. tanks"
                         onChange={handleChange}
+                        disabled={true}
                       />
                     </Box>
                     <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -230,8 +232,10 @@ const ReservationForm = () => {
                         max="20"
                         name="thousandGal"
                         id="thousandGal"
-                        placeholder="# of 1000 gal. tanks needed"
+                        // placeholder="# of 1000 gal. tanks needed"
+                        placeholder="out of 1000 gal. tanks"
                         onChange={handleChange}
+                        disabled={true}
                       />
                     </Box>
                   </Box>

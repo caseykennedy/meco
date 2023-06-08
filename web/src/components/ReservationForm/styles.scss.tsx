@@ -68,6 +68,10 @@ export const ReservationForm = styled.div`
         &::placeholder {
           color: ${tint(0.05, `${theme.colors.primary}`)};
         }
+
+        &:disabled {
+          background: ${tint(-0.4, `${theme.colors.background}`)};
+        }
       }
 
       select {
