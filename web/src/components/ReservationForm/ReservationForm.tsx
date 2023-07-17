@@ -248,9 +248,8 @@ const ReservationForm = () => {
                         type="number"
                         name="privateContainers"
                         id="privateContainers"
-                        // placeholder="# of private containers"
+                        placeholder="# of private containers"
                         onChange={handleChange}
-                        disabled={true}
                       />
                     </Box>
                     <Box width={[1, 1, 1 / 2]} className="form-group__box">
@@ -259,8 +258,9 @@ const ReservationForm = () => {
                         type="number"
                         name="rv"
                         id="rv"
-                        placeholder="# of RVs"
+                        // placeholder="# of RVs"
                         onChange={handleChange}
+                        disabled={true}
                       />
                     </Box>
                   </Box>
