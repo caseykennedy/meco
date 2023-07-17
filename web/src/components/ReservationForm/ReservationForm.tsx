@@ -258,7 +258,7 @@ const ReservationForm = () => {
                         type="number"
                         name="rv"
                         id="rv"
-                        // placeholder="# of RVs"
+                        placeholder="out of RVs"
                         onChange={handleChange}
                         disabled={true}
                       />
