@@ -59,75 +59,20 @@ const ReservationForm = () => {
             {active ? 'Reservations are open!' : 'Reservations are closed.'}
           </strong>
         </Text>
-        {!active && (
+        <Text as="p" color="background" fontSize={1}>
+          Thank you for all your reservations. We look forward to seeing you on
+          the playa!
+        </Text>
+        {/* {!active && (
           <Text as="p" color="background" fontSize={1}>
             In the meantime, shoot us your email and we'll let you know as soon
             as reservations open.
           </Text>
-        )}
+        )} */}
       </Section>
 
       {!active ? (
-        <NetlifyForm name="Email Capture Form" honeypotName="bot-field">
-          {({ handleChange, success, error }) => (
-            <>
-              <Honeypot />
-              {success && (
-                <FormFeedback
-                  type="success"
-                  message="Thanks for visiting us!"
-                />
-              )}
-              {error && (
-                <FormFeedback
-                  type="error"
-                  message="Sorry, something went wrong. Please refresh and
-                try again."
-                />
-              )}
-              {!success && !error && (
-                <fieldset>
-                  <Box width={1} className="form-group">
-                    <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                      <label htmlFor="name">
-                        Name:{' '}
-                        <abbr title="required" aria-label="required">
-                          *
-                        </abbr>
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Name"
-                        required={true}
-                        onChange={handleChange}
-                      />
-                    </Box>
-                    <Box width={[1, 1, 1 / 2]} className="form-group__box">
-                      <label htmlFor="email">
-                        Email:
-                        <abbr title="required" aria-label="required">
-                          *
-                        </abbr>
-                      </label>
-                      <input
-                        name="email"
-                        placeholder="Email"
-                        type="email"
-                        required={true}
-                        onChange={handleChange}
-                      />
-                    </Box>
-                  </Box>
-                  <button type="submit" value="submit">
-                    Submit
-                  </button>
-                </fieldset>
-              )}
-            </>
-          )}
-        </NetlifyForm>
+        <></>
       ) : (
         <NetlifyForm name="Static Form" honeypotName="bot-field">
           {({ handleChange, success, error }) => (
@@ -278,3 +223,64 @@ const ReservationForm = () => {
 }
 
 export default ReservationForm
+
+// <NetlifyForm name="Email Capture Form" honeypotName="bot-field">
+//   {({ handleChange, success, error }) => (
+//     <>
+//       <Honeypot />
+//       {success && (
+//         <FormFeedback
+//           type="success"
+//           message="Thanks for visiting us!"
+//         />
+//       )}
+//       {error && (
+//         <FormFeedback
+//           type="error"
+//           message="Sorry, something went wrong. Please refresh and
+//         try again."
+//         />
+//       )}
+//       {!success && !error && (
+//         <fieldset>
+//           <Box width={1} className="form-group">
+//             <Box width={[1, 1, 1 / 2]} className="form-group__box">
+//               <label htmlFor="name">
+//                 Name:{' '}
+//                 <abbr title="required" aria-label="required">
+//                   *
+//                 </abbr>
+//               </label>
+//               <input
+//                 type="text"
+//                 name="name"
+//                 id="name"
+//                 placeholder="Name"
+//                 required={true}
+//                 onChange={handleChange}
+//               />
+//             </Box>
+//             <Box width={[1, 1, 1 / 2]} className="form-group__box">
+//               <label htmlFor="email">
+//                 Email:
+//                 <abbr title="required" aria-label="required">
+//                   *
+//                 </abbr>
+//               </label>
+//               <input
+//                 name="email"
+//                 placeholder="Email"
+//                 type="email"
+//                 required={true}
+//                 onChange={handleChange}
+//               />
+//             </Box>
+//           </Box>
+//           <button type="submit" value="submit">
+//             Submit
+//           </button>
+//         </fieldset>
+//       )}
+//     </>
+//   )}
+// </NetlifyForm>
